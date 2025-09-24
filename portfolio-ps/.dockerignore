@@ -1,0 +1,18 @@
+node_modules
+node_modules/**
+dist
+dist/**
+.git
+.vscode
+.DS_Store
+.env
+*.log
+*.local
+coverage
+npm-debug.log
+yarn-error.log
+.idea
+
+# Ignore Dockerfile / deployment artifacts if present
+Dockerfile*
+docker-compose*.yaml
