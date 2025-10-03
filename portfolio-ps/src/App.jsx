@@ -1,751 +1,587 @@
-import { ThemeProvider, createTheme } from "@mui/material/styles"
-import CssBaseline from "@mui/material/CssBaseline"
+"use client"
+
+import { useState } from "react"
 import {
-  Container,
-  Typography,
-  Grid,
-  Card,
-  CardContent,
-  Avatar,
-  Box,
-  Chip,
-  Divider,
-  Paper,
-  LinearProgress,
-} from "@mui/material"
-import {
-  Email,
+  Mail,
+  MapPin,
   Phone,
-  LocationOn,
-  DriveEta,
-  Work,
-  School,
-  EmojiEvents,
+  Car,
+  Briefcase,
+  GraduationCap,
+  Award,
   Code,
-  Language,
-  Person,
-} from "@mui/icons-material"
+  Globe,
+  Menu,
+  X,
+  Github,
+  Linkedin,
+  ExternalLink,
+} from "lucide-react"
 
-const theme = createTheme({
-  palette: {
-    mode: "dark",
-    primary: {
-      main: "#3b82f6",
-      light: "#60a5fa",
-      dark: "#1d4ed8",
-      contrastText: "#ffffff",
-    },
-    secondary: {
-      main: "#10b981",
-      light: "#34d399",
-      dark: "#059669",
-    },
-    background: {
-      default: "#0f172a",
-      paper: "#1e293b",
-    },
-    text: {
-      primary: "#f8fafc",
-      secondary: "#cbd5e1",
-    },
-    divider: "rgba(148, 163, 184, 0.12)",
-    success: {
-      main: "#10b981",
-    },
-    warning: {
-      main: "#f59e0b",
-    },
-    info: {
-      main: "#3b82f6",
-    },
-  },
-  typography: {
-    fontFamily: '"Inter", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-    h1: {
-      fontWeight: 800,
-      fontSize: "3.5rem",
-      lineHeight: 1.1,
-      letterSpacing: "-0.02em",
-    },
-    h3: {
-      fontWeight: 700,
-      fontSize: "2.25rem",
-      lineHeight: 1.2,
-      letterSpacing: "-0.01em",
-    },
-    h4: {
-      fontWeight: 600,
-      fontSize: "1.5rem",
-      lineHeight: 1.3,
-      letterSpacing: "-0.01em",
-    },
-    h5: {
-      fontWeight: 600,
-      fontSize: "1.25rem",
-      lineHeight: 1.4,
-    },
-    h6: {
-      fontWeight: 500,
-      fontSize: "1.125rem",
-      lineHeight: 1.4,
-    },
-    body1: {
-      fontSize: "1rem",
-      lineHeight: 1.6,
-      letterSpacing: "0.01em",
-    },
-    body2: {
-      fontSize: "0.875rem",
-      lineHeight: 1.5,
-      letterSpacing: "0.01em",
-    },
-  },
-  components: {
-    MuiCard: {
-      styleOverrides: {
-        root: {
-          backgroundImage: "linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(16, 185, 129, 0.05) 100%)",
-          backdropFilter: "blur(10px)",
-          border: "1px solid rgba(148, 163, 184, 0.1)",
-          transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-          "&:hover": {
-            transform: "translateY(-2px)",
-            boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2)",
-            border: "1px solid rgba(59, 130, 246, 0.2)",
-          },
-        },
-      },
-    },
-    MuiChip: {
-      styleOverrides: {
-        root: {
-          fontWeight: 500,
-          fontSize: "0.8rem",
-          height: "28px",
-          transition: "all 0.2s ease-in-out",
-          "&:hover": {
-            transform: "scale(1.05)",
-          },
-        },
-      },
-    },
-  },
-})
+export default function App() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
-function App() {
-  const data = {
-    name: "Stefan Popa",
-    title: "Industrial Computing Student & Entrepreneur",
-    about:
-      "Motivated student entrepreneur seeking an internship in industrial computing and automation. Passionate about bridging the gap between technology and practical applications in industrial environments.",
-    languages: [
-      { name: "French", level: "Native", proficiency: 100 },
-      { name: "Romanian", level: "Native", proficiency: 100 },
-      { name: "English", level: "C1", proficiency: 85 },
-      { name: "Dutch", level: "A1", proficiency: 25 },
-    ],
-    workExperience: [
-      {
-        company: "Code it Bryan!",
-        position: "System Administrator and Webmaster",
-        period: "Nov. 2023 - Ongoing",
-        description:
-          "Developed and maintained the digital infrastructure of a private school of 200 students and teachers.",
-        type: "Current Position",
-        color: "success",
-      },
-      {
-        company: "Logiscool",
-        position: "Part-time Job as Teacher",
-        period: "Nov. 2021 - Ongoing",
-        description: "Part-time computer science and AI technologies teacher.",
-        type: "teaching",
-        color: "info",
-      },
-      {
-        company: "Aproove",
-        position: "R&D Software Development Internship",
-        period: "Feb. 2023 - June 2023",
-        description:
-          "Developed an Adobe plugin for live communication of geometrical data. Conceived a 3D web proofing system prototype.",
-        type: "internship",
-        color: "primary",
-      },
-      {
-        company: "AGC Moustier",
-        position: "Software Development Internship",
-        period: "June 2022 - July 2022",
-        description:
-          "Further expanded services related to data gathering, treatment and display to other AGC plants across Belgium. Created dashboards for the commercial office of the plant.",
-        type: "internship",
-        color: "primary",
-      },
-    ],
-    skills: {
-      soft: ["Patience", "Honesty", "Communication", "Adaptability", "Project Management"],
-      hard: {
-        "Project Management": ["Git/Gitlab", "Agile", "Scrum", "Kanban", "Pert", "Gantt", "Jira", "Trello", "Notion"],
-        "Programming Languages & Frameworks": [
-          "JavaScript",
-          "TypeScript",
-          "Python",
-          "Java",
-          "C++",
-          "React",
-          "Node.js",
-          "Express",
-          "Django",
-          "Spring Boot",
-        ],
-        "Databases & Tools": [
-          "MySQL",
-          "PostgreSQL",
-          "MongoDB",
-          "Redis",
-          "Docker",
-          "AWS",
-          "Azure",
-          "Linux",
-          "Windows Server",
-        ],
-        "Industrial Computing": [
-          "PLC Programming",
-          "SCADA Systems",
-          "Industrial Networks",
-          "Automation",
-          "IoT",
-          "Embedded Systems",
-        ],
-      },
-    },
-    education: [
-      {
-        degree: "Bachelor degree in Industrial computing (systems and networks)",
-        institution: "Haute École Louvain en Hainaut Charleroi",
-        status: "Graduating in 2026 - In Progress",
-        current: true,
-      },
-      {
-        degree: "Bachelor degree in management computing (application development)",
-        institution: "Haute École Louvain en Hainaut Mons",
-        status: "Graduated in 2023 with upper class honor - Completed",
-        current: false,
-      },
-    ],
-    achievements: [
-      {
-        year: "2025",
-        description: "Preselected in the 4.0 Industry World Skills championship",
-        type: "competition",
-        icon: "🏆",
-      },
-      {
-        year: "2024",
-        description: 'Podium & Microsoft jury\'s award at the "Tech goes Wild" Hackaton',
-        type: "hackathon",
-        icon: "🥇",
-      },
-      {
-        year: "2023",
-        description: "Began as student entrepreneur to work as a freelance software developer",
-        type: "entrepreneurship",
-        icon: "🚀",
-      },
-      {
-        year: "2023",
-        description: '"Dev vs Wild" Hackaton at the Microsoft Innovation Center',
-        type: "hackathon",
-        icon: "💻",
-      },
-      {
-        year: "2022",
-        description: '"Space Office" Hackaton at the Microsoft Innovation Center',
-        type: "hackathon",
-        icon: "🌌",
-      },
-      {
-        year: "2022",
-        description: "Project nominated for use in the accounting department at HELHa Mons",
-        type: "recognition",
-        icon: "⭐",
-      },
-    ],
-    contact: {
-      location: "7060 Soignies, Belgium",
-      transportation: "Driving license + car",
-      email: "popa.stefan.pro@gmail.com",
-      phone: "+32 486 06 50 45",
-      message:
-        "Ready to discuss opportunities in industrial computing and automation. Let's connect and explore how we can work together.",
-    },
+  const scrollToSection = (id) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })
+    setMobileMenuOpen(false)
   }
 
-  const SectionCard = ({ title, icon, children, ...props }) => (
-    <Card
-      sx={{
-        mb: 4,
-        borderRadius: 3,
-        overflow: "hidden",
-        position: "relative",
-        ...props.sx,
-      }}
-      {...props}
-    >
-      <CardContent sx={{ p: 4 }}>
-        <Box sx={{ display: "flex", alignItems: "center", mb: 3 }}>
-          {icon && (
-            <Box
-              sx={{
-                mr: 2,
-                p: 1.5,
-                borderRadius: 2,
-                bgcolor: "primary.main",
-                color: "primary.contrastText",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              {icon}
-            </Box>
-          )}
-          <Typography variant="h4" component="h2" sx={{ fontWeight: 700 }}>
-            {title}
-          </Typography>
-        </Box>
-        {children}
-      </CardContent>
-    </Card>
-  )
-
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Box
-        sx={{
-          minHeight: "100vh",
-          background: "linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%)",
-          position: "relative",
-          "&::before": {
-            content: '""',
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            background:
-              "radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.1) 0%, transparent 50%)",
-            pointerEvents: "none",
-          },
-        }}
-      >
-        <Container
-          maxWidth="lg"
-          sx={{
-            py: 8,
-            position: "relative",
-            zIndex: 1,
-          }}
-        >
-          <Paper
-            elevation={0}
-            sx={{
-              textAlign: "center",
-              mb: 6,
-              p: 6,
-              borderRadius: 4,
-              background: "linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%)",
-              backdropFilter: "blur(20px)",
-              border: "1px solid rgba(148, 163, 184, 0.1)",
-              position: "relative",
-              overflow: "hidden",
-              "&::before": {
-                content: '""',
-                position: "absolute",
-                top: 0,
-                left: 0,
-                right: 0,
-                height: "4px",
-                background: "linear-gradient(90deg, #3b82f6, #10b981, #3b82f6)",
-              },
-            }}
-          >
-            <Avatar
-              sx={{
-                width: 140,
-                height: 140,
-                mx: "auto",
-                mb: 3,
-                bgcolor: "primary.main",
-                color: "primary.contrastText",
-                fontSize: "2.5rem",
-                fontWeight: 800,
-                border: "4px solid rgba(59, 130, 246, 0.2)",
-                boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2)",
-              }}
+    <div className="min-h-screen bg-[#0a0a0a] text-white">
+      {/* Navigation */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]/95 backdrop-blur-sm border-b border-white/5">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
+            <div className="text-xl font-bold tracking-tight">Stefan Popa</div>
+
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center gap-8">
+              <button
+                onClick={() => scrollToSection("about")}
+                className="text-sm text-gray-400 hover:text-white transition-colors"
+              >
+                About
+              </button>
+              <button
+                onClick={() => scrollToSection("experience")}
+                className="text-sm text-gray-400 hover:text-white transition-colors"
+              >
+                Experience
+              </button>
+              <button
+                onClick={() => scrollToSection("skills")}
+                className="text-sm text-gray-400 hover:text-white transition-colors"
+              >
+                Skills
+              </button>
+              <button
+                onClick={() => scrollToSection("contact")}
+                className="px-4 py-2 bg-white text-black text-sm font-medium rounded-md hover:bg-gray-200 transition-colors"
+              >
+                Contact
+              </button>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden p-2">
+              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden border-t border-white/5 bg-[#0a0a0a]">
+            <div className="px-6 py-4 space-y-3">
+              <button
+                onClick={() => scrollToSection("about")}
+                className="block w-full text-left text-gray-400 hover:text-white transition-colors"
+              >
+                About
+              </button>
+              <button
+                onClick={() => scrollToSection("experience")}
+                className="block w-full text-left text-gray-400 hover:text-white transition-colors"
+              >
+                Experience
+              </button>
+              <button
+                onClick={() => scrollToSection("skills")}
+                className="block w-full text-left text-gray-400 hover:text-white transition-colors"
+              >
+                Skills
+              </button>
+              <button
+                onClick={() => scrollToSection("contact")}
+                className="block w-full text-left px-4 py-2 bg-white text-black text-sm font-medium rounded-md hover:bg-gray-200 transition-colors"
+              >
+                Contact
+              </button>
+            </div>
+          </div>
+        )}
+      </nav>
+
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center px-6 pt-16">
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-white/3 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="relative max-w-5xl mx-auto text-center">
+          
+
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
+            Industrial Computing
+            <br />
+            <span className="text-gray-400">Specialist</span>
+          </h1>
+
+          <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed">
+            Bridging technology and industrial automation through innovative solutions. Specializing in system
+            integration, PLC programming, and full-stack development.
+          </p>
+
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <button
+              onClick={() => scrollToSection("contact")}
+              className="px-8 py-3 bg-white text-black font-medium rounded-md hover:bg-gray-200 transition-colors"
             >
-              {data.name
-                .split(" ")
-                .map((n) => n[0])
-                .join("")}
-            </Avatar>
-            <Typography variant="h1" component="h1" gutterBottom sx={{ mb: 2 }}>
-              {data.name}
-            </Typography>
-            <Typography
-              variant="h5"
-              color="text.secondary"
-              sx={{
-                mb: 3,
-                fontWeight: 400,
-                maxWidth: "600px",
-                mx: "auto",
-              }}
+              Get in Touch
+            </button>
+            <button
+              onClick={() => scrollToSection("experience")}
+              className="px-8 py-3 border border-white/20 rounded-md hover:bg-white/5 transition-colors"
             >
-              {data.title}
-            </Typography>
-            <Box sx={{ display: "flex", justifyContent: "center", gap: 2, flexWrap: "wrap" }}>
-              <Chip
-                label="Available for Internship"
-                color="success"
-                variant="filled"
-                sx={{ fontWeight: 600, px: 2, py: 1, height: "auto" }}
-              />
-              <Chip
-                label="Industrial Computing"
-                color="primary"
-                variant="outlined"
-                sx={{ fontWeight: 600, px: 2, py: 1, height: "auto" }}
-              />
-            </Box>
-          </Paper>
+              View Work
+            </button>
+          </div>
 
-          <SectionCard title="About" icon={<Person />}>
-            <Typography
-              variant="body1"
-              sx={{
-                fontSize: "1.125rem",
-                lineHeight: 1.7,
-                color: "text.primary",
-              }}
-            >
-              {data.about}
-            </Typography>
-          </SectionCard>
+          {/* Stats */}
+          <div className="grid grid-cols-3 gap-8 mt-20 max-w-3xl mx-auto">
+            <div className="text-center">
+              <div className="text-4xl font-bold mb-2">4+</div>
+              <div className="text-sm text-gray-400">Years Experience</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold mb-2">15+</div>
+              <div className="text-sm text-gray-400">Projects Delivered</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold mb-2">5+</div>
+              <div className="text-sm text-gray-400">Technologies</div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-          <SectionCard title="Languages" icon={<Language />}>
-            <Grid container spacing={3}>
-              {data.languages.map((lang, index) => (
-                <Grid item xs={12} sm={6} key={index}>
-                  <Box sx={{ mb: 2 }}>
-                    <Box sx={{ display: "flex", justifyContent: "space-between", mb: 1 }}>
-                      <Typography variant="h6" sx={{ fontWeight: 600 }}>
-                        {lang.name}
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary" sx={{ fontWeight: 500 }}>
-                        {lang.level}
-                      </Typography>
-                    </Box>
-                    <LinearProgress
-                      variant="determinate"
-                      value={lang.proficiency}
-                      sx={{
-                        height: 8,
-                        borderRadius: 4,
-                        bgcolor: "rgba(148, 163, 184, 0.2)",
-                        "& .MuiLinearProgress-bar": {
-                          borderRadius: 4,
-                          background:
-                            lang.proficiency === 100
-                              ? "linear-gradient(90deg, #10b981, #34d399)"
-                              : "linear-gradient(90deg, #3b82f6, #60a5fa)",
-                        },
-                      }}
-                    />
-                  </Box>
-                </Grid>
-              ))}
-            </Grid>
-          </SectionCard>
+      {/* About Section */}
+      <section id="about" className="py-24 px-6">
+        <div className="max-w-5xl mx-auto">
+          <div className="flex items-center gap-3 mb-12">
+            <div className="w-12 h-12 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
+              <Briefcase size={20} />
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold">About</h2>
+          </div>
 
-          <SectionCard title="Work Experience" icon={<Work />}>
-            {data.workExperience.map((exp, index) => (
-              <Box key={index} sx={{ mb: index < data.workExperience.length - 1 ? 4 : 0 }}>
-                <Paper
-                  sx={{
-                    p: 3,
-                    borderRadius: 2,
-                    bgcolor: "rgba(148, 163, 184, 0.05)",
-                    border: "1px solid rgba(148, 163, 184, 0.1)",
-                    transition: "all 0.2s ease-in-out",
-                    "&:hover": {
-                      bgcolor: "rgba(148, 163, 184, 0.08)",
-                      transform: "translateX(4px)",
-                    },
-                  }}
-                >
-                  <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", mb: 2 }}>
-                    <Box sx={{ flex: 1 }}>
-                      <Typography variant="h6" sx={{ fontWeight: 600, mb: 0.5 }}>
-                        {exp.position}
-                      </Typography>
-                      <Typography variant="subtitle1" color="primary.main" sx={{ fontWeight: 600, mb: 1 }}>
-                        {exp.company}
-                      </Typography>
-                    </Box>
-                    <Chip
-                      label={exp.type}
-                      color={exp.color || "default"}
-                      size="small"
-                      sx={{ ml: 2, fontWeight: 500 }}
-                    />
-                  </Box>
-                  <Typography variant="body2" color="text.secondary" sx={{ mb: 2, fontWeight: 500 }}>
-                    {exp.period}
-                  </Typography>
-                  <Typography variant="body1" sx={{ lineHeight: 1.6 }}>
-                    {exp.description}
-                  </Typography>
-                </Paper>
-              </Box>
-            ))}
-          </SectionCard>
+          <div className="grid md:grid-cols-2 gap-12">
+            <div>
+              <p className="text-gray-300 leading-relaxed mb-6">
+                Motivated industrial computing specialist with a proven track record in system administration, software
+                development, and automation solutions. Currently pursuing advanced studies in industrial computing with
+                a focus on systems and networks.
+              </p>
+              <p className="text-gray-300 leading-relaxed">
+                Passionate about leveraging technology to solve complex industrial challenges, with hands-on experience
+                in PLC programming, SCADA systems, and full-stack development. Committed to delivering scalable,
+                efficient solutions that drive operational excellence.
+              </p>
+            </div>
 
-          <SectionCard title="Skills" icon={<Code />}>
-            <Box sx={{ mb: 4 }}>
-              <Typography variant="h5" gutterBottom sx={{ mb: 3, fontWeight: 600 }}>
-                Soft Skills
-              </Typography>
-              <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1.5 }}>
-                {data.skills.soft.map((skill, index) => (
-                  <Chip
-                    key={index}
-                    label={skill}
-                    color="secondary"
-                    sx={{
-                      fontWeight: 500,
-                      px: 2,
-                      py: 1,
-                      height: "auto",
-                    }}
-                  />
-                ))}
-              </Box>
-            </Box>
-
-            {Object.entries(data.skills.hard).map(([category, skills]) => (
-              <Box key={category} sx={{ mb: 4 }}>
-                <Typography variant="h5" gutterBottom sx={{ mb: 3, fontWeight: 600 }}>
-                  {category}
-                </Typography>
-                <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1.5 }}>
-                  {skills.map((skill, index) => (
-                    <Chip
-                      key={index}
-                      label={skill}
-                      variant="outlined"
-                      color="primary"
-                      sx={{
-                        fontWeight: 500,
-                        px: 2,
-                        py: 1,
-                        height: "auto",
-                        "&:hover": {
-                          bgcolor: "primary.main",
-                          color: "primary.contrastText",
-                          borderColor: "primary.main",
-                        },
-                      }}
-                    />
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
+                  <Globe size={18} />
+                  Languages
+                </h3>
+                <div className="space-y-3">
+                  {[
+                    { name: "French", level: "Native", width: "100%" },
+                    { name: "Romanian", level: "Native", width: "100%" },
+                    { name: "English", level: "Professional (C1)", width: "85%" },
+                    { name: "Dutch", level: "Basic (A1)", width: "25%" },
+                  ].map((lang) => (
+                    <div key={lang.name}>
+                      <div className="flex justify-between text-sm mb-1">
+                        <span className="text-gray-300">{lang.name}</span>
+                        <span className="text-gray-500">{lang.level}</span>
+                      </div>
+                      <div className="h-1.5 bg-white/5 rounded-full overflow-hidden">
+                        <div
+                          className="h-full bg-white rounded-full transition-all duration-1000"
+                          style={{ width: lang.width }}
+                        ></div>
+                      </div>
+                    </div>
                   ))}
-                </Box>
-              </Box>
-            ))}
-          </SectionCard>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-          <SectionCard title="Education" icon={<School />}>
-            {data.education.map((edu, index) => (
-              <Box key={index} sx={{ mb: index < data.education.length - 1 ? 3 : 0 }}>
-                <Paper
-                  sx={{
-                    p: 3,
-                    borderRadius: 2,
-                    bgcolor: edu.current ? "rgba(16, 185, 129, 0.1)" : "rgba(148, 163, 184, 0.05)",
-                    border: `1px solid ${edu.current ? "rgba(16, 185, 129, 0.2)" : "rgba(148, 163, 184, 0.1)"}`,
-                    position: "relative",
-                  }}
-                >
-                  {edu.current && (
-                    <Chip
-                      label="Current"
-                      color="success"
-                      size="small"
-                      sx={{
-                        position: "absolute",
-                        top: 16,
-                        right: 16,
-                        fontWeight: 600,
-                      }}
-                    />
+      {/* Experience Section */}
+      <section id="experience" className="py-24 px-6 bg-white/[0.02]">
+        <div className="max-w-5xl mx-auto">
+          <div className="flex items-center gap-3 mb-12">
+            <div className="w-12 h-12 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
+              <Briefcase size={20} />
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold">Experience</h2>
+          </div>
+
+          <div className="space-y-6">
+            {[
+              {
+                title: "System Administrator & Webmaster",
+                company: "Code it Bryan!",
+                period: "Nov 2023 - Present",
+                description:
+                  "Architected and maintained comprehensive digital infrastructure for an educational institution serving 200+ students and faculty. Implemented scalable systems for enhanced operational efficiency.",
+                tag: "Current",
+                tagColor: "bg-green-500/10 text-green-400 border-green-500/20",
+              },
+              {
+                title: "Computer Science Instructor",
+                company: "Logiscool",
+                period: "Nov 2021 - Present",
+                description:
+                  "Delivered engaging instruction in computer science fundamentals and AI technologies. Developed curriculum materials and mentored students in programming concepts.",
+                tag: "Part-time",
+                tagColor: "bg-blue-500/10 text-blue-400 border-blue-500/20",
+              },
+              {
+                title: "R&D Software Development Intern",
+                company: "Aproove",
+                period: "Feb 2023 - Jun 2023",
+                description:
+                  "Engineered Adobe plugin for real-time geometric data communication. Prototyped innovative 3D web proofing system, demonstrating strong problem-solving and technical skills.",
+                tag: "Internship",
+                tagColor: "bg-purple-500/10 text-purple-400 border-purple-500/20",
+              },
+              {
+                title: "Software Development Intern",
+                company: "AGC Moustier",
+                period: "Jun 2022 - Jul 2022",
+                description:
+                  "Expanded data analytics capabilities across multiple AGC facilities in Belgium. Created executive dashboards for commercial operations, improving data-driven decision making.",
+                tag: "Internship",
+                tagColor: "bg-purple-500/10 text-purple-400 border-purple-500/20",
+              },
+            ].map((job, index) => (
+              <div
+                key={index}
+                className="group p-6 bg-white/[0.02] border border-white/5 rounded-lg hover:bg-white/[0.04] hover:border-white/10 transition-all"
+              >
+                <div className="flex flex-wrap items-start justify-between gap-4 mb-3">
+                  <div>
+                    <h3 className="text-xl font-semibold mb-1">{job.title}</h3>
+                    <p className="text-gray-400">{job.company}</p>
+                  </div>
+                  <div className="flex flex-col items-end gap-2">
+                    <span className={`px-3 py-1 text-xs font-medium border rounded-full ${job.tagColor}`}>
+                      {job.tag}
+                    </span>
+                    <span className="text-sm text-gray-500">{job.period}</span>
+                  </div>
+                </div>
+                <p className="text-gray-300 leading-relaxed">{job.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Skills Section */}
+      <section id="skills" className="py-24 px-6">
+        <div className="max-w-5xl mx-auto">
+          <div className="flex items-center gap-3 mb-12">
+            <div className="w-12 h-12 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
+              <Code size={20} />
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold">Skills & Expertise</h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Technical Skills */}
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-lg font-semibold mb-4 text-gray-300">Industrial Computing</h3>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    "PLC Programming",
+                    "SCADA Systems",
+                    "Industrial Networks",
+                    "Automation",
+                    "IoT",
+                    "Embedded Systems",
+                  ].map((skill) => (
+                    <span
+                      key={skill}
+                      className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-md text-sm hover:bg-white/10 transition-colors"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-lg font-semibold mb-4 text-gray-300">Programming & Frameworks</h3>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    "JavaScript",
+                    "TypeScript",
+                    "Python",
+                    "Java",
+                    "C++",
+                    "React",
+                    "Node.js",
+                    "Express",
+                    "Django",
+                    "Spring Boot",
+                  ].map((skill) => (
+                    <span
+                      key={skill}
+                      className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-md text-sm hover:bg-white/10 transition-colors"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-lg font-semibold mb-4 text-gray-300">Databases & Infrastructure</h3>
+                <div className="flex flex-wrap gap-2">
+                  {["MySQL", "PostgreSQL", "MongoDB", "Redis", "Docker", "AWS", "Azure", "Linux", "Windows Server"].map(
+                    (skill) => (
+                      <span
+                        key={skill}
+                        className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-md text-sm hover:bg-white/10 transition-colors"
+                      >
+                        {skill}
+                      </span>
+                    ),
                   )}
-                  <Typography variant="h6" sx={{ fontWeight: 600, mb: 1, pr: edu.current ? 10 : 0 }}>
-                    {edu.degree}
-                  </Typography>
-                  <Typography variant="subtitle1" color="primary.main" sx={{ fontWeight: 600, mb: 1 }}>
-                    {edu.institution}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary" sx={{ fontWeight: 500 }}>
-                    {edu.status}
-                  </Typography>
-                </Paper>
-              </Box>
+                </div>
+              </div>
+            </div>
+
+            {/* Soft Skills & Tools */}
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-lg font-semibold mb-4 text-gray-300">Project Management</h3>
+                <div className="flex flex-wrap gap-2">
+                  {["Git/GitLab", "Agile", "Scrum", "Kanban", "Jira", "Trello", "Notion"].map((skill) => (
+                    <span
+                      key={skill}
+                      className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-md text-sm hover:bg-white/10 transition-colors"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-lg font-semibold mb-4 text-gray-300">Professional Skills</h3>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    "Problem Solving",
+                    "Team Collaboration",
+                    "Technical Communication",
+                    "Adaptability",
+                    "Project Leadership",
+                  ].map((skill) => (
+                    <span
+                      key={skill}
+                      className="px-3 py-1.5 bg-white text-black rounded-md text-sm font-medium hover:bg-gray-200 transition-colors"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Education */}
+              <div>
+                <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
+                  <GraduationCap size={18} />
+                  Education
+                </h3>
+                <div className="space-y-4">
+                  <div className="p-4 bg-white/5 border border-white/10 rounded-lg">
+                    <div className="flex items-start justify-between mb-2">
+                      <div className="font-medium">Bachelor in Industrial Computing</div>
+                      <span className="px-2 py-0.5 bg-green-500/10 text-green-400 border border-green-500/20 rounded text-xs">
+                        Current
+                      </span>
+                    </div>
+                    <div className="text-sm text-gray-400 mb-1">Haute École Louvain en Hainaut</div>
+                    <div className="text-xs text-gray-500">Expected 2026</div>
+                  </div>
+                  <div className="p-4 bg-white/5 border border-white/10 rounded-lg">
+                    <div className="font-medium mb-2">Bachelor in Management Computing</div>
+                    <div className="text-sm text-gray-400 mb-1">Haute École Louvain en Hainaut</div>
+                    <div className="text-xs text-gray-500">Graduated 2023 - Upper Class Honors</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Achievements Section */}
+      <section className="py-24 px-6 bg-white/[0.02]">
+        <div className="max-w-5xl mx-auto">
+          <div className="flex items-center gap-3 mb-12">
+            <div className="w-12 h-12 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
+              <Award size={20} />
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold">Achievements</h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {[
+              {
+                year: "2025",
+                title: "WorldSkills Industry 4.0 Championship",
+                description:
+                  "Selected for prestigious international competition showcasing industrial automation expertise",
+                icon: "🏆",
+              },
+              {
+                year: "2024",
+                title: "Tech Goes Wild Hackathon",
+                description: "Podium finish and Microsoft Jury's Award for innovative technical solution",
+                icon: "🥇",
+              },
+              {
+                year: "2023",
+                title: "Student Entrepreneur",
+                description:
+                  "Established freelance software development practice, delivering solutions to multiple clients",
+                icon: "🚀",
+              },
+              {
+                year: "2023",
+                title: "Dev vs Wild Hackathon",
+                description: "Competed at Microsoft Innovation Center, demonstrating rapid prototyping skills",
+                icon: "💻",
+              },
+              {
+                year: "2022",
+                title: "Space Office Hackathon",
+                description: "Participated in Microsoft Innovation Center innovation challenge",
+                icon: "🌌",
+              },
+              {
+                year: "2022",
+                title: "Academic Recognition",
+                description: "Project selected for implementation in HELHa Mons accounting department",
+                icon: "⭐",
+              },
+            ].map((achievement, index) => (
+              <div
+                key={index}
+                className="p-6 bg-white/[0.02] border border-white/5 rounded-lg hover:bg-white/[0.04] hover:border-white/10 transition-all"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="text-3xl">{achievement.icon}</div>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-3 mb-2">
+                      <span className="text-sm font-medium text-gray-400">{achievement.year}</span>
+                    </div>
+                    <h3 className="font-semibold mb-2">{achievement.title}</h3>
+                    <p className="text-sm text-gray-400 leading-relaxed">{achievement.description}</p>
+                  </div>
+                </div>
+              </div>
             ))}
-          </SectionCard>
+          </div>
+        </div>
+      </section>
 
-          <SectionCard title="Achievements" icon={<EmojiEvents />}>
-            <Grid container spacing={3}>
-              {data.achievements.map((ach, index) => (
-                <Grid item xs={12} md={6} key={index}>
-                  <Paper
-                    sx={{
-                      p: 3,
-                      borderRadius: 2,
-                      bgcolor: "rgba(148, 163, 184, 0.05)",
-                      border: "1px solid rgba(148, 163, 184, 0.1)",
-                      height: "100%",
-                      transition: "all 0.2s ease-in-out",
-                      "&:hover": {
-                        bgcolor: "rgba(148, 163, 184, 0.08)",
-                        transform: "translateY(-2px)",
-                      },
-                    }}
-                  >
-                    <Box sx={{ display: "flex", alignItems: "flex-start", mb: 2 }}>
-                      <Typography sx={{ fontSize: "1.5rem", mr: 2 }}>{ach.icon}</Typography>
-                      <Box sx={{ flex: 1 }}>
-                        <Typography variant="h6" sx={{ fontWeight: 600, color: "primary.main", mb: 0.5 }}>
-                          {ach.year}
-                        </Typography>
-                        <Chip
-                          label={ach.type}
-                          size="small"
-                          color="primary"
-                          variant="outlined"
-                          sx={{ mb: 1, fontWeight: 500 }}
-                        />
-                      </Box>
-                    </Box>
-                    <Typography variant="body1" sx={{ lineHeight: 1.6 }}>
-                      {ach.description}
-                    </Typography>
-                  </Paper>
-                </Grid>
-              ))}
-            </Grid>
-          </SectionCard>
+      {/* Contact Section */}
+      <section id="contact" className="py-24 px-6">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">Let's Work Together</h2>
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+              Open to discussing opportunities in industrial computing, automation, and software development. Let's
+              connect and explore how we can collaborate.
+            </p>
+          </div>
 
-          <SectionCard
-            title="Contact"
-            icon={<Email />}
-            sx={{
-              background: "linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%)",
-              border: "1px solid rgba(59, 130, 246, 0.2)",
-            }}
-          >
-            <Typography
-              variant="body1"
-              sx={{
-                mb: 4,
-                fontSize: "1.125rem",
-                fontWeight: 500,
-                color: "text.primary",
-              }}
+          <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-12">
+            <a
+              href="mailto:popa.stefan.pro@gmail.com"
+              className="flex items-center gap-4 p-6 bg-white/[0.02] border border-white/5 rounded-lg hover:bg-white/[0.04] hover:border-white/10 transition-all group"
             >
-              {data.contact.message}
-            </Typography>
+              <div className="w-12 h-12 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center group-hover:bg-white group-hover:text-black transition-colors">
+                <Mail size={20} />
+              </div>
+              <div>
+                <div className="text-sm text-gray-400 mb-1">Email</div>
+                <div className="font-medium">popa.stefan.pro@gmail.com</div>
+              </div>
+            </a>
 
-            <Grid container spacing={4}>
-              <Grid item xs={12} md={6}>
-                <Box sx={{ display: "flex", alignItems: "center", mb: 3 }}>
-                  <Box
-                    sx={{
-                      mr: 2,
-                      p: 1,
-                      borderRadius: 2,
-                      bgcolor: "primary.main",
-                      color: "primary.contrastText",
-                      display: "flex",
-                    }}
-                  >
-                    <LocationOn />
-                  </Box>
-                  <Typography sx={{ fontWeight: 500 }}>{data.contact.location}</Typography>
-                </Box>
-                <Box sx={{ display: "flex", alignItems: "center", mb: 3 }}>
-                  <Box
-                    sx={{
-                      mr: 2,
-                      p: 1,
-                      borderRadius: 2,
-                      bgcolor: "secondary.main",
-                      color: "primary.contrastText",
-                      display: "flex",
-                    }}
-                  >
-                    <DriveEta />
-                  </Box>
-                  <Typography sx={{ fontWeight: 500 }}>{data.contact.transportation}</Typography>
-                </Box>
-              </Grid>
-              <Grid item xs={12} md={6}>
-                <Box sx={{ display: "flex", alignItems: "center", mb: 3 }}>
-                  <Box
-                    sx={{
-                      mr: 2,
-                      p: 1,
-                      borderRadius: 2,
-                      bgcolor: "info.main",
-                      color: "primary.contrastText",
-                      display: "flex",
-                    }}
-                  >
-                    <Email />
-                  </Box>
-                  <Typography sx={{ fontWeight: 500 }}>{data.contact.email}</Typography>
-                </Box>
-                <Box sx={{ display: "flex", alignItems: "center", mb: 3 }}>
-                  <Box
-                    sx={{
-                      mr: 2,
-                      p: 1,
-                      borderRadius: 2,
-                      bgcolor: "warning.main",
-                      color: "primary.contrastText",
-                      display: "flex",
-                    }}
-                  >
-                    <Phone />
-                  </Box>
-                  <Typography sx={{ fontWeight: 500 }}>{data.contact.phone}</Typography>
-                </Box>
-              </Grid>
-            </Grid>
+            <a
+              href="tel:+32486065045"
+              className="flex items-center gap-4 p-6 bg-white/[0.02] border border-white/5 rounded-lg hover:bg-white/[0.04] hover:border-white/10 transition-all group"
+            >
+              <div className="w-12 h-12 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center group-hover:bg-white group-hover:text-black transition-colors">
+                <Phone size={20} />
+              </div>
+              <div>
+                <div className="text-sm text-gray-400 mb-1">Phone</div>
+                <div className="font-medium">+32 486 06 50 45</div>
+              </div>
+            </a>
 
-            <Divider sx={{ my: 3, opacity: 0.3 }} />
+            <div className="flex items-center gap-4 p-6 bg-white/[0.02] border border-white/5 rounded-lg">
+              <div className="w-12 h-12 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
+                <MapPin size={20} />
+              </div>
+              <div>
+                <div className="text-sm text-gray-400 mb-1">Location</div>
+                <div className="font-medium">Soignies, Belgium</div>
+              </div>
+            </div>
 
-            <Box sx={{ textAlign: "center" }}>
-              <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
-                Ready to Connect
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                Let's discuss how we can work together on your next industrial computing project
-              </Typography>
-            </Box>
-          </SectionCard>
-        </Container>
-      </Box>
-    </ThemeProvider>
+            <div className="flex items-center gap-4 p-6 bg-white/[0.02] border border-white/5 rounded-lg">
+              <div className="w-12 h-12 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
+                <Car size={20} />
+              </div>
+              <div>
+                <div className="text-sm text-gray-400 mb-1">Mobility</div>
+                <div className="font-medium">Driver's License + Vehicle</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <a
+              href="mailto:popa.stefan.pro@gmail.com"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-white text-black font-medium rounded-md hover:bg-gray-200 transition-colors"
+            >
+              Send Message
+              <ExternalLink size={16} />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-8 px-6 border-t border-white/5">
+        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="text-sm text-gray-500">© 2025 Stefan Popa. All rights reserved.</div>
+          <div className="flex items-center gap-4">
+            <a href="#" className="text-gray-500 hover:text-white transition-colors">
+              <Github size={20} />
+            </a>
+            <a href="#" className="text-gray-500 hover:text-white transition-colors">
+              <Linkedin size={20} />
+            </a>
+          </div>
+        </div>
+      </footer>
+    </div>
   )
 }
-
-export default App
