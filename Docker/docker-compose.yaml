@@ -17,7 +17,7 @@ services:
       - "traefik.http.routers.portfolio.middlewares=portfolio-strip@docker"
       - "traefik.http.middlewares.portfolio-strip.stripprefix.prefixes=/portfolio"
     networks:
-      - network-starco-global
+      - starcozka-app-network
     healthcheck:
       test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://127.0.0.1:80/"]
       interval: 30s
@@ -26,6 +26,5 @@ services:
       start_period: 40s
 
 networks:
-  network-starco-global:
-    name: docker_starco_network_network-starco-global
-    external: true
+  starcozka-app-network:
+       external: true
