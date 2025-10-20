@@ -7,13 +7,31 @@ import GitHubIcon from '@mui/icons-material/GitHub'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import { useState } from 'react'
 import { useThemeMode } from '../context/ThemeContext'
-import portfolioData from '../data/portfolioData.json'
 
 export function Navigation({ onScrollToSection }) {
   const [mobileOpen, setMobileOpen] = useState(false)
   const { isDark, toggleTheme } = useThemeMode()
   const muiTheme = useMuiTheme()
   const isMobile = useMediaQuery(muiTheme.breakpoints.down('md'))
+
+  const personal = {
+    "name": "Stefan Popa",
+    "title": "IT & OT full-stack developer",
+    "subtitle": "Bridging ",
+    "description": "Motivated industrial computing specialist with a proven track record in system administration, software development, and automation solutions. Currently pursuing advanced studies in industrial computing with a focus on systems and networks.",
+    "fullDescription": "Passionate about leveraging technology to solve complex industrial challenges, with hands-on experience in PLC programming, SCADA systems, and full-stack development. Committed to delivering scalable, efficient solutions that drive operational excellence.",
+    "email": "popa.stefan.pro@gmail.com",
+    "phone": "+32 486 06 50 45",
+    "location": "Soignies, Belgium",
+    "mobility": "Driver's License + Vehicle"
+  }
+
+  const links = {
+    "github": "https://github.com",
+    "linkedin": "https://linkedin.com",
+    "twitter": "https://twitter.com",
+    "email": "mailto:popa.stefan.pro@gmail.com"
+  }
 
   const navItems = ['About', 'Experience', 'Skills']
 
@@ -45,7 +63,7 @@ export function Navigation({ onScrollToSection }) {
               color: isDark ? '#ffffff' : '#000000',
             }}
           >
-            {portfolioData.personal.name}
+            {personal.name}
           </Box>
 
           {!isMobile && (
@@ -96,7 +114,7 @@ export function Navigation({ onScrollToSection }) {
             </IconButton>
 
             <IconButton
-              href={portfolioData.links.github}
+              href={links.github}
               target="_blank"
               rel="noopener noreferrer"
               sx={{
@@ -107,7 +125,7 @@ export function Navigation({ onScrollToSection }) {
             </IconButton>
 
             <IconButton
-              href={portfolioData.links.linkedin}
+              href={links.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               sx={{

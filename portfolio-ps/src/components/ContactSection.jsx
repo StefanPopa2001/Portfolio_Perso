@@ -6,7 +6,6 @@ import LocationOnIcon from '@mui/icons-material/LocationOn'
 import DirectionsCarIcon from '@mui/icons-material/DirectionsCar'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
-import portfolioData from '../data/portfolioData.json'
 
 export function ContactSection() {
   const theme = useTheme()
@@ -16,25 +15,25 @@ export function ContactSection() {
     {
       icon: MailIcon,
       label: 'Email',
-      value: portfolioData.personal.email,
-      href: `mailto:${portfolioData.personal.email}`,
+      value: 'popa.stefan.pro@gmail.com',
+      href: 'mailto:popa.stefan.pro@gmail.com',
     },
     {
       icon: PhoneIcon,
       label: 'Phone',
-      value: portfolioData.personal.phone,
-      href: `tel:${portfolioData.personal.phone}`,
+      value: '+32 486 06 50 45',
+      href: 'tel:+32 486 06 50 45',
     },
     {
       icon: LocationOnIcon,
       label: 'Location',
-      value: portfolioData.personal.location,
+      value: 'Soignies, Belgium',
       href: null,
     },
     {
       icon: DirectionsCarIcon,
       label: 'Mobility',
-      value: portfolioData.personal.mobility,
+      value: 'Driver\'s License + Vehicle',
       href: null,
     },
   ]
@@ -58,7 +57,7 @@ export function ContactSection() {
               fontSize: { xs: '1.8rem', sm: '2.5rem', md: '2.75rem' },
             }}
           >
-            Let's Work Together
+            Let’s Work Together
           </Typography>
           <Typography
             variant="body1"
@@ -68,8 +67,7 @@ export function ContactSection() {
               lineHeight: 1.6,
             }}
           >
-            Open to discussing opportunities in industrial computing, automation, and software development. Let's
-            connect and explore how we can collaborate.
+            I’m open to opportunities in industrial computing, automation, and software development. Let’s connect and explore how we can collaborate.
           </Typography>
         </Box>
 
@@ -152,7 +150,7 @@ export function ContactSection() {
         <Box sx={{ textAlign: 'center' }}>
           <Button
             variant="contained"
-            href={portfolioData.links.email}
+            href="mailto:popa.stefan.pro@gmail.com"
             sx={{
               backgroundColor: isDark ? '#ffffff' : '#000000',
               color: isDark ? '#000000' : '#ffffff',
@@ -182,7 +180,7 @@ export function ContactSection() {
           </Typography>
           <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2 }}>
             <Button
-              href={portfolioData.links.github}
+              href="https://github.com"
               target="_blank"
               rel="noopener noreferrer"
               variant="outlined"
@@ -198,7 +196,7 @@ export function ContactSection() {
               GitHub
             </Button>
             <Button
-              href={portfolioData.links.linkedin}
+              href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
               variant="outlined"

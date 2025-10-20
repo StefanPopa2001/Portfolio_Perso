@@ -1,6 +1,5 @@
 import { Box, Container, Typography, Button, Grid, Paper } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
-import portfolioData from '../data/portfolioData.json'
 
 export function HeroSection({ onScrollToSection }) {
   const theme = useTheme()
@@ -67,10 +66,10 @@ export function HeroSection({ onScrollToSection }) {
               fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' },
             }}
           >
-            {portfolioData.personal.title.split(' ')[0]}
+            IT & OT
             <br />
-            <Box component="span" sx={{ color: isDark ? '#b0b0b0' : '#666666' }}>
-              {portfolioData.personal.title.split(' ').slice(1).join(' ')}
+            <Box component="span" sx={{ }}>
+              Full‑Stack Developer
             </Box>
           </Typography>
 
@@ -84,7 +83,7 @@ export function HeroSection({ onScrollToSection }) {
               lineHeight: 1.6,
             }}
           >
-            {portfolioData.personal.description}
+            Software developer and industrial computing student seeking a thesis internship. I also work as a freelance developer, building applications that streamline work for people and organizations.
           </Typography>
 
           <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', marginBottom: 6, flexWrap: 'wrap' }}>
@@ -123,42 +122,106 @@ export function HeroSection({ onScrollToSection }) {
           </Box>
 
           {/* Stats */}
-          <Grid container spacing={2} sx={{ maxWidth: '100%' }}>
-            {portfolioData.stats.map((stat, index) => (
-              <Grid item xs={12} sm={6} md={4} key={index}>
-                <Paper
-                  elevation={0}
+          <Grid container spacing={2} sx={{ maxWidth: '100%', justifyContent: 'center' }}>
+            <Grid item xs={12} sm={6} md={4}>
+              <Paper
+                elevation={0}
+                sx={{
+                  backgroundColor: isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.02)',
+                  padding: 2,
+                  textAlign: 'center',
+                  border: `1px solid ${isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}`,
+                  borderRadius: 2,
+                }}
+              >
+                <Typography
+                  variant="h5"
                   sx={{
-                    backgroundColor: isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.02)',
-                    padding: 2,
-                    textAlign: 'center',
-                    border: `1px solid ${isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}`,
-                    borderRadius: 2,
+                    fontWeight: 700,
+                    marginBottom: 1,
+                    color: isDark ? '#ffffff' : '#000000',
+                    fontSize: { xs: '1.5rem', sm: '2rem' },
                   }}
                 >
-                  <Typography
-                    variant="h5"
-                    sx={{
-                      fontWeight: 700,
-                      marginBottom: 1,
-                      color: isDark ? '#ffffff' : '#000000',
-                      fontSize: { xs: '1.5rem', sm: '2rem' },
-                    }}
-                  >
-                    {stat.value}
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      color: isDark ? '#b0b0b0' : '#666666',
-                      fontSize: { xs: '0.8rem', sm: '0.9rem' },
-                    }}
-                  >
-                    {stat.label}
-                  </Typography>
-                </Paper>
-              </Grid>
-            ))}
+                  4+
+                </Typography>
+                <Typography
+                  variant="body2"
+                  sx={{
+                    color: isDark ? '#b0b0b0' : '#666666',
+                    fontSize: { xs: '0.8rem', sm: '0.9rem' },
+                  }}
+                >
+                  Years of experience
+                </Typography>
+              </Paper>
+            </Grid>
+            <Grid item xs={12} sm={6} md={4}>
+              <Paper
+                elevation={0}
+                sx={{
+                  backgroundColor: isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.02)',
+                  padding: 2,
+                  textAlign: 'center',
+                  border: `1px solid ${isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}`,
+                  borderRadius: 2,
+                }}
+              >
+                <Typography
+                  variant="h5"
+                  sx={{
+                    fontWeight: 700,
+                    marginBottom: 1,
+                    color: isDark ? '#ffffff' : '#000000',
+                    fontSize: { xs: '1.5rem', sm: '2rem' },
+                  }}
+                >
+                  3+
+                </Typography>
+                <Typography
+                  variant="body2"
+                  sx={{
+                    color: isDark ? '#b0b0b0' : '#666666',
+                    fontSize: { xs: '0.8rem', sm: '0.9rem' },
+                  }}
+                >
+                  Years of freelancing
+                </Typography>
+              </Paper>
+            </Grid>
+            <Grid item xs={12} sm={6} md={4}>
+              <Paper
+                elevation={0}
+                sx={{
+                  backgroundColor: isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.02)',
+                  padding: 2,
+                  textAlign: 'center',
+                  border: `1px solid ${isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}`,
+                  borderRadius: 2,
+                }}
+              >
+                <Typography
+                  variant="h5"
+                  sx={{
+                    fontWeight: 700,
+                    marginBottom: 1,
+                    color: isDark ? '#ffffff' : '#000000',
+                    fontSize: { xs: '1.5rem', sm: '2rem' },
+                  }}
+                >
+                  6
+                </Typography>
+                <Typography
+                  variant="body2"
+                  sx={{
+                    color: isDark ? '#b0b0b0' : '#666666',
+                    fontSize: { xs: '0.8rem', sm: '0.9rem' },
+                  }}
+                >
+                  Years of study
+                </Typography>
+              </Paper>
+            </Grid>
           </Grid>
         </Box>
       </Container>
