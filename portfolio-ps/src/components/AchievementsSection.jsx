@@ -27,13 +27,23 @@ export function AchievementsSection() {
             textAlign: 'center',
           }}
         >
-          Achievements
+          Achievements & notable experiences
         </Typography>
 
   <Grid container spacing={3} sx={{ justifyContent: 'center', maxWidth: 1200, alignItems: 'stretch' }}>
           <Grid item xs={12} sm={10} md={6} lg={4} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'stretch' }}>
-            <Box
+            <Paper
+              elevation={0}
               sx={{
+                padding: 2,
+                backgroundColor: isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.02)',
+                border: `1px solid ${isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}`,
+                borderRadius: 2,
+                transition: 'all 0.3s ease',
+                '&:hover': {
+                  backgroundColor: isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.04)',
+                  borderColor: isDark ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.2)',
+                },
                 display: 'flex',
                 flexDirection: 'column',
                 height: '100%',
@@ -41,76 +51,13 @@ export function AchievementsSection() {
                 minHeight: 420,
               }}
             >
-              {/* Photo Card - Square */}
-              <Paper
-                elevation={0}
-                sx={{
-                  width: '100%',
-                  aspectRatio: '1 / 1',
-                  marginBottom: 2,
-                  backgroundColor: isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.02)',
-                  border: `1px solid ${isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}`,
-                  borderRadius: 2,
-                  overflow: 'hidden',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}
-              >
-                <Box
-                  component="img"
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUwXYCqqGT3Dj34m47vJrl-_1PWRerKscoxw&s"
-                  alt="WorldSkills Industry 4.0 Championship"
-                  sx={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                  }}
-                />
-              </Paper>
-
-              {/* Achievement Info */}
-              <Paper
-                elevation={0}
-                sx={{
-                  padding: 2,
-                  backgroundColor: isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.02)',
-                  border: `1px solid ${isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}`,
-                  borderRadius: 2,
-                  transition: 'all 0.3s ease',
-                  flex: 1,
-                  display: 'flex',
-                  flexDirection: 'column',
-                  '&:hover': {
-                    backgroundColor: isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.04)',
-                    borderColor: isDark ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.2)',
-                  },
-                }}
-              >
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, marginBottom: 1 }}>
-                  <Typography
-                    sx={{
-                      fontSize: '1.5rem',
-                    }}
-                  >
-                    🏆
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      color: isDark ? '#b0b0b0' : '#666666',
-                      fontWeight: 600,
-                    }}
-                  >
-                    2025
-                  </Typography>
-                </Box>
+              {/* Header */}
+              <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 1 }}>
                 <Typography
                   variant="h6"
                   sx={{
                     fontWeight: 700,
                     color: isDark ? '#ffffff' : '#000000',
-                    marginBottom: 1,
                     fontSize: '0.95rem',
                   }}
                 >
@@ -119,37 +66,70 @@ export function AchievementsSection() {
                 <Typography
                   variant="body2"
                   sx={{
-                    color: isDark ? '#d0d0d0' : '#333333',
-                    lineHeight: 1.5,
-                    flex: 0,
+                    color: isDark ? '#b0b0b0' : '#666666',
+                    fontWeight: 600,
                   }}
                 >
-                  Selected for prestigious international competition showcasing industrial automation expertise
+                  2025
                 </Typography>
-
-                <Collapse in={!!openIndexes[0]} collapsedSize={72} sx={{ mt: 1 }}>
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      color: isDark ? '#cfcfcf' : '#222222',
-                      lineHeight: 1.6,
-                      textAlign: 'justify',
-                    }}
-                  >
-                    Prepared and competed on challenges spanning PLC programming, sensor integration, industrial networking, and data acquisition pipelines aligned with Industry 4.0 standards. Emphasized reliability, safety, and real-time performance while coordinating troubleshooting under tight time constraints.
-                  </Typography>
-                </Collapse>
-                <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 1 }}>
-                  <Button size="small" onClick={() => toggleOpen(0)}>
-                    {openIndexes[0] ? 'Read less' : 'Read more'}
-                  </Button>
-                </Box>
-              </Paper>
-            </Box>
+              </Box>
+              {/* Small description */}
+              <Typography
+                variant="body2"
+                sx={{
+                  color: isDark ? '#d0d0d0' : '#333333',
+                  lineHeight: 1.5,
+                  marginBottom: 2,
+                }}
+              >
+                Selected for the 2025 StarTech WorldSkills championship
+              </Typography>
+              {/* Image banner */}
+              <Box
+                component="img"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUwXYCqqGT3Dj34m47vJrl-_1PWRerKscoxw&s"
+                alt="WorldSkills Industry 4.0 Championship"
+                sx={{
+                  width: '100%',
+                  height: 150,
+                  objectFit: 'cover',
+                  borderRadius: 1,
+                  marginBottom: 2,
+                }}
+              />
+              {/* Description with read more */}
+              <Collapse in={!!openIndexes[0]} collapsedSize={72}>
+                <Typography
+                  variant="body2"
+                  sx={{
+                    color: isDark ? '#cfcfcf' : '#222222',
+                    lineHeight: 1.6,
+                    textAlign: 'justify',
+                  }}
+                >
+                  Preselected for further training and invited to StarTech Day 2025 after qualification on a Siemens PLC / pneumatic system programming challenge.
+                </Typography>
+              </Collapse>
+              <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 1 }}>
+                <Button size="small" onClick={() => toggleOpen(0)}>
+                  {openIndexes[0] ? 'Read less' : 'Read more'}
+                </Button>
+              </Box>
+            </Paper>
           </Grid>
           <Grid item xs={12} sm={10} md={6} lg={4} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'stretch' }}>
-            <Box
+            <Paper
+              elevation={0}
               sx={{
+                padding: 2,
+                backgroundColor: isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.02)',
+                border: `1px solid ${isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}`,
+                borderRadius: 2,
+                transition: 'all 0.3s ease',
+                '&:hover': {
+                  backgroundColor: isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.04)',
+                  borderColor: isDark ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.2)',
+                },
                 display: 'flex',
                 flexDirection: 'column',
                 height: '100%',
@@ -157,76 +137,13 @@ export function AchievementsSection() {
                 minHeight: 420,
               }}
             >
-              {/* Photo Card - Square */}
-              <Paper
-                elevation={0}
-                sx={{
-                  width: '100%',
-                  aspectRatio: '1 / 1',
-                  marginBottom: 2,
-                  backgroundColor: isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.02)',
-                  border: `1px solid ${isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}`,
-                  borderRadius: 2,
-                  overflow: 'hidden',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}
-              >
-                <Box
-                  component="img"
-                  src="https://i.ytimg.com/vi/HqmJ21fm_Ac/hqdefault.jpg"
-                  alt="Tech Goes Wild Hackathon"
-                  sx={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                  }}
-                />
-              </Paper>
-
-              {/* Achievement Info */}
-              <Paper
-                elevation={0}
-                sx={{
-                  padding: 2,
-                  backgroundColor: isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.02)',
-                  border: `1px solid ${isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}`,
-                  borderRadius: 2,
-                  transition: 'all 0.3s ease',
-                  flex: 1,
-                  display: 'flex',
-                  flexDirection: 'column',
-                  '&:hover': {
-                    backgroundColor: isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.04)',
-                    borderColor: isDark ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.2)',
-                  },
-                }}
-              >
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, marginBottom: 1 }}>
-                  <Typography
-                    sx={{
-                      fontSize: '1.5rem',
-                    }}
-                  >
-                    🥇
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      color: isDark ? '#b0b0b0' : '#666666',
-                      fontWeight: 600,
-                    }}
-                  >
-                    2024
-                  </Typography>
-                </Box>
+              {/* Header */}
+              <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 1 }}>
                 <Typography
                   variant="h6"
                   sx={{
                     fontWeight: 700,
                     color: isDark ? '#ffffff' : '#000000',
-                    marginBottom: 1,
                     fontSize: '0.95rem',
                   }}
                 >
@@ -235,39 +152,70 @@ export function AchievementsSection() {
                 <Typography
                   variant="body2"
                   sx={{
-                    color: isDark ? '#d0d0d0' : '#333333',
-                    lineHeight: 1.5,
-                    flex: 0,
+                    color: isDark ? '#b0b0b0' : '#666666',
+                    fontWeight: 600,
                   }}
                 >
-                  Podium finish and Microsoft Jury's Award for innovative technical solution
+                  2024
                 </Typography>
-
-                <Collapse in={!!openIndexes[1]} collapsedSize={72} sx={{ mt: 1 }}>
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      color: isDark ? '#cfcfcf' : '#222222',
-                      lineHeight: 1.6,
-                      textAlign: 'justify',
-                    }}
-                  >
-
-                    Developed an AI‑powered solution in partnership with Microsoft and OpenAI. Our team created a flexible framework for dynamic data intake and intelligent responses. The application featured a lightweight AI agent that could be embedded at any software level, supporting conversational queries, live audio discussions, image analysis, personalization, and response filtering—all backed by a user‑updateable knowledge base. Recognized by the Microsoft and Proximus jury, our coordinator presented the project to the Regional Investment Board with success and managed to acquire funding for hardware capable of implementing our porject at the HELHa to be used by the students.
-  
-                     </Typography>
-                </Collapse>
-                <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 1 }}>
-                  <Button size="small" onClick={() => toggleOpen(1)}>
-                    {openIndexes[1] ? 'Read less' : 'Read more'}
-                  </Button>
-                </Box>
-              </Paper>
-            </Box>
+              </Box>
+              {/* Small description */}
+              <Typography
+                variant="body2"
+                sx={{
+                  color: isDark ? '#d0d0d0' : '#333333',
+                  lineHeight: 1.5,
+                  marginBottom: 2,
+                }}
+              >
+                3rd place and Microsoft jury award for an innovative technical solution
+              </Typography>
+              {/* Image banner */}
+              <Box
+                component="img"
+                src="https://i.ytimg.com/vi/jD-oPebTRpw/sddefault.jpg"
+                alt="Tech Goes Wild Hackathon"
+                sx={{
+                  width: '100%',
+                  height: 150,
+                  objectFit: 'cover',
+                  borderRadius: 1,
+                  marginBottom: 2,
+                }}
+              />
+              {/* Description with read more */}
+              <Collapse in={!!openIndexes[1]} collapsedSize={72}>
+                <Typography
+                  variant="body2"
+                  sx={{
+                    color: isDark ? '#cfcfcf' : '#222222',
+                    lineHeight: 1.6,
+                    textAlign: 'justify',
+                  }}
+                >
+                  Developed an AI-powered solution in partnership with Microsoft and OpenAI. Our team built a flexible framework for dynamic data ingestion and intelligent responses. The application included a lightweight AI agent that could be embedded at multiple software layers, supporting conversational queries, live audio, image analysis, personalization, and response filtering — all backed by a user-maintainable knowledge base. The project was recognized by the Microsoft and Proximus juries; our coordinator presented it to the Regional Investment Board and secured funding for hardware to deploy the solution at HELHa for student use.
+                </Typography>
+              </Collapse>
+              <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 1 }}>
+                <Button size="small" onClick={() => toggleOpen(1)}>
+                  {openIndexes[1] ? 'Read less' : 'Read more'}
+                </Button>
+              </Box>
+            </Paper>
           </Grid>
           <Grid item xs={12} sm={10} md={6} lg={4} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'stretch' }}>
-            <Box
+            <Paper
+              elevation={0}
               sx={{
+                padding: 2,
+                backgroundColor: isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.02)',
+                border: `1px solid ${isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}`,
+                borderRadius: 2,
+                transition: 'all 0.3s ease',
+                '&:hover': {
+                  backgroundColor: isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.04)',
+                  borderColor: isDark ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.2)',
+                },
                 display: 'flex',
                 flexDirection: 'column',
                 height: '100%',
@@ -275,76 +223,13 @@ export function AchievementsSection() {
                 minHeight: 420,
               }}
             >
-              {/* Photo Card - Square */}
-              <Paper
-                elevation={0}
-                sx={{
-                  width: '100%',
-                  aspectRatio: '1 / 1',
-                  marginBottom: 2,
-                  backgroundColor: isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.02)',
-                  border: `1px solid ${isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}`,
-                  borderRadius: 2,
-                  overflow: 'hidden',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}
-              >
-                <Box
-                  component="img"
-                  src="https://cdn.discordapp.com/attachments/1363859175980929076/1429810761403990106/image.png?ex=68f77e8a&is=68f62d0a&hm=fc0c5ea264ced2cb881d9d3286eafe63f8fde83ba8b0cd246b12edac24dd08a1&"
-                  alt="Student Entrepreneur"
-                  sx={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                  }}
-                />
-              </Paper>
-
-              {/* Achievement Info */}
-              <Paper
-                elevation={0}
-                sx={{
-                  padding: 2,
-                  backgroundColor: isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.02)',
-                  border: `1px solid ${isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}`,
-                  borderRadius: 2,
-                  transition: 'all 0.3s ease',
-                  flex: 1,
-                  display: 'flex',
-                  flexDirection: 'column',
-                  '&:hover': {
-                    backgroundColor: isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.04)',
-                    borderColor: isDark ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.2)',
-                  },
-                }}
-              >
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, marginBottom: 1 }}>
-                  <Typography
-                    sx={{
-                      fontSize: '1.5rem',
-                    }}
-                  >
-                    🚀
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      color: isDark ? '#b0b0b0' : '#666666',
-                      fontWeight: 600,
-                    }}
-                  >
-                    2023
-                  </Typography>
-                </Box>
+              {/* Header */}
+              <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 1 }}>
                 <Typography
                   variant="h6"
                   sx={{
                     fontWeight: 700,
                     color: isDark ? '#ffffff' : '#000000',
-                    marginBottom: 1,
                     fontSize: '0.95rem',
                   }}
                 >
@@ -353,37 +238,70 @@ export function AchievementsSection() {
                 <Typography
                   variant="body2"
                   sx={{
-                    color: isDark ? '#d0d0d0' : '#333333',
-                    lineHeight: 1.5,
-                    flex: 0,
+                    color: isDark ? '#b0b0b0' : '#666666',
+                    fontWeight: 600,
                   }}
                 >
-                  Began working as a freelance full stack software developer
+                  2023
                 </Typography>
-
-                <Collapse in={!!openIndexes[2]} collapsedSize={72} sx={{ mt: 1 }}>
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      color: isDark ? '#cfcfcf' : '#222222',
-                      lineHeight: 1.6,
-                      textAlign: 'justify',
-                    }}
-                  >
-                  Inspired by the success of LMI, the director of Logiscool Mons encouraged me to start working as a software developer. Since then I work as a freelance full stack software engineer doing small gigs left and right. My main objective with this endeavor is to gain experience in project development, entrepreneurship, and communication with the client.
-                  </Typography>
-                </Collapse>
-                <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 1 }}>
-                  <Button size="small" onClick={() => toggleOpen(2)}>
-                    {openIndexes[2] ? 'Read less' : 'Read more'}
-                  </Button>
-                </Box>
-              </Paper>
-            </Box>
+              </Box>
+              {/* Small description */}
+              <Typography
+                variant="body2"
+                sx={{
+                  color: isDark ? '#d0d0d0' : '#333333',
+                  lineHeight: 1.5,
+                  marginBottom: 2,
+                }}
+              >
+                Began working as a freelance full‑stack software developer
+              </Typography>
+              {/* Image banner */}
+              <Box
+                component="img"
+                src="https://cdn.discordapp.com/attachments/1363859175980929076/1429810761403990106/image.png?ex=68f77e8a&is=68f62d0a&hm=fc0c5ea264ced2cb881d9d3286eafe63f8fde83ba8b0cd246b12edac24dd08a1&"
+                alt="Student Entrepreneur"
+                sx={{
+                  width: '100%',
+                  height: 150,
+                  objectFit: 'cover',
+                  borderRadius: 1,
+                  marginBottom: 2,
+                }}
+              />
+              {/* Description with read more */}
+              <Collapse in={!!openIndexes[2]} collapsedSize={72}>
+                <Typography
+                  variant="body2"
+                  sx={{
+                    color: isDark ? '#cfcfcf' : '#222222',
+                    lineHeight: 1.6,
+                    textAlign: 'justify',
+                  }}
+                >
+                  Encouraged by the success of LMI and support from the director of Logiscool Mons, I began working as a freelance full‑stack software developer. Since then I have completed multiple small projects to gain practical experience in software delivery, entrepreneurship, and client communication.
+                </Typography>
+              </Collapse>
+              <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 1 }}>
+                <Button size="small" onClick={() => toggleOpen(2)}>
+                  {openIndexes[2] ? 'Read less' : 'Read more'}
+                </Button>
+              </Box>
+            </Paper>
           </Grid>
           <Grid item xs={12} sm={10} md={6} lg={4} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'stretch' }}>
-            <Box
+            <Paper
+              elevation={0}
               sx={{
+                padding: 2,
+                backgroundColor: isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.02)',
+                border: `1px solid ${isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}`,
+                borderRadius: 2,
+                transition: 'all 0.3s ease',
+                '&:hover': {
+                  backgroundColor: isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.04)',
+                  borderColor: isDark ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.2)',
+                },
                 display: 'flex',
                 flexDirection: 'column',
                 height: '100%',
@@ -391,76 +309,13 @@ export function AchievementsSection() {
                 minHeight: 420,
               }}
             >
-              {/* Photo Card - Square */}
-              <Paper
-                elevation={0}
-                sx={{
-                  width: '100%',
-                  aspectRatio: '1 / 1',
-                  marginBottom: 2,
-                  backgroundColor: isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.02)',
-                  border: `1px solid ${isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}`,
-                  borderRadius: 2,
-                  overflow: 'hidden',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}
-              >
-                <Box
-                  component="img"
-                  src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&h=400&fit=crop"
-                  alt="Dev vs Wild Hackathon"
-                  sx={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                  }}
-                />
-              </Paper>
-
-              {/* Achievement Info */}
-              <Paper
-                elevation={0}
-                sx={{
-                  padding: 2,
-                  backgroundColor: isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.02)',
-                  border: `1px solid ${isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}`,
-                  borderRadius: 2,
-                  transition: 'all 0.3s ease',
-                  flex: 1,
-                  display: 'flex',
-                  flexDirection: 'column',
-                  '&:hover': {
-                    backgroundColor: isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.04)',
-                    borderColor: isDark ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.2)',
-                  },
-                }}
-              >
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, marginBottom: 1 }}>
-                  <Typography
-                    sx={{
-                      fontSize: '1.5rem',
-                    }}
-                  >
-                    💻
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      color: isDark ? '#b0b0b0' : '#666666',
-                      fontWeight: 600,
-                    }}
-                  >
-                    2023
-                  </Typography>
-                </Box>
+              {/* Header */}
+              <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 1 }}>
                 <Typography
                   variant="h6"
                   sx={{
                     fontWeight: 700,
                     color: isDark ? '#ffffff' : '#000000',
-                    marginBottom: 1,
                     fontSize: '0.95rem',
                   }}
                 >
@@ -469,37 +324,70 @@ export function AchievementsSection() {
                 <Typography
                   variant="body2"
                   sx={{
-                    color: isDark ? '#d0d0d0' : '#333333',
-                    lineHeight: 1.5,
-                    flex: 0,
+                    color: isDark ? '#b0b0b0' : '#666666',
+                    fontWeight: 600,
                   }}
                 >
-                  Competed at Microsoft Innovation Center for a hackaton about the theme of the wild life
+                  2023
                 </Typography>
-
-                <Collapse in={!!openIndexes[3]} collapsedSize={72} sx={{ mt: 1 }}>
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      color: isDark ? '#cfcfcf' : '#222222',
-                      lineHeight: 1.6,
-                      textAlign: 'justify',
-                    }}
-                  >
-                    Our team developed a VR online game that was about avoiding obstacles and dangerous animals controller onlined by another user on a web interface. The web interface allowed the user to see the progress of the player in the VR level, and with buttons triggers traps.
-                  </Typography>
-                </Collapse>
-                <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 1 }}>
-                  <Button size="small" onClick={() => toggleOpen(3)}>
-                    {openIndexes[3] ? 'Read less' : 'Read more'}
-                  </Button>
-                </Box>
-              </Paper>
-            </Box>
+              </Box>
+              {/* Small description */}
+              <Typography
+                variant="body2"
+                sx={{
+                  color: isDark ? '#d0d0d0' : '#333333',
+                  lineHeight: 1.5,
+                  marginBottom: 2,
+                }}
+              >
+                Created a VR multiplayer online game
+              </Typography>
+              {/* Image banner */}
+              <Box
+                component="img"
+                src="https://i.ytimg.com/vi/HqmJ21fm_Ac/maxresdefault.jpg"
+                alt="Dev vs Wild Hackathon"
+                sx={{
+                  width: '100%',
+                  height: 150,
+                  objectFit: 'cover',
+                  borderRadius: 1,
+                  marginBottom: 2,
+                }}
+              />
+              {/* Description with read more */}
+              <Collapse in={!!openIndexes[3]} collapsedSize={72}>
+                <Typography
+                  variant="body2"
+                  sx={{
+                    color: isDark ? '#cfcfcf' : '#222222',
+                    lineHeight: 1.6,
+                    textAlign: 'justify',
+                  }}
+                >
+                  Our team developed a VR multiplayer game focused on obstacle avoidance and environmental challenges. A separate web interface allowed a remote user to monitor player progress and trigger interactive events in real time.
+                </Typography>
+              </Collapse>
+              <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 1 }}>
+                <Button size="small" onClick={() => toggleOpen(3)}>
+                  {openIndexes[3] ? 'Read less' : 'Read more'}
+                </Button>
+              </Box>
+            </Paper>
           </Grid>
           <Grid item xs={12} sm={10} md={6} lg={4} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'stretch' }}>
-            <Box
+            <Paper
+              elevation={0}
               sx={{
+                padding: 2,
+                backgroundColor: isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.02)',
+                border: `1px solid ${isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}`,
+                borderRadius: 2,
+                transition: 'all 0.3s ease',
+                '&:hover': {
+                  backgroundColor: isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.04)',
+                  borderColor: isDark ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.2)',
+                },
                 display: 'flex',
                 flexDirection: 'column',
                 height: '100%',
@@ -507,76 +395,13 @@ export function AchievementsSection() {
                 minHeight: 420,
               }}
             >
-              {/* Photo Card - Square */}
-              <Paper
-                elevation={0}
-                sx={{
-                  width: '100%',
-                  aspectRatio: '1 / 1',
-                  marginBottom: 2,
-                  backgroundColor: isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.02)',
-                  border: `1px solid ${isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}`,
-                  borderRadius: 2,
-                  overflow: 'hidden',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}
-              >
-                <Box
-                  component="img"
-                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=400&fit=crop"
-                  alt="Space Office Hackathon"
-                  sx={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                  }}
-                />
-              </Paper>
-
-              {/* Achievement Info */}
-              <Paper
-                elevation={0}
-                sx={{
-                  padding: 2,
-                  backgroundColor: isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.02)',
-                  border: `1px solid ${isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}`,
-                  borderRadius: 2,
-                  transition: 'all 0.3s ease',
-                  flex: 1,
-                  display: 'flex',
-                  flexDirection: 'column',
-                  '&:hover': {
-                    backgroundColor: isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.04)',
-                    borderColor: isDark ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.2)',
-                  },
-                }}
-              >
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, marginBottom: 1 }}>
-                  <Typography
-                    sx={{
-                      fontSize: '1.5rem',
-                    }}
-                  >
-                    🌌
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      color: isDark ? '#b0b0b0' : '#666666',
-                      fontWeight: 600,
-                    }}
-                  >
-                    2022
-                  </Typography>
-                </Box>
+              {/* Header */}
+              <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 1 }}>
                 <Typography
                   variant="h6"
                   sx={{
                     fontWeight: 700,
                     color: isDark ? '#ffffff' : '#000000',
-                    marginBottom: 1,
                     fontSize: '0.95rem',
                   }}
                 >
@@ -585,37 +410,70 @@ export function AchievementsSection() {
                 <Typography
                   variant="body2"
                   sx={{
-                    color: isDark ? '#d0d0d0' : '#333333',
-                    lineHeight: 1.5,
-                    flex: 0,
+                    color: isDark ? '#b0b0b0' : '#666666',
+                    fontWeight: 600,
                   }}
                 >
-                  Participated in Microsoft Innovation Center innovation challenge
+                  2022
                 </Typography>
-
-                <Collapse in={!!openIndexes[4]} collapsedSize={72} sx={{ mt: 1 }}>
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      color: isDark ? '#cfcfcf' : '#222222',
-                      lineHeight: 1.6,
-                      textAlign: 'justify',
-                    }}
-                  >
-                    Created an application with Java and JavaFX for simulating the resource drain and management on a spatial environment. The objective of the application was to simulate different environments and their impact on resource consumption and accident chances. The application itself was thought of as a visual management game, but the created data could then be visualized on a dashboard and fed to a deep learning model. The point was to identify what resources were critical and the need for adaptation in a risk environment.
-                  </Typography>
-                </Collapse>
-                <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 1 }}>
-                  <Button size="small" onClick={() => toggleOpen(4)}>
-                    {openIndexes[4] ? 'Read less' : 'Read more'}
-                  </Button>
-                </Box>
-              </Paper>
-            </Box>
+              </Box>
+              {/* Small description */}
+              <Typography
+                variant="body2"
+                sx={{
+                  color: isDark ? '#d0d0d0' : '#333333',
+                  lineHeight: 1.5,
+                  marginBottom: 2,
+                }}
+              >
+                Created a space resource-management simulation application with deep-learning components
+              </Typography>
+              {/* Image banner */}
+              <Box
+                component="img"
+                src=""
+                alt="Space Office Hackathon"
+                sx={{
+                  width: '100%',
+                  height: 150,
+                  objectFit: 'cover',
+                  borderRadius: 1,
+                  marginBottom: 2,
+                }}
+              />
+              {/* Description with read more */}
+              <Collapse in={!!openIndexes[4]} collapsedSize={72}>
+                <Typography
+                  variant="body2"
+                  sx={{
+                    color: isDark ? '#cfcfcf' : '#222222',
+                    lineHeight: 1.6,
+                    textAlign: 'justify',
+                  }}
+                >
+                  Developed a Java/JavaFX application to simulate resource consumption and risk management in space environments. The simulator produced datasets that were visualized on a dashboard and used to train deep-learning models aimed at identifying critical resources and adaptation needs in hazardous scenarios.
+                </Typography>
+              </Collapse>
+              <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 1 }}>
+                <Button size="small" onClick={() => toggleOpen(4)}>
+                  {openIndexes[4] ? 'Read less' : 'Read more'}
+                </Button>
+              </Box>
+            </Paper>
           </Grid>
           <Grid item xs={12} sm={10} md={6} lg={4} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'stretch' }}>
-            <Box
+            <Paper
+              elevation={0}
               sx={{
+                padding: 2,
+                backgroundColor: isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.02)',
+                border: `1px solid ${isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}`,
+                borderRadius: 2,
+                transition: 'all 0.3s ease',
+                '&:hover': {
+                  backgroundColor: isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.04)',
+                  borderColor: isDark ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.2)',
+                },
                 display: 'flex',
                 flexDirection: 'column',
                 height: '100%',
@@ -623,111 +481,71 @@ export function AchievementsSection() {
                 minHeight: 420,
               }}
             >
-              {/* Photo Card - Square */}
-              <Paper
-                elevation={0}
-                sx={{
-                  width: '100%',
-                  aspectRatio: '1 / 1',
-                  marginBottom: 2,
-                  backgroundColor: isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.02)',
-                  border: `1px solid ${isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}`,
-                  borderRadius: 2,
-                  overflow: 'hidden',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}
-              >
-                <Box
-                  component="img"
-                  src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&h=400&fit=crop"
-                  alt="Academic Recognition"
-                  sx={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                  }}
-                />
-              </Paper>
-
-              {/* Achievement Info */}
-              <Paper
-                elevation={0}
-                sx={{
-                  padding: 2,
-                  backgroundColor: isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.02)',
-                  border: `1px solid ${isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}`,
-                  borderRadius: 2,
-                  transition: 'all 0.3s ease',
-                  flex: 1,
-                  display: 'flex',
-                  flexDirection: 'column',
-                  '&:hover': {
-                    backgroundColor: isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.04)',
-                    borderColor: isDark ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.2)',
-                  },
-                }}
-              >
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, marginBottom: 1 }}>
-                  <Typography
-                    sx={{
-                      fontSize: '1.5rem',
-                    }}
-                  >
-                    ⭐
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      color: isDark ? '#b0b0b0' : '#666666',
-                      fontWeight: 600,
-                    }}
-                  >
-                    2022
-                  </Typography>
-                </Box>
+              {/* Header */}
+              <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 1 }}>
                 <Typography
                   variant="h6"
                   sx={{
                     fontWeight: 700,
                     color: isDark ? '#ffffff' : '#000000',
-                    marginBottom: 1,
                     fontSize: '0.95rem',
                   }}
                 >
-                  Academic Recognition
+                  School porject selected for implementation
                 </Typography>
                 <Typography
                   variant="body2"
                   sx={{
-                    color: isDark ? '#d0d0d0' : '#333333',
-                    lineHeight: 1.5,
-                    flex: 0,
+                    color: isDark ? '#b0b0b0' : '#666666',
+                    fontWeight: 600,
                   }}
                 >
-                  Project selected for implementation in HELHa Mons accounting department
+                  2022
                 </Typography>
-
-                <Collapse in={!!openIndexes[5]} collapsedSize={72} sx={{ mt: 1 }}>
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      color: isDark ? '#cfcfcf' : '#222222',
-                      lineHeight: 1.6,
-                      textAlign: 'justify',
-                    }}
-                  >
-                    During my first year at HELHa Mons, every student was tasked with developing a solution for the accounting department by creating a visual application written in basic capable of working with excel sheets that could track all the financial data, notes de frais of professeurs, factures, bidgets, ... My version of the application was selected to be used, and a presentation of was supposed to be done in front of the direcito and accounting team of HELHa Mons, but due tu Covid and delays I was asked to present it in front of the freshemen the next year.
-                  </Typography>
-                </Collapse>
-                <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 1 }}>
-                  <Button size="small" onClick={() => toggleOpen(5)}>
-                    {openIndexes[5] ? 'Read less' : 'Read more'}
-                  </Button>
-                </Box>
-              </Paper>
-            </Box>
+              </Box>
+              {/* Small description */}
+              <Typography
+                variant="body2"
+                sx={{
+                  color: isDark ? '#d0d0d0' : '#333333',
+                  lineHeight: 1.5,
+                  marginBottom: 2,
+                }}
+              >
+                Project selected for implementation in the HELHa Mons accounting department
+              </Typography>
+              {/* Image banner */}
+              <Box
+                component="img"
+                src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&h=400&fit=crop"
+                alt="Academic Recognition"
+                sx={{
+                  width: '100%',
+                  height: 150,
+                  objectFit: 'cover',
+                  borderRadius: 1,
+                  marginBottom: 2,
+                }}
+              />
+              {/* Description with read more */}
+              <Collapse in={!!openIndexes[5]} collapsedSize={72}>
+                <Typography
+                  variant="body2"
+                  sx={{
+                    color: isDark ? '#cfcfcf' : '#222222',
+                    lineHeight: 1.6,
+                    textAlign: 'justify',
+                  }}
+                >
+                  In my first year at HELHa Mons, students were asked to develop a tool for the accounting department to manage financial data (expenses, invoices, budgets, etc.). My solution was selected for use. A planned presentation to the director and accounting team was postponed due to COVID-19; the project was later presented to the incoming cohort.
+                </Typography>
+              </Collapse>
+              <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 1 }}>
+                <Button size="small" onClick={() => toggleOpen(5)}>
+                  {openIndexes[5] ? 'Read less' : 'Read more'}
+                </Button>
+              </Box>
+            </Paper>
           </Grid>
         </Grid>
       </Container>

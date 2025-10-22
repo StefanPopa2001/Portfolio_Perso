@@ -103,10 +103,10 @@ export function SkillsSection() {
           Skills & Expertise
         </Typography>
 
-        <Grid container spacing={4} sx={{ marginBottom: 8 }}>
+        <Grid container spacing={4} sx={{ marginBottom: 8, alignItems: 'stretch' }}>
           {skillCategories.map((category, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
-              <Box>
+              <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%', padding: 2 }}>
                 <Typography
                   variant="h6"
                   sx={{
@@ -120,10 +120,10 @@ export function SkillsSection() {
                 </Typography>
                 <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1.5, justifyContent: 'center' }}>
                   {category.skills.map((skill) => (
-                    <Chip
+                    <Paper
                       key={skill}
-                      label={skill}
                       sx={{
+                        padding: '8px 12px',
                         backgroundColor: category.isProfessional
                           ? isDark ? '#ffffff' : '#000000'
                           : isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.05)',
@@ -131,6 +131,7 @@ export function SkillsSection() {
                           ? isDark ? '#000000' : '#ffffff'
                           : isDark ? '#ffffff' : '#000000',
                         border: `1px solid ${isDark ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.1)'}`,
+                        borderRadius: '4px',
                         fontWeight: 500,
                         '&:hover': {
                           backgroundColor: category.isProfessional
@@ -138,7 +139,11 @@ export function SkillsSection() {
                             : isDark ? 'rgba(255, 255, 255, 0.15)' : 'rgba(0, 0, 0, 0.08)',
                         },
                       }}
-                    />
+                    >
+                      <Typography variant="body2" sx={{ fontWeight: 500 }}>
+                        {skill}
+                      </Typography>
+                    </Paper>
                   ))}
                 </Box>
               </Box>

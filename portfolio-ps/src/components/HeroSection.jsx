@@ -143,7 +143,7 @@ export function HeroSection({ onScrollToSection }) {
                     fontSize: { xs: '1.5rem', sm: '2rem' },
                   }}
                 >
-                  4+
+                  2
                 </Typography>
                 <Typography
                   variant="body2"
@@ -152,7 +152,7 @@ export function HeroSection({ onScrollToSection }) {
                     fontSize: { xs: '0.8rem', sm: '0.9rem' },
                   }}
                 >
-                  Years of experience
+                  Bachelor degrees
                 </Typography>
               </Paper>
             </Grid>
@@ -218,7 +218,7 @@ export function HeroSection({ onScrollToSection }) {
                     fontSize: { xs: '0.8rem', sm: '0.9rem' },
                   }}
                 >
-                  Years of study
+                  Projects in produciton
                 </Typography>
               </Paper>
             </Grid>

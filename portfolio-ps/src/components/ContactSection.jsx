@@ -46,7 +46,7 @@ export function ContactSection() {
         background: isDark ? '#121212' : '#ffffff',
       }}
     >
-      <Container maxWidth="sm">
+  <Container maxWidth="md">
         <Box sx={{ textAlign: 'center', marginBottom: 6 }}>
           <Typography
             variant="h3"
@@ -71,16 +71,18 @@ export function ContactSection() {
           </Typography>
         </Box>
 
-        <Grid container spacing={2} sx={{ marginBottom: 4 }}>
+        <Grid container spacing={2} sx={{ marginBottom: 4, alignItems: 'stretch' }}>
           {contactItems.map((item, index) => {
             const IconComponent = item.icon
             return (
-              <Grid item xs={12} sm={6} key={index}>
+              <Grid item xs={12} sm={6} key={index} sx={{ display: 'flex', width: '100%' }}>
                 <Paper
                   elevation={0}
                   component={item.href ? 'a' : 'div'}
                   href={item.href}
                   sx={{
+                    width: '100%',
+                    boxSizing: 'border-box',
                     padding: 2,
                     backgroundColor: isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.02)',
                     border: `1px solid ${isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}`,
@@ -91,6 +93,8 @@ export function ContactSection() {
                     alignItems: 'flex-start',
                     transition: 'all 0.3s ease',
                     cursor: item.href ? 'pointer' : 'default',
+                    flex: 1,
+                    minHeight: { xs: 'auto', sm: 110 },
                     '&:hover': item.href ? {
                       backgroundColor: isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.04)',
                       borderColor: isDark ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.2)',

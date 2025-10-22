@@ -33,7 +33,7 @@ export function Navigation({ onScrollToSection }) {
     "email": "mailto:popa.stefan.pro@gmail.com"
   }
 
-  const navItems = ['About', 'Experience', 'Skills']
+  const navItems = ['About', 'Experience', 'Skills', 'Projects']
 
   const handleNavClick = (item) => {
     onScrollToSection(item.toLowerCase())
