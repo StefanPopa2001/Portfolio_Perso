@@ -67,7 +67,7 @@ export function ExperienceSection() {
               </Box>
               <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 1 }}>
                 <Chip
-                  label="Current"
+                  label="Current (part time)"
                   size="small"
                   sx={{
                     backgroundColor: '#10b981',
@@ -95,8 +95,8 @@ export function ExperienceSection() {
                 textAlign: 'justify',
               }}
             >
-              On my own initiative, I proposed a CRM‑like solution to the leadership of Code it Bryan!—the ASBL behind Logiscool Mons—to manage student attendance, monthly payments, teacher replacement tracking, centralized student contact and financial information, and mailing.
-              Before this, most tasks were handled manually in spreadsheets—or not at all—leading to recurring errors. As the second‑largest Logiscool branch in Belgium, with roughly 200 students and 50 staff members, the need for a robust system was critical.
+              On my initiative, and with the help of Mathis Bruyère, I proposed the development of a CRM solution to the leadership of "Code it Bryan!", the ASBL behind Logiscool Mons.
+              The objective was to automate manual tasks done with excel sheets.
             </Typography>
             <Typography
               variant="body2"
@@ -109,7 +109,7 @@ export function ExperienceSection() {
                 textAlign: 'justify',
               }}
             >
-              Outcome: By 2025, LMI v2 (Logiscool Mons Intranet) fully handled attendance and its intricacies. The automated system suggested equivalent make‑up lessons for absent students, protecting learning continuity. It was used about 160 times—roughly 10% of total lessons. The platform also centralized communication, documentation, contacts, and financial status tracking for management. The system remains in use and is being upgraded to LMI v3, containerized with Docker and rebuilt with React and Express.js to expand capabilities and improve responsiveness and UI.
+              Outcome: By 2025, the solution fully handles databases, facturation, statistical trackers, attendances and automatic mailing. In the second half of 2024, the system allowed students more than 160 times to be proposed to attend a class they had missed. That is more than 10% of every lesson given having a student catching up his missed class automatically.
             </Typography>
           </Paper>
           <Paper
@@ -152,7 +152,7 @@ export function ExperienceSection() {
               </Box>
               <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 1 }}>
                 <Chip
-                  label="Current"
+                  label="Current (part time)"
                   size="small"
                   sx={{
                     backgroundColor: '#10b981',
@@ -180,7 +180,7 @@ export function ExperienceSection() {
                 textAlign: 'justify',
               }}
             >
-              In my second year at HELHa Mons, I began working part‑time as a teacher at Logiscool Mons, a private school where students of all ages learn computer science, programming, and AI.
+              I am hired as a titular computer science teacher at Logiscool Mons, a coding school for kids and teenagers. I teach programming in Python, JavaScript, C# (Unity) and AI concepts and tools.
             </Typography>
             <Typography
               variant="body2"
@@ -193,7 +193,7 @@ export function ExperienceSection() {
                 textAlign: 'justify',
               }}
             >
-              Outcome: At the end of last year, one of my students brought me a box of chocolates.
+              Outcome: At the end of last year, my students brought me chocolate.
             </Typography>
           </Paper>
           <Paper
@@ -264,7 +264,7 @@ export function ExperienceSection() {
                 textAlign: 'justify',
               }}
             >
-              During my final year at HELHa Mons, for my end‑of‑studies thesis, I joined the R&D team at Aproove for a 15‑week internship. The project aimed to develop a state‑of‑the‑art solution to integrate the Aproove proofing and versioning system into the Adobe application environment.
+              For my end of studies thesis of my first bachelor degree, I joined the R&D team at Aproove for a 15 week internship. The project aimed to develop a state of the art solution to integrate the Aproove proofing and versioning system into the Adobe application environment.
             </Typography>
             <Typography
               variant="body2"
@@ -277,7 +277,7 @@ export function ExperienceSection() {
                 textAlign: 'justify',
               }}
             >
-              Outcome: Delivered a working Adobe plugin enabling real‑time exchange of geometric data. I completed the entire scope of work ahead of schedule and kicked off a second project: a prototype for in‑browser proofing of 3D files using the existing Aproove API. The prototype was successful and approved by the CEO for further integration into the Aproove suite.
+              Outcome: Delivered a working Adobe plugin enabling real time exchange of geometric data surpassing the initial design brief and before the deadline. The remaining time was dedicated to developing from scratch a prototype for proofing 3D files inside the browser. The prototype was approved by the CEO for further integration into the Aproove suite.
             </Typography>
           </Paper>
           <Paper
@@ -348,7 +348,7 @@ export function ExperienceSection() {
                 textAlign: 'justify',
               }}
             >
-              Summer student job supporting the plant’s commercial office. Streamlined SAP dashboards that had become bloated to Power BI. Worked with the IT team of AGC Belgium to expand software capabilities of their framework.
+              Summer student job supporting the plant’s IT team and commercial bureau. Streamlined SAP dashboards to Power BI. Worked with the IT team of AGC to expand the IT/OT system capabilities unique to Moustier to other plants.
             </Typography>
             <Typography
               variant="body2"
@@ -361,7 +361,7 @@ export function ExperienceSection() {
                 textAlign: 'justify',
               }}
             >
-              Outcome: Delivered dashboards adopted by management, leading to improved decision‑making and operational insights across facilities.
+              Outcome: The dashboards were tested and deployed. The IT/OT system expansion is in production, and my work was recognized for its dynamic and adaptive implementation.
             </Typography>
           </Paper>
         </Box>

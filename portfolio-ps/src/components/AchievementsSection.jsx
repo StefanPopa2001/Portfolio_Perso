@@ -82,7 +82,7 @@ export function AchievementsSection() {
                   marginBottom: 2,
                 }}
               >
-                Selected for the 2025 StarTech WorldSkills championship
+                Preselected for the WorldSkills Industry 4.0
               </Typography>
               {/* Image banner */}
               <Box
@@ -107,7 +107,7 @@ export function AchievementsSection() {
                     textAlign: 'justify',
                   }}
                 >
-                  Preselected for further training and invited to StarTech Day 2025 after qualification on a Siemens PLC / pneumatic system programming challenge.
+                  Preselected for further training and invited to a 3 days national finale competition at the StarTech day 2025 after qualification on a Siemens PLC / pneumatic system programming challenge.
                 </Typography>
               </Collapse>
               <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 1 }}>
@@ -168,7 +168,7 @@ export function AchievementsSection() {
                   marginBottom: 2,
                 }}
               >
-                3rd place and Microsoft jury award for an innovative technical solution
+                3rd place and Microsoft jury's award for an innovative technical solution
               </Typography>
               {/* Image banner */}
               <Box
@@ -193,7 +193,7 @@ export function AchievementsSection() {
                     textAlign: 'justify',
                   }}
                 >
-                  Developed an AI-powered solution in partnership with Microsoft and OpenAI. Our team built a flexible framework for dynamic data ingestion and intelligent responses. The application included a lightweight AI agent that could be embedded at multiple software layers, supporting conversational queries, live audio, image analysis, personalization, and response filtering — all backed by a user-maintainable knowledge base. The project was recognized by the Microsoft and Proximus juries; our coordinator presented it to the Regional Investment Board and secured funding for hardware to deploy the solution at HELHa for student use.
+                  Our team developed an AI agent capable of intaking a massive amount of data on the basis of RAG and then give a personalized answer. The AI agent was meant to be used on any kind of platform, even older hardware and totally independentelly from the internet. We won the 3rd place as well as the Microsoft jury's award for most innovative technical solution.
                 </Typography>
               </Collapse>
               <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 1 }}>
@@ -254,7 +254,7 @@ export function AchievementsSection() {
                   marginBottom: 2,
                 }}
               >
-                Began working as a freelance full‑stack software developer
+                Began working as a part-time freelance full stack developer
               </Typography>
               {/* Image banner */}
               <Box
@@ -279,7 +279,7 @@ export function AchievementsSection() {
                     textAlign: 'justify',
                   }}
                 >
-                  Encouraged by the success of LMI and support from the director of Logiscool Mons, I began working as a freelance full‑stack software developer. Since then I have completed multiple small projects to gain practical experience in software delivery, entrepreneurship, and client communication.
+                  Encouraged by the success of LMI and support from the director of Logiscool Mons, I began working as a freelance fullstack software developer. Since then I have completed multiple small projects to gain practical experience in software delivery, entrepreneurship, and client communication.
                 </Typography>
               </Collapse>
               <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 1 }}>
@@ -365,7 +365,7 @@ export function AchievementsSection() {
                     textAlign: 'justify',
                   }}
                 >
-                  Our team developed a VR multiplayer game focused on obstacle avoidance and environmental challenges. A separate web interface allowed a remote user to monitor player progress and trigger interactive events in real time.
+                  Our team developed a VR  multiplayer online game with unity. 
                 </Typography>
               </Collapse>
               <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 1 }}>

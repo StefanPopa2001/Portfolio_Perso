@@ -3,8 +3,6 @@ import MenuIcon from '@mui/icons-material/Menu'
 import CloseIcon from '@mui/icons-material/Close'
 import LightModeIcon from '@mui/icons-material/LightMode'
 import DarkModeIcon from '@mui/icons-material/DarkMode'
-import GitHubIcon from '@mui/icons-material/GitHub'
-import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import { useState } from 'react'
 import { useThemeMode } from '../context/ThemeContext'
 
@@ -113,27 +111,7 @@ export function Navigation({ onScrollToSection }) {
               {isDark ? <LightModeIcon /> : <DarkModeIcon />}
             </IconButton>
 
-            <IconButton
-              href={links.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              sx={{
-                color: isDark ? '#ffffff' : '#000000',
-              }}
-            >
-              <GitHubIcon />
-            </IconButton>
-
-            <IconButton
-              href={links.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              sx={{
-                color: isDark ? '#ffffff' : '#000000',
-              }}
-            >
-              <LinkedInIcon />
-            </IconButton>
+            {/* GitHub and LinkedIn icons removed per request */}
 
             {isMobile && (
               <IconButton

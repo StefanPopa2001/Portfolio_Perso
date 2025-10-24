@@ -7,51 +7,74 @@ export function SkillsSection() {
 
   const skills = {
     industrial: [
-      "PLC Programming",
-      "SCADA Systems",
+      "Siemens PLC Programming",
+      "Schneider Electric PLC Programming",
+      "HMI/SCADA Development",
+      "Microcontrollers",
+      "IoT",
+      "Embedded Systems",
+      "Telecommunications",
       "Industrial Networks",
       "Automation",
-      "IoT",
-      "Embedded Systems"
+      "PID Control regulation"
     ],
     programming: [
       "JavaScript",
       "TypeScript",
       "Python",
       "Java",
+      "TDD",
+      "OOP",
+      "C",
+      "C#",
       "C++",
       "React",
       "Node.js",
       "Express",
-      "Django",
-      "Spring Boot"
+      "Kotlin",
+      "Angular",
+      "Basic",
+      ".NET",
+      "Pascal",
+      "PHP",
+
+
+      
     ],
     infrastructure: [
       "MySQL",
       "PostgreSQL",
-      "MongoDB",
       "Redis",
       "Docker",
-      "AWS",
       "Azure",
       "Linux",
-      "Windows Server"
+      "Windows Server",
+      "Proxmox",
+      "Traefik",
+      "Node-RED",
+      "Entity Framework",
+      "Prisma"
     ],
     management: [
-      "Git/GitLab",
+      "Git",
       "Agile",
       "Scrum",
       "Kanban",
       "Jira",
       "Trello",
-      "Notion"
+      "Notion",
+      "Pert",
+      "Gantt"
+
     ],
     professional: [
-      "Problem Solving",
-      "Team Collaboration",
-      "Technical Communication",
       "Adaptability",
-      "Project Leadership"
+      "Communication",
+      "Problem-Solving",
+      "Teamwork",
+      "Patience",
+      "Critical Thinking",
+      "Creativity"
     ]
   }
 
@@ -62,7 +85,7 @@ export function SkillsSection() {
       "status": "Current",
       "date": "2023 - 2026",
       "photo": "https://spgeng.rosselcdn.net/sites/default/files/dpistyles_v2/sp_16_9_864w/2022/05/24/node_464111/51966003/public/2022/05/24/B9731017942Z.1_20220524170128_000%2BGAEKIM26N.1-0.jpg?itok=FtO8pV_k1653405256",
-      "description": "Focus on Industrial IT with emphasis on automation, control systems, and secure networking. Coursework and labs include PLC programming (Siemens/TIA Portal), SCADA/HMI design, industrial protocols (Modbus/TCP, Profinet), embedded systems, and IIoT. Building strong foundations in system architecture, cybersecurity for OT, and high-availability infrastructure for plant operations."
+      "description": "Electronics and automation, with an emphasis on networks and cybersecurity to brindge the OT and IT."
     },
     {
       "degree": "Bachelor in Management Computing (Application developement)",
@@ -70,7 +93,7 @@ export function SkillsSection() {
       "status": "Graduated",
       "date": "2020 - 2023 - Upper Class Honors",
       "photo": "/helha_mons.jpg",
-      "description": "Combined software engineering fundamentals with business-oriented problem solving. Completed projects in full‑stack web development, databases, and data analysis, with a strong focus on delivering measurable value to stakeholders. Developed an analytical mindset for translating operational needs into robust, maintainable software solutions."
+      "description": "Software development and architecture with business-oriented problem solving."
     }
   ]
 
@@ -79,18 +102,22 @@ export function SkillsSection() {
     { title: 'Programming & Frameworks', skills: skills.programming },
     { title: 'Databases & Infrastructure', skills: skills.infrastructure },
     { title: 'Project Management', skills: skills.management },
-    { title: 'Professional Skills', skills: skills.professional, isProfessional: true },
+    { title: 'Soft Skills', skills: skills.professional, isProfessional: true },
   ]
 
   return (
     <Box
       id="skills"
       sx={{
-        paddingY: 8,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        minHeight: '60vh',
         background: isDark ? '#121212' : '#ffffff',
+        boxSizing: 'border-box',
       }}
     >
-      <Container maxWidth="md">
+      <Container maxWidth="md" sx={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', py: 8 }}>
         <Typography
           variant="h3"
           sx={{
@@ -100,13 +127,13 @@ export function SkillsSection() {
             textAlign: 'center',
           }}
         >
-          Skills & Expertise
+          Soft and Hard Skills
         </Typography>
 
-        <Grid container spacing={4} sx={{ marginBottom: 8, alignItems: 'stretch' }}>
+  <Grid container spacing={4} sx={{ marginBottom: 8, alignItems: 'stretch', justifyContent: 'center' }}>
           {skillCategories.map((category, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
-              <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%', padding: 2 }}>
+              <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'stretch', justifyContent: 'flex-start', height: '100%', padding: 2 }}>
                 <Typography
                   variant="h6"
                   sx={{
@@ -119,7 +146,10 @@ export function SkillsSection() {
                   {category.title}
                 </Typography>
                 <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1.5, justifyContent: 'center' }}>
-                  {category.skills.map((skill) => (
+                  {category.skills
+                    .slice() // don't mutate original
+                    .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()))
+                    .map((skill) => (
                     <Paper
                       key={skill}
                       sx={{
