@@ -1,4 +1,4 @@
-import { Box, Container, Typography, Grid, Paper, LinearProgress } from '@mui/material'
+import { Box, Container, Typography, Grid, Paper } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 
 export function AboutSection() {
@@ -10,7 +10,6 @@ export function AboutSection() {
       id="about"
       sx={{
         paddingY: 8,
-        background: isDark ? '#121212' : '#ffffff',
       }}
     >
       <Container maxWidth="md">
@@ -38,8 +37,9 @@ export function AboutSection() {
                 textAlign: 'justify',
               }}
             >
-              I’m Stefan Popa, a 24‑year‑old software developer. I was born in Romania and have live in Belgium since the age of seven. I grew up around the early‑2000s era of computers, and very early on I started exploring the realms of Windows 95 and XP.
+              I’m Stefan Popa, a 24-year-old software developer. I was born in Romania and have lived in Belgium since I was seven. Growing up in the early 2000s computer era, I started exploring the realms of Windows 95 and XP.
             </Typography>
+
             <Typography
               variant="body1"
               sx={{
@@ -49,9 +49,10 @@ export function AboutSection() {
                 textAlign: 'justify',
               }}
             >
-              I began studying computer science at Saint‑Vincent Soignies in my third year of high school. For higher education, I chose Management Computing at HELHa Mons to prepare for a career in IT. This path offered both in‑depth software development and practical exposure to entrepreneurship and project management.
+              Before starting my bachelor’s degree, I taught myself video editing, one of my hobbies, and began working as a freelance video editor in my free time. This early experience helped me develop the qualities that define me most today: patience, entrepreneurship, self-learning, and communication.
             </Typography>
 
+              <br />
 
               <Typography
               variant="body1"
@@ -63,9 +64,11 @@ export function AboutSection() {
               }}
             >
 
-              Early on, I assumed I would start a full‑time job immediately after graduating. However, through hackathons, internships, and networking, I realized I wanted to work beyond pure software—to integrate devices and make them easy to control through modern web interfaces. That’s why I began a second bachelor’s in Industrial Computing, focusing on telecommunications, electronics, and applying them with user‑friendly technologies such as React.
+              My first bachelor’s degree at HELHa Mons sparked my curiosity for clean code practices and software architecture. My end-of-studies internship at Aproove further expanded my belief that code should be written first for other developers, and that architecture should limit or eliminate technical debt.
             </Typography>
 
+
+              <br />
 
               <Typography
               variant="body1"
@@ -76,226 +79,25 @@ export function AboutSection() {
                 textAlign: 'justify',
               }}
             >
-              Now, as I enter my final year in Industrial Computing in Charleroi, I’m seeking an internship to support my end‑of‑studies thesis. I’m interested in roles across industrial computing, automation, and full‑stack development—ideally at the intersection of all three.
+              My love for software and hardware led me to pursue a second bachelor’s degree in Industrial Computing at HELHa Charleroi. These studies have given me a deeper understanding of how our connected world works.
+            </Typography>
+
+            <br />
+
+                 <Typography
+              variant="body1"
+              sx={{
+                color: isDark ? '#d0d0d0' : '#333333',
+                lineHeight: 1.8,
+                fontSize: '1.1rem',
+                textAlign: 'justify',
+              }}
+            >
+              These studies and experiences have given me a strong foundation to tackle tomorrow’s world and its challenges. My new goal is to gain what I’m missing: real years of experience inside a tech company.
             </Typography>
 
           </Grid>
         </Grid>
-
-        <Box sx={{ maxWidth: '600px', margin: '0 auto' }}>
-          <Typography
-            variant="h6"
-            sx={{
-              fontWeight: 700,
-              marginBottom: 3,
-              color: isDark ? '#ffffff' : '#000000',
-              textAlign: 'center',
-            }}
-          >
-            Languages
-          </Typography>
-
-          <Box sx={{ marginBottom: 3 }}>
-            <Box
-              sx={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                marginBottom: 1,
-              }}
-            >
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                <Typography
-                  sx={{
-                    fontSize: '1.5rem',
-                  }}
-                >
-                  🇫🇷
-                </Typography>
-                <Typography
-                  variant="body2"
-                  sx={{
-                    color: isDark ? '#d0d0d0' : '#333333',
-                    fontWeight: 500,
-                  }}
-                >
-                  French
-                </Typography>
-              </Box>
-              <Typography
-                variant="body2"
-                sx={{
-                  color: isDark ? '#808080' : '#999999',
-                }}
-              >
-                Native
-              </Typography>
-            </Box>
-            <LinearProgress
-              variant="determinate"
-              value={100}
-              sx={{
-                height: 8,
-                borderRadius: 4,
-                backgroundColor: isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)',
-                '& .MuiLinearProgress-bar': {
-                  backgroundColor: isDark ? '#ffffff' : '#000000',
-                  borderRadius: 4,
-                },
-              }}
-            />
-          </Box>
-          <Box sx={{ marginBottom: 3 }}>
-            <Box
-              sx={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                marginBottom: 1,
-              }}
-            >
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                <Typography
-                  sx={{
-                    fontSize: '1.5rem',
-                  }}
-                >
-                  🇷🇴
-                </Typography>
-                <Typography
-                  variant="body2"
-                  sx={{
-                    color: isDark ? '#d0d0d0' : '#333333',
-                    fontWeight: 500,
-                  }}
-                >
-                  Romanian
-                </Typography>
-              </Box>
-              <Typography
-                variant="body2"
-                sx={{
-                  color: isDark ? '#808080' : '#999999',
-                }}
-              >
-                Native
-              </Typography>
-            </Box>
-            <LinearProgress
-              variant="determinate"
-              value={100}
-              sx={{
-                height: 8,
-                borderRadius: 4,
-                backgroundColor: isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)',
-                '& .MuiLinearProgress-bar': {
-                  backgroundColor: isDark ? '#ffffff' : '#000000',
-                  borderRadius: 4,
-                },
-              }}
-            />
-          </Box>
-          <Box sx={{ marginBottom: 3 }}>
-            <Box
-              sx={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                marginBottom: 1,
-              }}
-            >
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                <Typography
-                  sx={{
-                    fontSize: '1.5rem',
-                  }}
-                >
-                  🇬🇧
-                </Typography>
-                <Typography
-                  variant="body2"
-                  sx={{
-                    color: isDark ? '#d0d0d0' : '#333333',
-                    fontWeight: 500,
-                  }}
-                >
-                  English
-                </Typography>
-              </Box>
-              <Typography
-                variant="body2"
-                sx={{
-                  color: isDark ? '#808080' : '#999999',
-                }}
-              >
-                Professional (C1)
-              </Typography>
-            </Box>
-            <LinearProgress
-              variant="determinate"
-              value={85}
-              sx={{
-                height: 8,
-                borderRadius: 4,
-                backgroundColor: isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)',
-                '& .MuiLinearProgress-bar': {
-                  backgroundColor: isDark ? '#ffffff' : '#000000',
-                  borderRadius: 4,
-                },
-              }}
-            />
-          </Box>
-          <Box sx={{ marginBottom: 3 }}>
-            <Box
-              sx={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                marginBottom: 1,
-              }}
-            >
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                <Typography
-                  sx={{
-                    fontSize: '1.5rem',
-                  }}
-                >
-                  🇳🇱
-                </Typography>
-                <Typography
-                  variant="body2"
-                  sx={{
-                    color: isDark ? '#d0d0d0' : '#333333',
-                    fontWeight: 500,
-                  }}
-                >
-                  Dutch
-                </Typography>
-              </Box>
-              <Typography
-                variant="body2"
-                sx={{
-                  color: isDark ? '#808080' : '#999999',
-                }}
-              >
-                Basic (A1)
-              </Typography>
-            </Box>
-            <LinearProgress
-              variant="determinate"
-              value={25}
-              sx={{
-                height: 8,
-                borderRadius: 4,
-                backgroundColor: isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)',
-                '& .MuiLinearProgress-bar': {
-                  backgroundColor: isDark ? '#ffffff' : '#000000',
-                  borderRadius: 4,
-                },
-              }}
-            />
-          </Box>
-        </Box>
       </Container>
     </Box>
   )

@@ -1,4 +1,4 @@
-import { Box, Container, Typography, Grid, Paper, Chip } from '@mui/material'
+import { Box, Container, Typography, Grid, Paper, LinearProgress } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 
 export function SkillsSection() {
@@ -70,32 +70,12 @@ export function SkillsSection() {
     professional: [
       "Adaptability",
       "Communication",
-      "Problem-Solving",
       "Teamwork",
       "Patience",
-      "Critical Thinking",
+      "Entrepreneurship",
       "Creativity"
     ]
   }
-
-  const education = [
-    {
-      "degree": "Bachelor in Industrial Computing (System and networks)",
-      "school": "Haute École Louvain en Hainaut",
-      "status": "Current",
-      "date": "2023 - 2026",
-      "photo": "https://spgeng.rosselcdn.net/sites/default/files/dpistyles_v2/sp_16_9_864w/2022/05/24/node_464111/51966003/public/2022/05/24/B9731017942Z.1_20220524170128_000%2BGAEKIM26N.1-0.jpg?itok=FtO8pV_k1653405256",
-      "description": "Electronics and automation, with an emphasis on networks and cybersecurity to brindge the OT and IT."
-    },
-    {
-      "degree": "Bachelor in Management Computing (Application developement)",
-      "school": "Haute École Louvain en Hainaut",
-      "status": "Graduated",
-      "date": "2020 - 2023 - Upper Class Honors",
-      "photo": "/helha_mons.jpg",
-      "description": "Software development and architecture with business-oriented problem solving."
-    }
-  ]
 
   const skillCategories = [
     { title: 'Industrial Computing', skills: skills.industrial },
@@ -103,6 +83,13 @@ export function SkillsSection() {
     { title: 'Databases & Infrastructure', skills: skills.infrastructure },
     { title: 'Project Management', skills: skills.management },
     { title: 'Soft Skills', skills: skills.professional, isProfessional: true },
+  ]
+
+  const languages = [
+    { name: 'French', flag: '🇫🇷', level: 'Native', value: 100 },
+    { name: 'Romanian', flag: '🇷🇴', level: 'Native', value: 100 },
+    { name: 'English', flag: '🇬🇧', level: 'Professional (C1)', value: 85 },
+    { name: 'Dutch', flag: '🇳🇱', level: 'Basic (A1)', value: 25 },
   ]
 
   return (
@@ -113,7 +100,6 @@ export function SkillsSection() {
         alignItems: 'center',
         justifyContent: 'center',
         minHeight: '60vh',
-        background: isDark ? '#121212' : '#ffffff',
         boxSizing: 'border-box',
       }}
     >
@@ -181,117 +167,92 @@ export function SkillsSection() {
           ))}
         </Grid>
 
-  {/* Education Section - Vertical Display with Photos */}
-        <Box>
+        <Box sx={{ maxWidth: '800px', margin: '0 auto', marginTop: 4 }}>
           <Typography
             variant="h6"
             sx={{
               fontWeight: 700,
-              marginBottom: 4,
+              marginBottom: 3,
               color: isDark ? '#ffffff' : '#000000',
               textAlign: 'center',
             }}
           >
-            Education
+            Languages
           </Typography>
-          <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4, maxWidth: '840px', margin: '0 auto' }}>
-            {education.map((edu, index) => (
-              <Box
-                key={index}
-                sx={{
-                  display: 'flex',
-                  flexDirection: { xs: 'column', sm: 'row' },
-                  gap: 2,
-                  alignItems: 'stretch',
-                  justifyContent: 'center',
-                }}
-              >
-                {/* Photo Card */}
+
+          <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: 3, alignItems: 'stretch' }}>
+            {languages.map((lang, index) => (
+              <Box key={index} sx={{ display: 'flex' }}>
                 <Paper
                   elevation={0}
                   sx={{
-                    width: { xs: '100%', sm: '160px' },
-                    height: { xs: '200px', sm: '160px' },
-                    minWidth: { xs: 'auto', sm: '160px' },
+                    padding: 3,
                     backgroundColor: isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.02)',
                     border: `1px solid ${isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}`,
                     borderRadius: 2,
-                    overflow: 'hidden',
+                    transition: 'all 0.3s ease',
+                    flex: 1,
                     display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
+                    flexDirection: 'column',
+                    minHeight: 120,
+                    minWidth: 230,
+                    width: 350,
+                    '&:hover': {
+                      backgroundColor: isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.04)',
+                      borderColor: isDark ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.2)',
+                    },
                   }}
                 >
-                  {edu.photo && (
-                    <Box
-                      component="img"
-                      src={edu.photo}
-                      alt={edu.degree}
-                      sx={{
-                        width: '100%',
-                        height: '100%',
-                        objectFit: 'cover',
-                      }}
-                    />
-                  )}
-                </Paper>
-
-                {/* Education Info */}
-                <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', minHeight: { xs: 'auto', sm: '160px' } }}>
-                  <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 1, flexWrap: 'wrap', gap: 1 }}>
-                    <Typography
-                      variant="body1"
-                      sx={{
-                        fontWeight: 600,
-                        color: isDark ? '#ffffff' : '#000000',
-                      }}
-                    >
-                      {edu.degree}
-                    </Typography>
-                    <Chip
-                      label={edu.status}
-                      size="small"
-                      sx={{
-                        backgroundColor: edu.status === 'Current'
-                          ? isDark ? 'rgba(16, 185, 129, 0.2)' : 'rgba(16, 185, 129, 0.1)'
-                          : isDark ? 'rgba(59, 130, 246, 0.2)' : 'rgba(59, 130, 246, 0.1)',
-                        color: edu.status === 'Current'
-                          ? isDark ? '#10b981' : '#059669'
-                          : isDark ? '#3b82f6' : '#1e40af',
-                      }}
-                    />
-                  </Box>
-                  <Typography
-                    variant="body2"
+                  <Box
                     sx={{
-                      color: isDark ? '#b0b0b0' : '#666666',
-                      marginBottom: 0.5,
+                      display: 'flex',
+                      flexDirection: 'column',
+                      alignItems: 'flex-start',
+                      marginBottom: 2,
+                      flex: 1,
                     }}
                   >
-                    {edu.school}
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      color: isDark ? '#808080' : '#999999',
-                      fontSize: '0.85rem',
-                    }}
-                  >
-                    {edu.date}
-                  </Typography>
-                  {edu.description && (
+                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                      <Typography
+                        sx={{
+                          fontSize: '1.5rem',
+                        }}
+                      >
+                        {lang.flag}
+                      </Typography>
+                      <Typography
+                        variant="body1"
+                        sx={{
+                          color: isDark ? '#d0d0d0' : '#333333',
+                          fontWeight: 600,
+                        }}
+                      >
+                        {lang.name}
+                      </Typography>
+                    </Box>
                     <Typography
                       variant="body2"
                       sx={{
-                        color: isDark ? '#d0d0d0' : '#333333',
-                        marginTop: 1,
-                        lineHeight: 1.6,
+                        color: isDark ? '#808080' : '#999999',
                       }}
                     >
-                      {edu.description}
+                      {lang.level}
                     </Typography>
-                  )}
-                </Box>
+                  </Box>
+                  <LinearProgress
+                    variant="determinate"
+                    value={lang.value}
+                    sx={{
+                      height: 8,
+                      borderRadius: 4,
+                      backgroundColor: isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)',
+                      '& .MuiLinearProgress-bar': {
+                        backgroundColor: isDark ? '#ffffff' : '#000000',
+                        borderRadius: 4,
+                      },
+                    }}
+                  />
+                </Paper>
               </Box>
             ))}
           </Box>

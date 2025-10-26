@@ -36,6 +36,18 @@ export function ContactSection() {
       value: 'Driver\'s License + Vehicle',
       href: null,
     },
+    {
+      icon: GitHubIcon,
+      label: 'GitHub',
+      value: 'github.com',
+      href: 'https://github.com/StefanPopa2001',
+    },
+    {
+      icon: LinkedInIcon,
+      label: 'LinkedIn',
+      value: 'linkedin.com',
+      href: 'https://be.linkedin.com/in/stefan-popa-2ab261232',
+    },
   ]
 
   return (
@@ -43,7 +55,6 @@ export function ContactSection() {
       id="contact"
       sx={{
         paddingY: 8,
-        background: isDark ? '#121212' : '#ffffff',
       }}
     >
   <Container maxWidth="md">
@@ -71,151 +82,96 @@ export function ContactSection() {
           </Typography>
         </Box>
 
-        <Grid container spacing={2} sx={{ marginBottom: 4, alignItems: 'stretch' }}>
+        <Box sx={{
+          display: 'grid',
+          gridTemplateColumns: {
+            xs: '1fr',
+            sm: '1fr',
+            md: 'repeat(2, minmax(0, 1fr))',
+          },
+          gap: 3,
+          alignItems: 'stretch',
+          marginBottom: 4,
+        }}>
           {contactItems.map((item, index) => {
             const IconComponent = item.icon
             return (
-              <Grid item xs={12} sm={6} key={index} sx={{ display: 'flex', width: '100%' }}>
-                <Paper
-                  elevation={0}
-                  component={item.href ? 'a' : 'div'}
-                  href={item.href}
+              <Paper
+                key={index}
+                elevation={0}
+                component={item.href ? 'a' : 'div'}
+                href={item.href}
+                target={item.href && item.href.startsWith('http') ? '_blank' : undefined}
+                rel={item.href && item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                sx={{
+                  padding: 2,
+                  backgroundColor: isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.02)',
+                  border: `1px solid ${isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}`,
+                  borderRadius: 2,
+                  transition: 'all 0.3s ease',
+                  flex: 1,
+                  display: 'flex',
+                  flexDirection: 'row',
+                  minHeight: 60,
+                  minWidth: 230,
+                  width: '100%',
+                  textDecoration: 'none',
+                  alignItems: 'flex-start',
+                  gap: 2,
+                  cursor: item.href ? 'pointer' : 'default',
+                  '&:hover': item.href ? {
+                    backgroundColor: isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.04)',
+                    borderColor: isDark ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.2)',
+                  } : {},
+                }}
+              >
+                <Box
                   sx={{
-                    width: '100%',
-                    boxSizing: 'border-box',
-                    padding: 2,
-                    backgroundColor: isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.02)',
-                    border: `1px solid ${isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}`,
-                    borderRadius: 2,
-                    textDecoration: 'none',
                     display: 'flex',
-                    gap: 2,
-                    alignItems: 'flex-start',
-                    transition: 'all 0.3s ease',
-                    cursor: item.href ? 'pointer' : 'default',
-                    flex: 1,
-                    minHeight: { xs: 'auto', sm: 110 },
-                    '&:hover': item.href ? {
-                      backgroundColor: isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.04)',
-                      borderColor: isDark ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.2)',
-                    } : {},
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: 40,
+                    height: 40,
+                    backgroundColor: isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.05)',
+                    border: `1px solid ${isDark ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.1)'}`,
+                    borderRadius: 1,
+                    flexShrink: 0,
                   }}
                 >
-                  <Box
+                  <IconComponent
                     sx={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      width: 40,
-                      height: 40,
-                      backgroundColor: isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.05)',
-                      border: `1px solid ${isDark ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.1)'}`,
-                      borderRadius: 1,
-                      flexShrink: 0,
+                      color: isDark ? '#ffffff' : '#000000',
+                      fontSize: '1.25rem',
+                    }}
+                  />
+                </Box>
+                <Box>
+                  <Typography
+                    variant="body2"
+                    sx={{
+                      color: isDark ? '#b0b0b0' : '#666666',
+                      marginBottom: 0.5,
+                      fontWeight: 500,
+                      fontSize: { xs: '0.8rem', sm: '0.85rem' },
                     }}
                   >
-                    <IconComponent
-                      sx={{
-                        color: isDark ? '#ffffff' : '#000000',
-                        fontSize: '1.25rem',
-                      }}
-                    />
-                  </Box>
-                  <Box>
-                    <Typography
-                      variant="body2"
-                      sx={{
-                        color: isDark ? '#b0b0b0' : '#666666',
-                        marginBottom: 0.5,
-                        fontWeight: 500,
-                        fontSize: { xs: '0.8rem', sm: '0.85rem' },
-                      }}
-                    >
-                      {item.label}
-                    </Typography>
-                    <Typography
-                      variant="body2"
-                      sx={{
-                        fontWeight: 600,
-                        color: isDark ? '#ffffff' : '#000000',
-                        fontSize: { xs: '0.85rem', sm: '0.95rem' },
-                        wordBreak: 'break-word',
-                      }}
-                    >
-                      {item.value}
-                    </Typography>
-                  </Box>
-                </Paper>
-              </Grid>
+                    {item.label}
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    sx={{
+                      fontWeight: 600,
+                      color: isDark ? '#ffffff' : '#000000',
+                      fontSize: { xs: '0.85rem', sm: '0.95rem' },
+                      wordBreak: 'break-word',
+                    }}
+                  >
+                    {item.value}
+                  </Typography>
+                </Box>
+              </Paper>
             )
           })}
-        </Grid>
-
-        <Box sx={{ textAlign: 'center' }}>
-          <Button
-            variant="contained"
-            href="mailto:popa.stefan.pro@gmail.com"
-            sx={{
-              backgroundColor: isDark ? '#ffffff' : '#000000',
-              color: isDark ? '#000000' : '#ffffff',
-              padding: '12px 32px',
-              fontSize: '1rem',
-              fontWeight: 600,
-              '&:hover': {
-                backgroundColor: isDark ? '#e0e0e0' : '#1a1a1a',
-              },
-            }}
-          >
-            Send Message
-          </Button>
-        </Box>
-
-        {/* Social Links */}
-        <Box sx={{ textAlign: 'center', marginTop: 6 }}>
-          <Typography
-            variant="body2"
-            sx={{
-              color: isDark ? '#b0b0b0' : '#666666',
-              marginBottom: 2,
-              fontWeight: 500,
-            }}
-          >
-            Connect with me on social media
-          </Typography>
-          <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2 }}>
-            <Button
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              variant="outlined"
-              startIcon={<GitHubIcon />}
-              sx={{
-                borderColor: isDark ? '#ffffff' : '#000000',
-                color: isDark ? '#ffffff' : '#000000',
-                '&:hover': {
-                  backgroundColor: isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.05)',
-                },
-              }}
-            >
-              GitHub
-            </Button>
-            <Button
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              variant="outlined"
-              startIcon={<LinkedInIcon />}
-              sx={{
-                borderColor: isDark ? '#ffffff' : '#000000',
-                color: isDark ? '#ffffff' : '#000000',
-                '&:hover': {
-                  backgroundColor: isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.05)',
-                },
-              }}
-            >
-              LinkedIn
-            </Button>
-          </Box>
         </Box>
       </Container>
     </Box>

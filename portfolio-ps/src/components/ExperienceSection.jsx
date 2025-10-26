@@ -9,8 +9,7 @@ export function ExperienceSection() {
     <Box
       id="experience"
       sx={{
-        paddingY: 8,
-        background: isDark ? 'rgba(255, 255, 255, 0.02)' : 'rgba(0, 0, 0, 0.02)',
+        paddingY: { xs: 4, sm: 6, md: 8 },
       }}
     >
       <Container maxWidth="md">
@@ -21,6 +20,7 @@ export function ExperienceSection() {
             marginBottom: 4,
             color: isDark ? '#ffffff' : '#000000',
             textAlign: 'center',
+            fontSize: { xs: '1.8rem', sm: '2.2rem', md: '2.5rem' },
           }}
         >
           Experience
@@ -31,7 +31,7 @@ export function ExperienceSection() {
             key={0}
             elevation={0}
             sx={{
-              padding: { xs: 2, sm: 3 },
+              padding: { xs: 2, sm: 3, md: 4 },
               backgroundColor: isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.02)',
               border: `1px solid ${isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}`,
               borderRadius: 2,
@@ -42,7 +42,7 @@ export function ExperienceSection() {
               },
             }}
           >
-            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 2, flexWrap: 'wrap', gap: 2 }}>
+            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 2, flexWrap: 'wrap', gap: { xs: 1, sm: 2 } }}>
               <Box>
                 <Typography
                   variant="h6"
@@ -50,7 +50,7 @@ export function ExperienceSection() {
                     fontWeight: 700,
                     color: isDark ? '#ffffff' : '#000000',
                     marginBottom: 0.5,
-                    fontSize: { xs: '1rem', sm: '1.1rem' },
+                    fontSize: { xs: '1rem', sm: '1.1rem', md: '1.2rem' },
                   }}
                 >
                   System Administrator & Webmaster
@@ -59,7 +59,7 @@ export function ExperienceSection() {
                   variant="body2"
                   sx={{
                     color: isDark ? '#b0b0b0' : '#666666',
-                    fontSize: { xs: '0.9rem', sm: '1rem' },
+                    fontSize: { xs: '0.9rem', sm: '1rem', md: '1.05rem' },
                   }}
                 >
                   Code it Bryan!
@@ -79,7 +79,7 @@ export function ExperienceSection() {
                   variant="body2"
                   sx={{
                     color: isDark ? '#808080' : '#999999',
-                    fontSize: '0.8rem',
+                    fontSize: { xs: '0.75rem', sm: '0.8rem' },
                   }}
                 >
                   November 2023 - Present
@@ -91,32 +91,32 @@ export function ExperienceSection() {
               sx={{
                 color: isDark ? '#d0d0d0' : '#333333',
                 lineHeight: 1.6,
-                fontSize: { xs: '0.9rem', sm: '1rem' },
-                textAlign: 'justify',
+                fontSize: { xs: '0.9rem', sm: '1rem', md: '1.05rem' },
+                textAlign: { xs: 'left', sm: 'justify' },
               }}
             >
-              On my initiative, and with the help of Mathis Bruyère, I proposed the development of a CRM solution to the leadership of "Code it Bryan!", the ASBL behind Logiscool Mons.
-              The objective was to automate manual tasks done with excel sheets.
+              On my own initiative, I proposed developing a CRM solution to the leadership of "Code it Bryan!", the ASBL behind Logiscool Mons.
+              The goal was to automate manual tasks previously done with Excel sheets.
             </Typography>
             <Typography
               variant="body2"
               sx={{
                 color: isDark ? '#a0a0a0' : '#555555',
                 lineHeight: 1.6,
-                fontSize: { xs: '0.85rem', sm: '0.95rem' },
+                fontSize: { xs: '0.85rem', sm: '0.95rem', md: '1rem' },
                 fontStyle: 'italic',
                 marginTop: 1,
-                textAlign: 'justify',
+                textAlign: { xs: 'left', sm: 'justify' },
               }}
             >
-              Outcome: By 2025, the solution fully handles databases, facturation, statistical trackers, attendances and automatic mailing. In the second half of 2024, the system allowed students more than 160 times to be proposed to attend a class they had missed. That is more than 10% of every lesson given having a student catching up his missed class automatically.
+              Outcome: By 2025, the solution fully manages databases, invoicing, statistical tracking, attendance, and automatic mailing. In the second half of 2024, the system enabled students to be invited to attend a missed class more than 160 times. That’s over 10% of all lessons given, with a student automatically catching up on a missed class.
             </Typography>
           </Paper>
           <Paper
             key={1}
             elevation={0}
             sx={{
-              padding: { xs: 2, sm: 3 },
+              padding: { xs: 2, sm: 3, md: 4 },
               backgroundColor: isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.02)',
               border: `1px solid ${isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}`,
               borderRadius: 2,
@@ -127,7 +127,7 @@ export function ExperienceSection() {
               },
             }}
           >
-            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 2, flexWrap: 'wrap', gap: 2 }}>
+            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 2, flexWrap: 'wrap', gap: { xs: 1, sm: 2 } }}>
               <Box>
                 <Typography
                   variant="h6"
@@ -135,7 +135,7 @@ export function ExperienceSection() {
                     fontWeight: 700,
                     color: isDark ? '#ffffff' : '#000000',
                     marginBottom: 0.5,
-                    fontSize: { xs: '1rem', sm: '1.1rem' },
+                    fontSize: { xs: '1rem', sm: '1.1rem', md: '1.2rem' },
                   }}
                 >
                   Computer Science Teacher
@@ -144,7 +144,7 @@ export function ExperienceSection() {
                   variant="body2"
                   sx={{
                     color: isDark ? '#b0b0b0' : '#666666',
-                    fontSize: { xs: '0.9rem', sm: '1rem' },
+                    fontSize: { xs: '0.9rem', sm: '1rem', md: '1.05rem' },
                   }}
                 >
                   Logiscool Mons
@@ -164,7 +164,7 @@ export function ExperienceSection() {
                   variant="body2"
                   sx={{
                     color: isDark ? '#808080' : '#999999',
-                    fontSize: '0.8rem',
+                    fontSize: { xs: '0.75rem', sm: '0.8rem' },
                   }}
                 >
                   November 2021 - Present
@@ -176,21 +176,21 @@ export function ExperienceSection() {
               sx={{
                 color: isDark ? '#d0d0d0' : '#333333',
                 lineHeight: 1.6,
-                fontSize: { xs: '0.9rem', sm: '1rem' },
-                textAlign: 'justify',
+                fontSize: { xs: '0.9rem', sm: '1rem', md: '1.05rem' },
+                textAlign: { xs: 'left', sm: 'justify' },
               }}
             >
-              I am hired as a titular computer science teacher at Logiscool Mons, a coding school for kids and teenagers. I teach programming in Python, JavaScript, C# (Unity) and AI concepts and tools.
+              I am employed as a titular computer science teacher at Logiscool Mons, a coding school for teenagers where I teach programming in Python, JavaScript, C# (Unity), and AI concepts and tools.
             </Typography>
             <Typography
               variant="body2"
               sx={{
                 color: isDark ? '#a0a0a0' : '#555555',
                 lineHeight: 1.6,
-                fontSize: { xs: '0.85rem', sm: '0.95rem' },
+                fontSize: { xs: '0.85rem', sm: '0.95rem', md: '1rem' },
                 fontStyle: 'italic',
                 marginTop: 1,
-                textAlign: 'justify',
+                textAlign: { xs: 'left', sm: 'justify' },
               }}
             >
               Outcome: At the end of last year, my students brought me chocolate.
@@ -200,7 +200,7 @@ export function ExperienceSection() {
             key={2}
             elevation={0}
             sx={{
-              padding: { xs: 2, sm: 3 },
+              padding: { xs: 2, sm: 3, md: 4 },
               backgroundColor: isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.02)',
               border: `1px solid ${isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}`,
               borderRadius: 2,
@@ -211,7 +211,7 @@ export function ExperienceSection() {
               },
             }}
           >
-            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 2, flexWrap: 'wrap', gap: 2 }}>
+            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 2, flexWrap: 'wrap', gap: { xs: 1, sm: 2 } }}>
               <Box>
                 <Typography
                   variant="h6"
@@ -219,7 +219,7 @@ export function ExperienceSection() {
                     fontWeight: 700,
                     color: isDark ? '#ffffff' : '#000000',
                     marginBottom: 0.5,
-                    fontSize: { xs: '1rem', sm: '1.1rem' },
+                    fontSize: { xs: '1rem', sm: '1.1rem', md: '1.2rem' },
                   }}
                 >
                   R&D Software Development Intern
@@ -228,7 +228,7 @@ export function ExperienceSection() {
                   variant="body2"
                   sx={{
                     color: isDark ? '#b0b0b0' : '#666666',
-                    fontSize: { xs: '0.9rem', sm: '1rem' },
+                    fontSize: { xs: '0.9rem', sm: '1rem', md: '1.05rem' },
                   }}
                 >
                   Aproove
@@ -248,7 +248,7 @@ export function ExperienceSection() {
                   variant="body2"
                   sx={{
                     color: isDark ? '#808080' : '#999999',
-                    fontSize: '0.8rem',
+                    fontSize: { xs: '0.75rem', sm: '0.8rem' },
                   }}
                 >
                   February 2023 - June 2023
@@ -260,31 +260,31 @@ export function ExperienceSection() {
               sx={{
                 color: isDark ? '#d0d0d0' : '#333333',
                 lineHeight: 1.6,
-                fontSize: { xs: '0.9rem', sm: '1rem' },
-                textAlign: 'justify',
+                fontSize: { xs: '0.9rem', sm: '1rem', md: '1.05rem' },
+                textAlign: { xs: 'left', sm: 'justify' },
               }}
             >
-              For my end of studies thesis of my first bachelor degree, I joined the R&D team at Aproove for a 15 week internship. The project aimed to develop a state of the art solution to integrate the Aproove proofing and versioning system into the Adobe application environment.
+              For my end-of-studies thesis for my first bachelor’s degree, I joined the R&D team at Aproove for a 15-week internship. The project aimed to develop a state-of-the-art solution to integrate the Aproove proofing and versioning system into the Adobe application environment.
             </Typography>
             <Typography
               variant="body2"
               sx={{
                 color: isDark ? '#a0a0a0' : '#555555',
                 lineHeight: 1.6,
-                fontSize: { xs: '0.85rem', sm: '0.95rem' },
+                fontSize: { xs: '0.85rem', sm: '0.95rem', md: '1rem' },
                 fontStyle: 'italic',
                 marginTop: 1,
-                textAlign: 'justify',
+                textAlign: { xs: 'left', sm: 'justify' },
               }}
             >
-              Outcome: Delivered a working Adobe plugin enabling real time exchange of geometric data surpassing the initial design brief and before the deadline. The remaining time was dedicated to developing from scratch a prototype for proofing 3D files inside the browser. The prototype was approved by the CEO for further integration into the Aproove suite.
+              Outcome: Delivered a working Adobe plugin enabling real-time exchange of geometric data, surpassing the initial design brief and ahead of the deadline. The remaining time was dedicated to developing a prototype from scratch for proofing 3D files inside the browser. The prototype was approved by the CEO for further integration into the Aproove suite.
             </Typography>
           </Paper>
           <Paper
             key={3}
             elevation={0}
             sx={{
-              padding: { xs: 2, sm: 3 },
+              padding: { xs: 2, sm: 3, md: 4 },
               backgroundColor: isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.02)',
               border: `1px solid ${isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}`,
               borderRadius: 2,
@@ -295,7 +295,7 @@ export function ExperienceSection() {
               },
             }}
           >
-            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 2, flexWrap: 'wrap', gap: 2 }}>
+            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 2, flexWrap: 'wrap', gap: { xs: 1, sm: 2 } }}>
               <Box>
                 <Typography
                   variant="h6"
@@ -303,7 +303,7 @@ export function ExperienceSection() {
                     fontWeight: 700,
                     color: isDark ? '#ffffff' : '#000000',
                     marginBottom: 0.5,
-                    fontSize: { xs: '1rem', sm: '1.1rem' },
+                    fontSize: { xs: '1rem', sm: '1.1rem', md: '1.2rem' },
                   }}
                 >
                   Software development internship
@@ -312,7 +312,7 @@ export function ExperienceSection() {
                   variant="body2"
                   sx={{
                     color: isDark ? '#b0b0b0' : '#666666',
-                    fontSize: { xs: '0.9rem', sm: '1rem' },
+                    fontSize: { xs: '0.9rem', sm: '1rem', md: '1.05rem' },
                   }}
                 >
                   AGC Moustier
@@ -332,7 +332,7 @@ export function ExperienceSection() {
                   variant="body2"
                   sx={{
                     color: isDark ? '#808080' : '#999999',
-                    fontSize: '0.8rem',
+                    fontSize: { xs: '0.75rem', sm: '0.8rem' },
                   }}
                 >
                   June 2022 - July 2022
@@ -344,24 +344,24 @@ export function ExperienceSection() {
               sx={{
                 color: isDark ? '#d0d0d0' : '#333333',
                 lineHeight: 1.6,
-                fontSize: { xs: '0.9rem', sm: '1rem' },
-                textAlign: 'justify',
+                fontSize: { xs: '0.9rem', sm: '1rem', md: '1.05rem' },
+                textAlign: { xs: 'left', sm: 'justify' },
               }}
             >
-              Summer student job supporting the plant’s IT team and commercial bureau. Streamlined SAP dashboards to Power BI. Worked with the IT team of AGC to expand the IT/OT system capabilities unique to Moustier to other plants.
+              Summer student job supporting the plant’s IT team and commercial office. Streamlined SAP dashboards to Power BI. Collaborated with the AGC IT team to expand the unique IT/OT system capabilities from Moustier to other plants.
             </Typography>
             <Typography
               variant="body2"
               sx={{
                 color: isDark ? '#a0a0a0' : '#555555',
                 lineHeight: 1.6,
-                fontSize: { xs: '0.85rem', sm: '0.95rem' },
+                fontSize: { xs: '0.85rem', sm: '0.95rem', md: '1rem' },
                 fontStyle: 'italic',
                 marginTop: 1,
-                textAlign: 'justify',
+                textAlign: { xs: 'left', sm: 'justify' },
               }}
             >
-              Outcome: The dashboards were tested and deployed. The IT/OT system expansion is in production, and my work was recognized for its dynamic and adaptive implementation.
+              Outcome: The dashboards were tested and deployed. The IT/OT system expansion is now in production, and my work was recognized for its dynamic and adaptive implementation.
             </Typography>
           </Paper>
         </Box>

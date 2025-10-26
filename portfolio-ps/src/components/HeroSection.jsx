@@ -12,48 +12,10 @@ export function HeroSection({ onScrollToSection }) {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        background: isDark
-          ? 'linear-gradient(135deg, #121212 0%, #1a1a1a 100%)'
-          : 'linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%)',
         paddingTop: '64px',
         paddingBottom: '64px',
-        position: 'relative',
-        overflow: 'hidden',
       }}
     >
-      {/* Background effect */}
-      <Box
-        sx={{
-          position: 'absolute',
-          width: '300px',
-          height: '300px',
-          background: isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.05)',
-          borderRadius: '50%',
-          filter: 'blur(120px)',
-          top: '10%',
-          left: '5%',
-          '@media (max-width: 600px)': {
-            width: '200px',
-            height: '200px',
-          },
-        }}
-      />
-      <Box
-        sx={{
-          position: 'absolute',
-          width: '300px',
-          height: '300px',
-          background: isDark ? 'rgba(255, 255, 255, 0.03)' : 'rgba(0, 0, 0, 0.03)',
-          borderRadius: '50%',
-          filter: 'blur(120px)',
-          bottom: '10%',
-          right: '5%',
-          '@media (max-width: 600px)': {
-            width: '200px',
-            height: '200px',
-          },
-        }}
-      />
 
       <Container maxWidth="sm">
         <Box sx={{ textAlign: 'center', position: 'relative', zIndex: 1 }}>
@@ -83,7 +45,8 @@ export function HeroSection({ onScrollToSection }) {
               lineHeight: 1.6,
             }}
           >
-            Software developer and industrial computing student seeking a thesis internship. I also work as a freelance developer, building applications that streamline work for people and organizations.
+            Software developer and industrial computing student seeking an end-of-studies internship.
+            I also work as a freelance full-stack developer, building applications tailored to specific needs with a minimal technical debt.
           </Typography>
 
           <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', marginBottom: 6, flexWrap: 'wrap' }}>
@@ -121,108 +84,7 @@ export function HeroSection({ onScrollToSection }) {
             </Button>
           </Box>
 
-          {/* Stats */}
-          <Grid container spacing={2} sx={{ maxWidth: '100%', justifyContent: 'center' }}>
-            <Grid item xs={12} sm={6} md={4}>
-              <Paper
-                elevation={0}
-                sx={{
-                  backgroundColor: isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.02)',
-                  padding: 2,
-                  textAlign: 'center',
-                  border: `1px solid ${isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}`,
-                  borderRadius: 2,
-                }}
-              >
-                <Typography
-                  variant="h5"
-                  sx={{
-                    fontWeight: 700,
-                    marginBottom: 1,
-                    color: isDark ? '#ffffff' : '#000000',
-                    fontSize: { xs: '1.5rem', sm: '2rem' },
-                  }}
-                >
-                  2
-                </Typography>
-                <Typography
-                  variant="body2"
-                  sx={{
-                    color: isDark ? '#b0b0b0' : '#666666',
-                    fontSize: { xs: '0.8rem', sm: '0.9rem' },
-                  }}
-                >
-                  Bachelor degrees
-                </Typography>
-              </Paper>
-            </Grid>
-            <Grid item xs={12} sm={6} md={4}>
-              <Paper
-                elevation={0}
-                sx={{
-                  backgroundColor: isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.02)',
-                  padding: 2,
-                  textAlign: 'center',
-                  border: `1px solid ${isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}`,
-                  borderRadius: 2,
-                }}
-              >
-                <Typography
-                  variant="h5"
-                  sx={{
-                    fontWeight: 700,
-                    marginBottom: 1,
-                    color: isDark ? '#ffffff' : '#000000',
-                    fontSize: { xs: '1.5rem', sm: '2rem' },
-                  }}
-                >
-                  3+
-                </Typography>
-                <Typography
-                  variant="body2"
-                  sx={{
-                    color: isDark ? '#b0b0b0' : '#666666',
-                    fontSize: { xs: '0.8rem', sm: '0.9rem' },
-                  }}
-                >
-                  Years of freelancing
-                </Typography>
-              </Paper>
-            </Grid>
-            <Grid item xs={12} sm={6} md={4}>
-              <Paper
-                elevation={0}
-                sx={{
-                  backgroundColor: isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.02)',
-                  padding: 2,
-                  textAlign: 'center',
-                  border: `1px solid ${isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}`,
-                  borderRadius: 2,
-                }}
-              >
-                <Typography
-                  variant="h5"
-                  sx={{
-                    fontWeight: 700,
-                    marginBottom: 1,
-                    color: isDark ? '#ffffff' : '#000000',
-                    fontSize: { xs: '1.5rem', sm: '2rem' },
-                  }}
-                >
-                  6
-                </Typography>
-                <Typography
-                  variant="body2"
-                  sx={{
-                    color: isDark ? '#b0b0b0' : '#666666',
-                    fontSize: { xs: '0.8rem', sm: '0.9rem' },
-                  }}
-                >
-                  Projects in produciton
-                </Typography>
-              </Paper>
-            </Grid>
-          </Grid>
+         
         </Box>
       </Container>
     </Box>

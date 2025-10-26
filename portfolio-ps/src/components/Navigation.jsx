@@ -1,13 +1,15 @@
-import { AppBar, Toolbar, Box, Button, IconButton, Drawer, List, ListItem, useMediaQuery, useTheme as useMuiTheme } from '@mui/material'
+import { AppBar, Toolbar, Box, Button, IconButton, Drawer, List, ListItem, useMediaQuery, useTheme as useMuiTheme, LinearProgress } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 import CloseIcon from '@mui/icons-material/Close'
 import LightModeIcon from '@mui/icons-material/LightMode'
 import DarkModeIcon from '@mui/icons-material/DarkMode'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useThemeMode } from '../context/ThemeContext'
 
 export function Navigation({ onScrollToSection }) {
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [scrollProgress, setScrollProgress] = useState(0)
+  const [currentSection, setCurrentSection] = useState('')
   const { isDark, toggleTheme } = useThemeMode()
   const muiTheme = useMuiTheme()
   const isMobile = useMediaQuery(muiTheme.breakpoints.down('md'))
@@ -31,7 +33,35 @@ export function Navigation({ onScrollToSection }) {
     "email": "mailto:popa.stefan.pro@gmail.com"
   }
 
-  const navItems = ['About', 'Experience', 'Skills', 'Projects']
+  const navItems = ['About', 'Experience', 'Skills', 'Education', 'Projects']
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const totalHeight = document.body.scrollHeight - window.innerHeight
+      const progress = (window.scrollY / totalHeight) * 100
+      setScrollProgress(progress)
+
+      // Determine current section
+      const sections = ['about', 'experience', 'skills', 'education', 'projects', 'contact']
+      let current = ''
+      for (const section of sections) {
+        const element = document.getElementById(section)
+        if (element) {
+          const rect = element.getBoundingClientRect()
+          if (rect.top <= 100 && rect.bottom >= 100) {
+            current = section
+            break
+          }
+        }
+      }
+      setCurrentSection(current)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    handleScroll() // Initial call
+
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const handleNavClick = (item) => {
     onScrollToSection(item.toLowerCase())
@@ -52,28 +82,36 @@ export function Navigation({ onScrollToSection }) {
           color: isDark ? '#ffffff' : '#000000',
         }}
       >
-        <Toolbar sx={{ justifyContent: 'space-between' }}>
+        <Toolbar
+          sx={{
+            display: 'grid',
+            gridTemplateColumns: isMobile ? '1fr auto' : '1fr auto 1fr',
+            alignItems: 'center',
+          }}
+        >
           <Box
             sx={{
               fontSize: '1.25rem',
               fontWeight: 700,
               letterSpacing: '-0.02em',
               color: isDark ? '#ffffff' : '#000000',
+              justifySelf: 'start',
             }}
           >
             {personal.name}
           </Box>
 
           {!isMobile && (
-            <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+            <Box sx={{ display: 'flex', gap: 1, alignItems: 'center', justifySelf: 'center' }}>
               {navItems.map((item) => (
                 <Button
                   key={item}
                   onClick={() => handleNavClick(item)}
                   sx={{
-                    color: isDark ? '#d0d0d0' : '#666666',
+                    color: currentSection === item.toLowerCase() ? (isDark ? '#ffffff' : '#000000') : (isDark ? '#d0d0d0' : '#666666'),
                     textTransform: 'none',
                     fontSize: '0.95rem',
+                    fontWeight: currentSection === item.toLowerCase() ? 600 : 400,
                     '&:hover': {
                       color: isDark ? '#ffffff' : '#000000',
                     },
@@ -85,14 +123,13 @@ export function Navigation({ onScrollToSection }) {
               <Button
                 onClick={() => onScrollToSection('contact')}
                 sx={{
-                  backgroundColor: isDark ? '#ffffff' : '#000000',
-                  color: isDark ? '#000000' : '#ffffff',
+                  color: currentSection === 'contact' ? (isDark ? '#ffffff' : '#000000') : (isDark ? '#d0d0d0' : '#666666'),
                   textTransform: 'none',
                   fontSize: '0.95rem',
-                  fontWeight: 600,
+                  fontWeight: currentSection === 'contact' ? 600 : 400,
                   marginLeft: 1,
                   '&:hover': {
-                    backgroundColor: isDark ? '#e0e0e0' : '#1a1a1a',
+                    color: isDark ? '#ffffff' : '#000000',
                   },
                 }}
               >
@@ -101,7 +138,7 @@ export function Navigation({ onScrollToSection }) {
             </Box>
           )}
 
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, justifySelf: 'end' }}>
             <IconButton
               onClick={toggleTheme}
               sx={{
@@ -126,6 +163,24 @@ export function Navigation({ onScrollToSection }) {
           </Box>
         </Toolbar>
       </AppBar>
+
+      {/* Scroll Progress Bar */}
+      <LinearProgress
+        variant="determinate"
+        value={scrollProgress}
+        sx={{
+          position: 'fixed',
+          top: '64px', // Below the AppBar
+          left: 0,
+          right: 0,
+          height: 2,
+          zIndex: 1100,
+          backgroundColor: isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)',
+          '& .MuiLinearProgress-bar': {
+            backgroundColor: isDark ? '#ffffff' : '#000000',
+          },
+        }}
+      />
 
       {/* Mobile Drawer */}
       <Drawer
@@ -161,8 +216,9 @@ export function Navigation({ onScrollToSection }) {
               >
                 <Box
                   sx={{
-                    color: isDark ? '#d0d0d0' : '#666666',
+                    color: currentSection === item.toLowerCase() ? (isDark ? '#ffffff' : '#000000') : (isDark ? '#d0d0d0' : '#666666'),
                     fontSize: '0.95rem',
+                    fontWeight: currentSection === item.toLowerCase() ? 600 : 400,
                   }}
                 >
                   {item}
@@ -181,7 +237,7 @@ export function Navigation({ onScrollToSection }) {
             >
               <Box
                 sx={{
-                  color: isDark ? '#ffffff' : '#000000',
+                  color: currentSection === 'contact' ? (isDark ? '#ffffff' : '#000000') : (isDark ? '#d0d0d0' : '#666666'),
                   fontSize: '0.95rem',
                   fontWeight: 600,
                 }}
