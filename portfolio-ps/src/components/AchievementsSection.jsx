@@ -81,7 +81,7 @@ export function AchievementsSection() {
               {/* Image banner */}
               <Box
                 component="img"
-                src="images/wskills.png"
+                src={`${import.meta.env.BASE_URL}images/wskills.png`}
                 alt="WorldSkills Industry 4.0 Championship"
                 sx={{
                   width: '100%',
@@ -159,7 +159,7 @@ export function AchievementsSection() {
               {/* Image banner */}
               <Box
                 component="img"
-                src="images/techgoeswild.jpg"
+                src={`${import.meta.env.BASE_URL}images/techgoeswild.jpg`}
                 alt="Tech Goes Wild Hackathon"
                 sx={{
                   width: '100%',
@@ -237,7 +237,7 @@ export function AchievementsSection() {
               {/* Image banner */}
               <Box
                 component="img"
-                src="images/entrepreneur2.jpg"
+                src={`${import.meta.env.BASE_URL}images/entrepreneur2.jpg`}
                 alt="Student Entrepreneur"
                 sx={{
                   width: '100%',
@@ -315,7 +315,7 @@ export function AchievementsSection() {
               {/* Image banner */}
               <Box
                 component="img"
-                src="images/techvswild2.JPG"
+                src={`${import.meta.env.BASE_URL}images/techvswild2.JPG`}
                 alt="Dev vs Wild Hackathon"
                 sx={{
                   width: '100%',
@@ -393,7 +393,7 @@ export function AchievementsSection() {
               {/* Image banner */}
               <Box
                 component="img"
-                src="images/spaceoffice2.jpg"
+                src={`${import.meta.env.BASE_URL}images/spaceoffice2.jpg`}
                 alt="Space Office Hackathon"
                 sx={{
                   width: '100%',
@@ -471,7 +471,7 @@ export function AchievementsSection() {
               {/* Image banner */}
               <Box
                 component="img"
-                src="images/helha_logo.jpg"
+                src={`${import.meta.env.BASE_URL}images/helha_logo.jpg`}
                 alt="Academic Recognition"
                 sx={{
                   width: '100%',

@@ -11,7 +11,7 @@ export function EducationSection() {
   "school": "Haute École Louvain en Hainaut",
   "status": "Current",
   "date": "2023 - 2026",
-  "photo": "images/helha_charleroi.jpg",
+  "photo": `${import.meta.env.BASE_URL}images/helha_charleroi.jpg`,
   "description": "Focused on electronics and automation, with a strong emphasis on networks and cybersecurity. The program bridges operational technology (OT) and information technology (IT), preparing me to work at the intersection of both worlds."
     },
     {
@@ -19,7 +19,7 @@ export function EducationSection() {
   "school": "Haute École Louvain en Hainaut",
   "status": "Graduated",
   "date": "2020 - 2023 – Upper Class Honors",
-  "photo": "images/helha_mons.jpg",
+  "photo": `${import.meta.env.BASE_URL}images/helha_mons.jpg`,
   "description": "Specialized in software development and architecture, with a focus on solving business challenges through reliable and scalable software solutions. This degree gave me a solid foundation in building robust applications and understanding the needs of modern organizations."
     }
   ]

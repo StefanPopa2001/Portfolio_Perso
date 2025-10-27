@@ -22,7 +22,7 @@ export function ProjectsSection() {
       techStack: ["React", "Node.js", "Express JS", "PostgreSQL", "Prisma", "Docker", "Docker Compose", "Traefik", "Javascript", "Typescript"],
       githubUrl: 'https://github.com/StefanPopa2001/RF-Food-Delivery-App',
       liveUrl: 'https://rudyetfanny.be',
-      images: ["images/rf_carousel_2.png"]
+  images: [`${import.meta.env.BASE_URL}images/rf_carousel_2.png`]
     },
     {   
       title: 'Logiscool Mons Intranet 3',
@@ -33,8 +33,7 @@ export function ProjectsSection() {
       githubUrl: 'https://github.com/StefanPopa2001/LMI-3',
       liveUrl: '',
       images: [
-        "images/lmi3_carousel_1.png"
-       
+        `${import.meta.env.BASE_URL}images/lmi3_carousel_1.png`
       ]
     },
     {   
@@ -45,7 +44,7 @@ export function ProjectsSection() {
       techStack: ['Next JS', 'Node.js', 'MySQL', 'Microcontrollers', 'SSE',"Embedded systems"],
       githubUrl: '',
       liveUrl: '',
-      images: ["images/projet2.jpg"]
+  images: [`${import.meta.env.BASE_URL}images/projet2.jpg`]
     },
     {
       title: "Les Amitiés Françaises de Mons conférences",
@@ -55,7 +54,7 @@ export function ProjectsSection() {
       techStack: ['HTML', 'CSS', 'JavaScript', 'Google Firebase'],
       githubUrl: 'https://github.com/StefanPopa2001/Amiti-s-FR',
       liveUrl: 'https://les-amities-francaises-de-mons.web.app/',
-      images: ["images/afr_carousel_1.png"]
+  images: [`${import.meta.env.BASE_URL}images/afr_carousel_1.png`]
     },
     {
       title: 'Logiscool Mons Intranet 2',
@@ -65,7 +64,7 @@ export function ProjectsSection() {
       techStack: ['Power apps', 'Power automate', 'Microsoft database','Sharepoint'],
       githubUrl: '',
       liveUrl: '',
-      images: ['images/lmi2.png']
+  images: [`${import.meta.env.BASE_URL}images/lmi2.png`]
     },
     {
       title: 'Logiscool Mons Intranet 1',
@@ -75,7 +74,7 @@ export function ProjectsSection() {
       techStack: ['React', 'C#', 'Entity Framework', 'MySQL'],
       githubUrl: 'https://github.com/mathbruu/Lmi',
       liveUrl: '',
-      images: ['images/lmi1.png']
+  images: [`${import.meta.env.BASE_URL}images/lmi1.png`]
     },
     {
       title: 'Small brother',
@@ -85,7 +84,7 @@ export function ProjectsSection() {
       techStack: ['Angular', 'C#', 'Entity Framework','Kotlin', 'OOP', 'MySQL'],
       githubUrl: '',
       liveUrl: '',
-      images: ['images/sb.png']
+  images: [`${import.meta.env.BASE_URL}images/sb.png`]
     },
     {
       title: 'Frog-GER',
@@ -95,7 +94,7 @@ export function ProjectsSection() {
       techStack: ['C', 'SFML'],
       githubUrl: 'https://github.com/StefanPopa2001/FroggerSFML',
       liveUrl: '',
-      images: ['images/frugger.png']
+  images: [`${import.meta.env.BASE_URL}images/frugger.png`]
     },
     {
       title: 'Joker-Quizz',
@@ -105,7 +104,7 @@ export function ProjectsSection() {
       techStack: ['Java', 'Java FX','OOP'],
       githubUrl: 'https://github.com/your-username/joker-quizz',
       liveUrl: '',
-      images: ['images/jq1.png']
+  images: [`${import.meta.env.BASE_URL}images/jq1.png`]
     },
     {
       title: 'Rooter-ED',
@@ -115,7 +114,7 @@ export function ProjectsSection() {
       techStack: ['PyScript', 'HTML', 'JavaScript','CSS'],
       githubUrl: 'https://github.com/StefanPopa2001/PyscriptWebIP',
       liveUrl: '',
-      images: ['images/rootered.png']
+  images: [`${import.meta.env.BASE_URL}images/rootered.png`]
     }
   ]
 
