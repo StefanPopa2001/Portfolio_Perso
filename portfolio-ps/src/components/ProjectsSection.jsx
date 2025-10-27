@@ -130,7 +130,7 @@ export function ProjectsSection() {
     }
 
     return (
-      <Box sx={{ position: 'relative', width: '100%', height: 200, overflow: 'hidden' }}>
+      <Box sx={{ position: 'relative', width: '100%', height: 200, overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
         <Box
           component="img"
           src={images[currentIndex]}
@@ -138,7 +138,9 @@ export function ProjectsSection() {
           sx={{
             width: '100%',
             height: '100%',
-            objectFit: 'cover',
+            objectFit: 'contain',
+            objectPosition: 'center',
+            display: 'block',
             borderRadius: 1,
           }}
         />
@@ -239,7 +241,7 @@ export function ProjectsSection() {
               >
                 {/* Show image carousel if images are available */}
                 {project.images && project.images.length > 0 && project.images[0] && (
-                  <Box sx={{ flex: '0 0 25%', maxWidth: { xs: '60%', sm: '25%' }, mb: { xs: 2, sm: 0 }, flexShrink: 0, margin: { xs: '0 auto', sm: 0 } }}>
+                  <Box sx={{ flex: '0 0 25%', maxWidth: { xs: '100%', sm: '25%' }, mb: { xs: 2, sm: 0 }, flexShrink: 0, margin: { xs: '0 auto', sm: 0 }, display: 'flex', justifyContent: 'center' }}>
                     <ImageCarousel images={project.images} />
                   </Box>
                 )}
@@ -268,7 +270,7 @@ export function ProjectsSection() {
                         sx={{
                           fontWeight: 700,
                           color: isDark ? '#ffffff' : '#000000',
-                          fontSize: { xs: '1.1rem', sm: '1.5rem' },
+                          fontSize: { xs: '0.9rem', sm: '1.5rem' },
                         }}
                       >
                         {project.title}

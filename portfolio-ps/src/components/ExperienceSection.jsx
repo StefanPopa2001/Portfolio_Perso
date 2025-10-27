@@ -42,7 +42,7 @@ export function ExperienceSection() {
               },
             }}
           >
-            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 2, flexWrap: 'wrap', gap: { xs: 1, sm: 2 } }}>
+            <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, justifyContent: { sm: 'space-between' }, alignItems: { xs: 'flex-start', sm: 'flex-start' }, marginBottom: 2, gap: { xs: 1, sm: 2 } }}>
               <Box>
                 <Typography
                   variant="h6"
@@ -65,7 +65,7 @@ export function ExperienceSection() {
                   Code it Bryan!
                 </Typography>
               </Box>
-              <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 1 }}>
+              <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: { xs: 'flex-start', sm: 'flex-end' }, gap: 1 }}>
                 <Chip
                   label="Current (part time)"
                   size="small"
@@ -127,7 +127,7 @@ export function ExperienceSection() {
               },
             }}
           >
-            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 2, flexWrap: 'wrap', gap: { xs: 1, sm: 2 } }}>
+            <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, justifyContent: { sm: 'space-between' }, alignItems: { xs: 'flex-start', sm: 'flex-start' }, marginBottom: 2, gap: { xs: 1, sm: 2 } }}>
               <Box>
                 <Typography
                   variant="h6"
@@ -150,7 +150,7 @@ export function ExperienceSection() {
                   Logiscool Mons
                 </Typography>
               </Box>
-              <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 1 }}>
+              <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: { xs: 'flex-start', sm: 'flex-end' }, gap: 1 }}>
                 <Chip
                   label="Current (part time)"
                   size="small"
@@ -211,7 +211,7 @@ export function ExperienceSection() {
               },
             }}
           >
-            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 2, flexWrap: 'wrap', gap: { xs: 1, sm: 2 } }}>
+            <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, justifyContent: { sm: 'space-between' }, alignItems: { xs: 'flex-start', sm: 'flex-start' }, marginBottom: 2, gap: { xs: 1, sm: 2 } }}>
               <Box>
                 <Typography
                   variant="h6"
@@ -234,7 +234,7 @@ export function ExperienceSection() {
                   Aproove
                 </Typography>
               </Box>
-              <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 1 }}>
+              <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: { xs: 'flex-start', sm: 'flex-end' }, gap: 1 }}>
                 <Chip
                   label="Internship"
                   size="small"
@@ -295,7 +295,7 @@ export function ExperienceSection() {
               },
             }}
           >
-            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 2, flexWrap: 'wrap', gap: { xs: 1, sm: 2 } }}>
+            <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, justifyContent: { sm: 'space-between' }, alignItems: { xs: 'flex-start', sm: 'flex-start' }, marginBottom: 2, gap: { xs: 1, sm: 2 } }}>
               <Box>
                 <Typography
                   variant="h6"
@@ -318,7 +318,7 @@ export function ExperienceSection() {
                   AGC Moustier
                 </Typography>
               </Box>
-              <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 1 }}>
+              <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: { xs: 'flex-start', sm: 'flex-end' }, gap: 1 }}>
                 <Chip
                   label="Internship"
                   size="small"

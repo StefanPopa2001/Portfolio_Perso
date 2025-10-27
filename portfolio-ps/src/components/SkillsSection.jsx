@@ -1,5 +1,6 @@
 import { Box, Container, Typography, Grid, Paper, LinearProgress } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
+import { FR, RO, GB, NL } from 'country-flag-icons/react/3x2'
 
 export function SkillsSection() {
   const theme = useTheme()
@@ -86,10 +87,10 @@ export function SkillsSection() {
   ]
 
   const languages = [
-    { name: 'French', flag: '🇫🇷', level: 'Native', value: 100 },
-    { name: 'Romanian', flag: '🇷🇴', level: 'Native', value: 100 },
-    { name: 'English', flag: '🇬🇧', level: 'Professional (C1)', value: 85 },
-    { name: 'Dutch', flag: '🇳🇱', level: 'Basic (A1)', value: 25 },
+    { name: 'French', flag: FR, level: 'Native', value: 100 },
+    { name: 'Romanian', flag: RO, level: 'Native', value: 100 },
+    { name: 'English', flag: GB, level: 'Professional (C1)', value: 85 },
+    { name: 'Dutch', flag: NL, level: 'Basic (A1)', value: 25 },
   ]
 
   return (
@@ -119,7 +120,7 @@ export function SkillsSection() {
   <Grid container spacing={4} sx={{ marginBottom: 8, alignItems: 'stretch', justifyContent: 'center' }}>
           {skillCategories.map((category, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
-              <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'stretch', justifyContent: 'flex-start', height: '100%', padding: 2 }}>
+              <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'stretch', justifyContent: 'flex-start', height: '100%', padding: { xs: 1, sm: 2 } }}>
                 <Typography
                   variant="h6"
                   sx={{
@@ -127,11 +128,12 @@ export function SkillsSection() {
                     marginBottom: 2,
                     color: isDark ? '#ffffff' : '#000000',
                     textAlign: 'center',
+                    fontSize: { xs: '1rem', sm: '1.25rem', md: '1.5rem' },
                   }}
                 >
                   {category.title}
                 </Typography>
-                <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1.5, justifyContent: 'center' }}>
+                <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: { xs: 1, sm: 1.5 }, justifyContent: 'center' }}>
                   {category.skills
                     .slice() // don't mutate original
                     .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()))
@@ -139,7 +141,7 @@ export function SkillsSection() {
                     <Paper
                       key={skill}
                       sx={{
-                        padding: '8px 12px',
+                        padding: { xs: '6px 10px', sm: '8px 12px' },
                         backgroundColor: category.isProfessional
                           ? isDark ? '#ffffff' : '#000000'
                           : isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.05)',
@@ -156,7 +158,7 @@ export function SkillsSection() {
                         },
                       }}
                     >
-                      <Typography variant="body2" sx={{ fontWeight: 500 }}>
+                      <Typography variant="body2" sx={{ fontWeight: 500, fontSize: { xs: '0.8rem', sm: '0.875rem' } }}>
                         {skill}
                       </Typography>
                     </Paper>
@@ -195,7 +197,7 @@ export function SkillsSection() {
                     display: 'flex',
                     flexDirection: 'column',
                     minHeight: 120,
-                    minWidth: 230,
+                    minWidth: 180,
                     width: 350,
                     '&:hover': {
                       backgroundColor: isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.04)',
@@ -213,13 +215,9 @@ export function SkillsSection() {
                     }}
                   >
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                      <Typography
-                        sx={{
-                          fontSize: '1.5rem',
-                        }}
-                      >
-                        {lang.flag}
-                      </Typography>
+                      <Box sx={{ width: 32, height: 24, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <lang.flag title={lang.name} style={{ width: '100%', height: '100%', borderRadius: 2 }} />
+                      </Box>
                       <Typography
                         variant="body1"
                         sx={{

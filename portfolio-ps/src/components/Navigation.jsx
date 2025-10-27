@@ -3,16 +3,18 @@ import MenuIcon from '@mui/icons-material/Menu'
 import CloseIcon from '@mui/icons-material/Close'
 import LightModeIcon from '@mui/icons-material/LightMode'
 import DarkModeIcon from '@mui/icons-material/DarkMode'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useThemeMode } from '../context/ThemeContext'
 
 export function Navigation({ onScrollToSection }) {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [scrollProgress, setScrollProgress] = useState(0)
   const [currentSection, setCurrentSection] = useState('')
+  const [appBarHeight, setAppBarHeight] = useState(64)
   const { isDark, toggleTheme } = useThemeMode()
   const muiTheme = useMuiTheme()
   const isMobile = useMediaQuery(muiTheme.breakpoints.down('md'))
+  const appBarRef = useRef(null)
 
   const personal = {
     "name": "Stefan Popa",
@@ -34,6 +36,12 @@ export function Navigation({ onScrollToSection }) {
   }
 
   const navItems = ['About', 'Experience', 'Skills', 'Education', 'Projects']
+
+  useEffect(() => {
+    if (appBarRef.current) {
+      setAppBarHeight(appBarRef.current.offsetHeight)
+    }
+  }, [isMobile])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -71,6 +79,7 @@ export function Navigation({ onScrollToSection }) {
   return (
     <>
       <AppBar
+        ref={appBarRef}
         position="fixed"
         elevation={0}
         sx={{
@@ -170,7 +179,7 @@ export function Navigation({ onScrollToSection }) {
         value={scrollProgress}
         sx={{
           position: 'fixed',
-          top: '64px', // Below the AppBar
+          top: `${appBarHeight}px`, // Below the AppBar
           left: 0,
           right: 0,
           height: 2,
@@ -191,7 +200,7 @@ export function Navigation({ onScrollToSection }) {
           '& .MuiDrawer-paper': {
             backgroundColor: isDark ? 'rgba(18, 18, 18, 0.98)' : 'rgba(255, 255, 255, 0.98)',
             borderLeft: `1px solid ${isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}`,
-            marginTop: '64px',
+            marginTop: `${appBarHeight}px`,
           },
         }}
       >

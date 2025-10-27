@@ -30,49 +30,16 @@ function AppContent() {
     }
   }
 
-  const circles = Array.from({ length: 20 }, (_, i) => ({
-    id: i,
-    size: Math.random() * 40 + 20, // 20-60px
-    top: Math.random() * 100,
-    left: Math.random() * 100,
-    delay: Math.random() * 10,
-    duration: Math.random() * 5 + 8, // 8-13s
-  }))
-
   return (
     <Box
       sx={{
         minHeight: "100vh",
-        background: isDark
-          ? "linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%)"
-          : "linear-gradient(135deg, #ffffff 0%, #f5f5f5 50%, #ffffff 100%)",
+        background: isDark ? "#0a0a0a" : "#ffffff",
         color: isDark ? "#ffffff" : "#000000",
         position: "relative",
         overflow: "hidden",
       }}
     >
-      {circles.map((circle) => (
-        <Box
-          key={circle.id}
-          sx={{
-            position: "absolute",
-            width: `${circle.size}px`,
-            height: `${circle.size}px`,
-            background: isDark
-              ? "radial-gradient(circle, rgba(128, 128, 128, 0.3) 0%, rgba(128, 128, 128, 0) 70%)"
-              : "radial-gradient(circle, rgba(100, 100, 100, 0.4) 0%, rgba(100, 100, 100, 0) 70%)",
-            borderRadius: "50%",
-            filter: "blur(15px)",
-            top: `${circle.top}%`,
-            left: `${circle.left}%`,
-            animation: `flicker ${circle.duration}s ease-in-out infinite ${circle.delay}s`,
-            "@keyframes flicker": {
-              "0%, 100%": { opacity: 0.1 },
-              "50%": { opacity: 0.5 },
-            },
-          }}
-        />
-      ))}
 
       <Navigation onScrollToSection={scrollToSection} />
       <HeroSection onScrollToSection={scrollToSection} />
