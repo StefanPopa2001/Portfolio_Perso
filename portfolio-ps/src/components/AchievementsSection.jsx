@@ -55,7 +55,7 @@ export function AchievementsSection() {
                     fontSize: '0.95rem',
                   }}
                 >
-                  WorldSkills Industry 4.0 Championship
+                  WorldSkills Industry 4.0 Gold medal
                 </Typography>
                 <Typography
                   variant="body2"
@@ -76,12 +76,12 @@ export function AchievementsSection() {
                   marginBottom: 2,
                 }}
               >
-                Preselected for WorldSkills Industry 4.0
+                Gold medal at the Belgian National Finals of WorldSkills Industry 4.0
               </Typography>
               {/* Image banner */}
               <Box
                 component="img"
-                src={`${import.meta.env.BASE_URL}images/wskills.png`}
+                src={`${import.meta.env.BASE_URL}images/gold.jpg`}
                 alt="WorldSkills Industry 4.0 Championship"
                 sx={{
                   width: '100%',
@@ -100,7 +100,7 @@ export function AchievementsSection() {
                   textAlign: 'justify',
                 }}
               >
-                Preselected for further training and invited to a 3-day national final at StarTech Day 2025 after qualifying in a Siemens PLC/pneumatic system programming challenge. This was my first time participating in an OT competition.
+                After the preselection phase consisting of a Siemens automate programmation to pilot a pneumatic system, I qualified for the national finale at the startech 2025 and won the gold medal. I was then selected to represent Belgium at the WorldSkills mondial competition in Shanghai 2026.
               </Typography>
             </Paper>
           </Grid>
