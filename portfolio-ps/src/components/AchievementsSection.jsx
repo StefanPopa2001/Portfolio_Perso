@@ -22,7 +22,7 @@ export function AchievementsSection() {
             textAlign: 'center',
           }}
         >
-          Achievements & notable experiences
+          Achievements
         </Typography>
 
   <Grid container spacing={3} sx={{ justifyContent: 'center', maxWidth: 1200, alignItems: 'stretch' }}>
@@ -100,7 +100,7 @@ export function AchievementsSection() {
                   textAlign: 'justify',
                 }}
               >
-                After the preselection phase consisting of a Siemens automate programmation to pilot a pneumatic system, I qualified for the national finale at the startech 2025 and won the gold medal. I was then selected to represent Belgium at the WorldSkills mondial competition in Shanghai 2026.
+                After the preselection phase, which involved programming a Siemens PLC to control a pneumatic system, I qualified for the national finals at Startech 2025 and won the gold medal. I was then selected to represent Belgium at the WorldSkills global competition in Shanghai 2026.
               </Typography>
             </Paper>
           </Grid>
@@ -178,7 +178,7 @@ export function AchievementsSection() {
                   textAlign: 'justify',
                 }}
               >
-                My team and I developed an AI agent capable of analysing a massive amount of data and giving personalized answers. The AI agent was designed to run on any kind of hardware and independently of the internet. We won 3rd place as well as the Microsoft jury's award for the most innovative technical solution. This was my first AI-based project.
+                My team and I developed an AI agent capable of analyzing massive amounts of data and providing personalized answers. The AI agent was designed to run on any hardware and offline. We won 3rd place as well as the Microsoft Jury Award for the most innovative technical solution. This was my first AI-based project.
               </Typography>
             </Paper>
           </Grid>
@@ -334,7 +334,7 @@ export function AchievementsSection() {
                   textAlign: 'justify',
                 }}
               >
-                Our team developed a VR multiplayer online game with Unity. This hackathon in particular is special to me because we had the opportunity to see lots of people testing and enjoying our game. On the development side, this experience was very enriching because all members of the team had very different skills, and it was a good challenge to combine everyone's efforts.
+                Our team developed a VR multiplayer online game with Unity. This hackathon was particularly special to me because we had the opportunity to see many people testing and enjoying our game. On the development side, this experience was very enriching because all team members had different skills, and it was a good challenge to combine everyone's efforts.
               </Typography>
             </Paper>
           </Grid>
@@ -412,7 +412,7 @@ export function AchievementsSection() {
                   textAlign: 'justify',
                 }}
               >
-                Developed a Java/JavaFX application to simulate resource consumption and risk management in space environments. The simulator produced datasets that were visualized on a dashboard and used to train deep learning models aimed at identifying critical resources and adaptation needs in hazardous scenarios. This has been the most enriching experience so far due to the number of technologies I had the chance to discover.
+                Developing a Java/JavaFX application to simulate resource consumption and risk management in space environments. The simulator produced datasets that were visualized on a dashboard and used to train deep learning models aimed at identifying critical resources and adaptation needs in hazardous scenarios. This was the most enriching experience so far due to the number of technologies I had the chance to discover.
               </Typography>
             </Paper>
           </Grid>
@@ -490,7 +490,7 @@ export function AchievementsSection() {
                   textAlign: 'justify',
                 }}
               >
-                In my first year at HELHa Mons, students were asked to develop a tool for the accounting department to manage financial data (expenses, invoices, budgets, etc.). My solution was selected for use in the accounting department. I also had the opportunity to present the project to other students and teachers to showcase what can be developed with the skills learned at HELHa.
+                During my first year at HELHa Mons, students were tasked with developing a tool for the accounting department to manage financial data (expenses, invoices, budgets, etc.). My solution was selected for use in the accounting department. I also had the opportunity to present the project to other students and teachers to showcase what can be developed with the skills learned at HELHa.
               </Typography>
             </Paper>
           </Grid>

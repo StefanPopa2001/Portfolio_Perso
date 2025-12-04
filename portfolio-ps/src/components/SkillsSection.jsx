@@ -114,11 +114,18 @@ export function SkillsSection() {
             textAlign: 'center',
           }}
         >
-          Soft and Hard Skills
+          Soft & Hard Skills
         </Typography>
 
-        <Typography>
-          Below is an overview of my technical skills and soft skills that I have developed over time through education, projects, and professional experiences. Levels of proficiency vary, please consult the project section to see my most proeficient skills.
+        <Typography variant="h6"
+          sx={{
+            fontWeight: 200,
+            marginBottom: 4,
+            color: isDark ? '#ffffff' : '#000000',
+            textAlign: 'center',
+            fontSize: { xs: '1rem', sm: '1.2rem', md: '1.5rem' },
+          }}>
+          Overview of my technical skills and soft skills. Levels of proficiency vary, please consult the project section to see my most proeficient skills.
         </Typography>
 
   <Grid container spacing={4} sx={{ marginBottom: 8, alignItems: 'stretch', justifyContent: 'center' }}>
@@ -173,7 +180,7 @@ export function SkillsSection() {
           ))}
         </Grid>
 
-        <Box sx={{ maxWidth: '800px', margin: '0 auto', marginTop: 4 }}>
+        <Box sx={{ maxWidth: '100%', width: '100%', margin: '0 auto', marginTop: 4 }}>
           <Typography
             variant="h6"
             sx={{
@@ -181,14 +188,15 @@ export function SkillsSection() {
               marginBottom: 3,
               color: isDark ? '#ffffff' : '#000000',
               textAlign: 'center',
+              fontSize: { xs: '1rem', sm: '1.25rem', md: '1.5rem' },
             }}
           >
             Languages
           </Typography>
 
-          <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: 3, alignItems: 'stretch' }}>
+          <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3, alignItems: 'stretch', width: '100%' }}>
             {languages.map((lang, index) => (
-              <Box key={index} sx={{ display: 'flex' }}>
+              <Box key={index} sx={{ display: 'flex', width: '100%' }}>
                 <Paper
                   elevation={0}
                   sx={{
@@ -201,8 +209,7 @@ export function SkillsSection() {
                     display: 'flex',
                     flexDirection: 'column',
                     minHeight: 120,
-                    minWidth: 180,
-                    width: 350,
+                    width: '100%',
                     '&:hover': {
                       backgroundColor: isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.04)',
                       borderColor: isDark ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.2)',

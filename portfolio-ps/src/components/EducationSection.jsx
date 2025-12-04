@@ -149,6 +149,7 @@ export function EducationSection() {
                         color: isDark ? '#d0d0d0' : '#333333',
                         marginTop: 1,
                         lineHeight: 1.6,
+                        textAlign: 'justify',
                       }}
                     >
                       {edu.description}

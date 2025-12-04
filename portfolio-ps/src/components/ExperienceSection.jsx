@@ -17,13 +17,25 @@ export function ExperienceSection() {
           variant="h3"
           sx={{
             fontWeight: 800,
-            marginBottom: 4,
+            marginBottom: 2,
             color: isDark ? '#ffffff' : '#000000',
             textAlign: 'center',
             fontSize: { xs: '1.8rem', sm: '2.2rem', md: '2.5rem' },
           }}
         >
           Experience
+        </Typography>
+
+        <Typography variant="h6"
+          sx={{
+            fontWeight: 200,
+            marginBottom: 4,
+            color: isDark ? '#ffffff' : '#000000',
+            textAlign: 'center',
+            fontSize: { xs: '1rem', sm: '1.2rem', md: '1.5rem' },
+          }}>
+
+          Summary of my professional experience:
         </Typography>
 
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
@@ -92,7 +104,7 @@ export function ExperienceSection() {
                 color: isDark ? '#d0d0d0' : '#333333',
                 lineHeight: 1.6,
                 fontSize: { xs: '0.9rem', sm: '1rem', md: '1.05rem' },
-                textAlign: { xs: 'left', sm: 'justify' },
+                textAlign: 'justify',
               }}
             >
               On my own initiative, I suggested developing a CRM solution to the leadership of "Code it Bryan!", the ASBL behind Logiscool Mons.
@@ -104,12 +116,11 @@ export function ExperienceSection() {
                 color: isDark ? '#a0a0a0' : '#555555',
                 lineHeight: 1.6,
                 fontSize: { xs: '0.85rem', sm: '0.95rem', md: '1rem' },
-            
                 marginTop: 1,
-                textAlign: { xs: 'left', sm: 'justify' },
+                textAlign: 'justify',
               }}
             >
-              Outcome: By 2025, the solution fully manages databases, invoicing, statistical tracking, attendance, and automatic mailing. In the second half of 2024, the system enabled students to attend a missed class more than 160 times.
+              Outcome: By 2025, the solution fully manages databases, invoicing, statistical tracking, attendance, and automatic mailing. In the second half of 2024, the system enabled students to attend a missed class more than 160 times. Furthermore, it allowed all the invoicing to be calculated automatically, and an automatic mailing system updated the personnel on important events.
             </Typography>
           </Paper>
           <Paper
@@ -177,7 +188,7 @@ export function ExperienceSection() {
                 color: isDark ? '#d0d0d0' : '#333333',
                 lineHeight: 1.6,
                 fontSize: { xs: '0.9rem', sm: '1rem', md: '1.05rem' },
-                textAlign: { xs: 'left', sm: 'justify' },
+                textAlign: 'justify',
               }}
             >
               I am employed as a titular computer science teacher at Logiscool Mons, a coding school for teenagers where I teach programming in Python, JavaScript, C# (Unity), and AI concepts and tools.
@@ -189,7 +200,7 @@ export function ExperienceSection() {
                 lineHeight: 1.6,
                 fontSize: { xs: '0.85rem', sm: '0.95rem', md: '1rem' },
                 marginTop: 1,
-                textAlign: { xs: 'left', sm: 'justify' },
+                textAlign: 'justify',
               }}
             >
               Outcome: At the end of 2025, my students brought me chocolate.
@@ -260,10 +271,10 @@ export function ExperienceSection() {
                 color: isDark ? '#d0d0d0' : '#333333',
                 lineHeight: 1.6,
                 fontSize: { xs: '0.9rem', sm: '1rem', md: '1.05rem' },
-                textAlign: { xs: 'left', sm: 'justify' },
+                textAlign: 'justify',
               }}
             >
-              During the conception of my end-of-studies thesis for my first bachelor’s degree, I joined the R&D team at Aproove for a 15-week internship. The project aimed to develop a state-of-the-art solution to integrate the Aproove proofing and versioning system into the Adobe application environment.
+              During the conception of my end-of-studies thesis for my first bachelor's degree, I joined the R&D team at Aproove for a 15-week internship. The project aimed to develop a state-of-the-art solution to integrate the Aproove proofing and versioning system into the Adobe application environment.
             </Typography>
             <Typography
               variant="body2"
@@ -272,7 +283,7 @@ export function ExperienceSection() {
                 lineHeight: 1.6,
                 fontSize: { xs: '0.85rem', sm: '0.95rem', md: '1rem' },
                 marginTop: 1,
-                textAlign: { xs: 'left', sm: 'justify' },
+                textAlign: 'justify',
               }}
             >
               Outcome: Delivering a working Adobe plugin enabling real-time exchange of geometric data, surpassing the initial design brief and ahead of the deadline. The remaining time was dedicated to developing a prototype from scratch for proofing 3D files inside the browser. The prototype was accepted by the CEO for further integration into the Aproove suite.
@@ -343,10 +354,10 @@ export function ExperienceSection() {
                 color: isDark ? '#d0d0d0' : '#333333',
                 lineHeight: 1.6,
                 fontSize: { xs: '0.9rem', sm: '1rem', md: '1.05rem' },
-                textAlign: { xs: 'left', sm: 'justify' },
+                textAlign: 'justify',
               }}
             >
-              I had the opportunity to work a summer student job supporting the plant’s IT team and commercial office. Streamlined SAP dashboards to Power BI. Collaborated with the AGC IT team to expand the unique IT/OT system capabilities from Moustier to other plants.
+              I had the opportunity to work a summer student job supporting the plant's IT team and commercial office. Streamlined SAP dashboards to Power BI. Collaborated with the AGC IT team to expand the unique IT/OT system capabilities from Moustier to other plants.
             </Typography>
             <Typography
               variant="body2"
@@ -355,7 +366,7 @@ export function ExperienceSection() {
                 lineHeight: 1.6,
                 fontSize: { xs: '0.85rem', sm: '0.95rem', md: '1rem' },
                 marginTop: 1,
-                textAlign: { xs: 'left', sm: 'justify' },
+                textAlign: 'justify',
               }}
             >
               Outcome: The dashboards were tested and deployed. The IT/OT system expansion is now in production, and my work was recognized for its dynamic and adaptive implementation.

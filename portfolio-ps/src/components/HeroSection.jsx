@@ -19,6 +19,27 @@ export function HeroSection({ onScrollToSection }) {
 
       <Container maxWidth="sm">
         <Box sx={{ textAlign: 'center', position: 'relative', zIndex: 1 }}>
+          {/* Profile Image Circle */}
+          <Box sx={{ display: 'flex', justifyContent: 'center', marginBottom: 4 }}>
+            <Box
+              component="img"
+              src={`${import.meta.env.BASE_URL}images/topphoto.png`}
+              alt="Stefan Popa"
+              sx={{
+                width: { xs: '200px', sm: '240px', md: '280px' },
+                height: { xs: '200px', sm: '240px', md: '280px' },
+                borderRadius: '50%',
+                objectFit: 'cover',
+                border: `3px solid ${isDark ? '#ffffff' : '#000000'}`,
+                filter: isDark ? 'grayscale(100%)' : 'grayscale(0%)',
+                transition: 'filter 0.3s ease',
+                '&:hover': {
+                  filter: isDark ? 'grayscale(80%)' : 'grayscale(0%)',
+                },
+              }}
+            />
+          </Box>
+
           <Typography
             variant="h2"
             sx={{
@@ -45,8 +66,7 @@ export function HeroSection({ onScrollToSection }) {
               lineHeight: 1.6,
             }}
           >
-            Software developer and industrial computing student seeking an end-of-studies internship.
-            I also work as a freelance full-stack developer, building applications tailored to specific needs with a minimal technical debt.
+            Software developer and industrial computing student with freelance full-stack developeement and 4.0 industry solutions experience.
           </Typography>
 
           <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', marginBottom: 6, flexWrap: 'wrap' }}>

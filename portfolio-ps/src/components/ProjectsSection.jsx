@@ -18,7 +18,7 @@ export function ProjectsSection() {
       title: 'Rudy et Fanny',
       type: 'professional', // professional or school
       inProduction: true,
-        description: 'A food ordering and delivery website for a restaurant. This project is notable because it is my first professional project to be self-hosted, and was designed with mobile and client-first principles.',
+        description: 'A food ordering and delivery website developed for a restaurant. This project is notable as my first self-hosted professional project, designed with a mobile-first and client-centric approach.',
       techStack: ["React", "Node.js", "Express JS", "PostgreSQL", "Prisma", "Docker", "Docker Compose", "Traefik", "Javascript", "Typescript"],
       githubUrl: 'https://github.com/StefanPopa2001/RF-Food-Delivery-App',
       liveUrl: 'https://rudyetfanny.be',
@@ -28,7 +28,7 @@ export function ProjectsSection() {
       title: 'Logiscool Mons Intranet 3',
       type: 'professional', // professional or school
       inProduction: false,
-        description: 'Logiscool Mons Intranet 3 is a web platform CRM designed to measure the needs of Logiscool Mons. It is meant to be modular and as easy as possible to maintain. Deployment to production is scheduled for early 2026.',
+        description: 'Logiscool Mons Intranet 3 is a web-based CRM platform designed to meet the specific operational needs of Logiscool Mons. It was built to be modular and easily maintainable. Deployment to production is scheduled for early 2026.',
       techStack: ["React", "Node.js", "Express JS", "PostgreSQL", "Prisma", "Docker", "Docker Compose", "Traefik", "Javascript", "Typescript"],
       githubUrl: 'https://github.com/StefanPopa2001/LMI-3',
       liveUrl: '',
@@ -40,7 +40,7 @@ export function ProjectsSection() {
       title: 'Automated warehouse system',
       type: 'school', // professional or school
       inProduction: false,
-        description: 'In my second year at HELHa Charleroi, I was tasked with building an automated warehouse system. A camera would scan AprilTags on items inside the frame of a 3D printer, and the stock is displayed on a web application and a small display directly on the frame. Users can order items from a keypad on the frame or the website, and the arm of the frame picks and places the items into a delivery zone.',
+        description: 'During my second year at HELHa Charleroi, I was tasked with building an automated warehouse system. A camera scanned AprilTags on items located within a 3D printer frame, and the stock was displayed on both a web application and a local display. Users could order items via a keypad or the website, prompting the system to pick and place the items into a delivery zone.',
       techStack: ['Next JS', 'Node.js', 'MySQL', 'Microcontrollers', 'SSE',"Embedded systems"],
       githubUrl: '',
       liveUrl: '',
@@ -50,7 +50,7 @@ export function ProjectsSection() {
       title: "Les Amitiés Françaises de Mons conférences",
       type: 'professional', // professional or school
       inProduction: true,
-        description: 'A showcase website deployed with Google Firebase. This website was built voluntarily for the president of the association Les Amitiés Françaises de Mons. This project is important to me because it was the first time I built something optimized for Google referencing. The website was built to be hosted for free and automatically updates itself to avoid regular maintenance.',
+        description: 'A showcase website deployed using Google Firebase, built voluntarily for the president of the association "Les Amitiés Françaises de Mons." This project marked my first experience with search engine optimization (SEO). The website was designed to be hosted for free and includes automated updates to minimize maintenance requirements.',
       techStack: ['HTML', 'CSS', 'JavaScript', 'Google Firebase'],
       githubUrl: 'https://github.com/StefanPopa2001/Amiti-s-FR',
       liveUrl: 'https://les-amities-francaises-de-mons.web.app/',
@@ -60,62 +60,33 @@ export function ProjectsSection() {
       title: 'Logiscool Mons Intranet 2',
       type: 'professional', 
       inProduction: true,
-        description: 'An Office 365 suite solution for Code it Bryan. Despite this project being built on low-code Microsoft technologies, it showcases my ability to create a working solution no matter the environment or technology available.',
+        description: 'An Office 365 suite solution developed for Code it Bryan. Although built using low-code Microsoft technologies, this project demonstrates my ability to deliver functional solutions regardless of the environment or available technology.',
       techStack: ['Power apps', 'Power automate', 'Microsoft database','Sharepoint'],
       githubUrl: '',
       liveUrl: '',
   images: [`${import.meta.env.BASE_URL}images/lmi2.png`]
     },
     {
-      title: 'Logiscool Mons Intranet 1',
-      type: 'professional', // professional or school
-      inProduction: false,
-        description: 'Logiscool Mons Intranet 1 is the first iteration of an attempt to build a CRM to handle the main tasks required to run Logiscool Mons. This project has been put on hiatus since LMI 2 due to the partnership with Microsoft, and recently the reboot of the project with more flexible technologies.',
-      techStack: ['React', 'C#', 'Entity Framework', 'MySQL'],
-      githubUrl: 'https://github.com/mathbruu/Lmi',
-      liveUrl: '',
-  images: [`${import.meta.env.BASE_URL}images/lmi1.png`]
-    },
-    {
       title: 'Small brother',
       type: 'school',
       inProduction: false,
-        description: 'A full stack application for finding and signaling lost animals, available as a website and mobile app.',
+        description: 'A full-stack application for finding and reporting lost animals, available as both a website and a mobile app.',
       techStack: ['Angular', 'C#', 'Entity Framework','Kotlin', 'OOP', 'MySQL'],
       githubUrl: '',
       liveUrl: '',
   images: [`${import.meta.env.BASE_URL}images/sb.png`]
     },
     {
-      title: 'Frog-GER',
-      type: 'school',
-      inProduction: false,
-        description: 'A graphic game built in C with the SFML library and manual memory management. This project was designed to be portable and run on both Windows and Linux systems.',
-      techStack: ['C', 'SFML'],
-      githubUrl: 'https://github.com/StefanPopa2001/FroggerSFML',
-      liveUrl: '',
-  images: [`${import.meta.env.BASE_URL}images/frugger.png`]
-    },
-    {
       title: 'Joker-Quizz',
       type: 'school',
       inProduction: false,
-        description: 'A graphic board game featuring animations, multiplayer, and a focus on the principles of clean code and programming design patterns.',
+        description: 'A digital board game featuring animations and multiplayer functionality, developed with a strong focus on clean code principles and design patterns.',
       techStack: ['Java', 'Java FX','OOP'],
       githubUrl: 'https://github.com/your-username/joker-quizz',
       liveUrl: '',
   images: [`${import.meta.env.BASE_URL}images/jq1.png`]
     },
-    {
-      title: 'Rooter-ED',
-      type: 'school',
-      inProduction: false,
-        description: 'A PyScript-powered web tool for IP administration. I am fond of this project because it allowed me to easily embed Python code into a web application.',
-      techStack: ['PyScript', 'HTML', 'JavaScript','CSS'],
-      githubUrl: 'https://github.com/StefanPopa2001/PyscriptWebIP',
-      liveUrl: '',
-  images: [`${import.meta.env.BASE_URL}images/rootered.png`]
-    }
+    
   ]
 
   const ImageCarousel = ({ images }) => {
@@ -241,41 +212,76 @@ export function ProjectsSection() {
               >
                 {/* Show image carousel if images are available */}
                 {project.images && project.images.length > 0 && project.images[0] && (
-                  <Box sx={{ flex: '0 0 25%', maxWidth: { xs: '100%', sm: '25%' }, mb: { xs: 2, sm: 0 }, flexShrink: 0, margin: { xs: '0 auto', sm: 0 }, display: 'flex', justifyContent: 'center' }}>
+                  <Box sx={{ flex: '0 0 25%', maxWidth: { xs: '100%', sm: '25%' }, mb: { xs: 2, sm: 0 }, flexShrink: 0, margin: { xs: '0 auto', sm: 0 }, display: 'flex', flexDirection: 'column', position: 'relative' }}>
                     <ImageCarousel images={project.images} />
+                    {/* Tags for project type and production status */}
+                    <Box sx={{ display: 'flex', width: '100%', position: 'absolute', bottom: 0, left: 0 }}>
+                      <Box
+                        sx={{
+                          flex: project.inProduction ? 1 : 1,
+                          width: project.inProduction ? '50%' : '100%',
+                          padding: '8px 12px',
+                          backgroundColor: project.type === 'professional' 
+                            ? (isDark ? 'rgba(144, 202, 249, 0.8)' : 'rgba(25, 118, 210, 0.15)')
+                            : (isDark ? 'rgba(129, 199, 132, 0.8)' : 'rgba(56, 142, 60, 0.15)'),
+                          color: project.type === 'professional'
+                            ? (isDark ? '#ffffff' : '#1976d2')
+                            : (isDark ? '#ffffff' : '#388e3c'),
+                          fontSize: '0.75rem',
+                          fontWeight: 600,
+                          textAlign: 'center',
+                          borderRadius: 0,
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          gap: 0.5,
+                        }}
+                      >
+                        {project.type === 'professional' ? (
+                          <WorkIcon sx={{ fontSize: '1rem' }} />
+                        ) : (
+                          <SchoolIcon sx={{ fontSize: '1rem' }} />
+                        )}
+                        {project.type === 'professional' ? 'Professional' : 'School'}
+                      </Box>
+                      {project.inProduction && (
+                        <Box
+                          sx={{
+                            flex: 1,
+                            width: '50%',
+                            padding: '8px 12px',
+                            backgroundColor: isDark ? 'rgba(255, 183, 77, 0.8)' : 'rgba(245, 124, 0, 0.15)',
+                            color: isDark ? '#ffffff' : '#f57c00',
+                            fontSize: '0.75rem',
+                            fontWeight: 600,
+                            textAlign: 'center',
+                            borderRadius: 0,
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            gap: 0.5,
+                          }}
+                        >
+                          <RocketIcon sx={{ fontSize: '1rem' }} />
+                          In Production
+                        </Box>
+                      )}
+                    </Box>
                   </Box>
                 )}
 
                 <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
                   <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 1, mb: 2 }}>
-                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                      {/* Show icon based on project type */}
-                      {project.type === 'professional' ? (
-                        <Tooltip title="Professional Project">
-                          <WorkIcon sx={{ color: isDark ? '#90caf9' : '#1976d2', fontSize: 28 }} />
-                        </Tooltip>
-                      ) : (
-                        <Tooltip title="School Project">
-                          <SchoolIcon sx={{ color: isDark ? '#81c784' : '#388e3c', fontSize: 28 }} />
-                        </Tooltip>
-                      )}
-                      {/* Show production icon if inProduction is true */}
-                      {project.inProduction && (
-                        <Tooltip title="In Production">
-                          <RocketIcon sx={{ color: isDark ? '#ffb74d' : '#f57c00', fontSize: 20 }} />
-                        </Tooltip>
-                      )}
-                      <Typography
-                        variant="h5"
-                        sx={{
-                          fontWeight: 700,
-                          color: isDark ? '#ffffff' : '#000000',
-                          fontSize: { xs: '0.9rem', sm: '1.5rem' },
-                        }}
-                      >
-                        {project.title}
-                      </Typography>
-                    </Box>
+                    <Typography
+                      variant="h5"
+                      sx={{
+                        fontWeight: 700,
+                        color: isDark ? '#ffffff' : '#000000',
+                        fontSize: { xs: '0.9rem', sm: '1.5rem' },
+                      }}
+                    >
+                      {project.title}
+                    </Typography>
                     <Box sx={{ display: 'flex', gap: 1 }}>
                       {project.liveUrl ? (
                         <IconButton
