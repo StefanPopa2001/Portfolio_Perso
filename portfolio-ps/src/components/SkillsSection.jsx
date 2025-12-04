@@ -117,6 +117,10 @@ export function SkillsSection() {
           Soft and Hard Skills
         </Typography>
 
+        <Typography>
+          Below is an overview of my technical skills and soft skills that I have developed over time through education, projects, and professional experiences. Levels of proficiency vary, please consult the project section to see my most proeficient skills.
+        </Typography>
+
   <Grid container spacing={4} sx={{ marginBottom: 8, alignItems: 'stretch', justifyContent: 'center' }}>
           {skillCategories.map((category, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>

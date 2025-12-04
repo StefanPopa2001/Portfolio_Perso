@@ -178,7 +178,7 @@ export function AchievementsSection() {
                   textAlign: 'justify',
                 }}
               >
-                My team and I developed an AI agent capable of ingesting a massive amount of data and giving personalized answers. The AI agent was designed to run on any kind of hardware and independently of the internet. We won 3rd place as well as the Microsoft jury's award for the most innovative technical solution. This was my first AI-based project.
+                My team and I developed an AI agent capable of analysing a massive amount of data and giving personalized answers. The AI agent was designed to run on any kind of hardware and independently of the internet. We won 3rd place as well as the Microsoft jury's award for the most innovative technical solution. This was my first AI-based project.
               </Typography>
             </Paper>
           </Grid>
@@ -256,7 +256,7 @@ export function AchievementsSection() {
                   textAlign: 'justify',
                 }}
               >
-                Encouraged by the success of LMI and the support from the director of Logiscool Mons, I began working as a freelance full-stack software developer. Since then, I have completed multiple small projects in my free time to gain practical experience in software delivery and client communication.
+                Encouraged by the success of LMI and the support from the director of Logiscool Mons, I began working as a freelance full-stack software developer. Since then, I have completed multiple projects in my free time to gain practical experience in software delivery and client communication.
               </Typography>
             </Paper>
           </Grid>

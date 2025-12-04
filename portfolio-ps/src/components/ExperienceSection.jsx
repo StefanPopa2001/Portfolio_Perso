@@ -95,8 +95,8 @@ export function ExperienceSection() {
                 textAlign: { xs: 'left', sm: 'justify' },
               }}
             >
-              On my own initiative, I proposed developing a CRM solution to the leadership of "Code it Bryan!", the ASBL behind Logiscool Mons.
-              The goal was to automate manual tasks previously done with Excel sheets.
+              On my own initiative, I suggested developing a CRM solution to the leadership of "Code it Bryan!", the ASBL behind Logiscool Mons.
+              The goal was to automate manual tasks previously completed with Excel sheets, leading to frequent versioning issues.
             </Typography>
             <Typography
               variant="body2"
@@ -104,12 +104,12 @@ export function ExperienceSection() {
                 color: isDark ? '#a0a0a0' : '#555555',
                 lineHeight: 1.6,
                 fontSize: { xs: '0.85rem', sm: '0.95rem', md: '1rem' },
-                fontStyle: 'italic',
+            
                 marginTop: 1,
                 textAlign: { xs: 'left', sm: 'justify' },
               }}
             >
-              Outcome: By 2025, the solution fully manages databases, invoicing, statistical tracking, attendance, and automatic mailing. In the second half of 2024, the system enabled students to be invited to attend a missed class more than 160 times. That’s over 10% of all lessons given, with a student automatically catching up on a missed class.
+              Outcome: By 2025, the solution fully manages databases, invoicing, statistical tracking, attendance, and automatic mailing. In the second half of 2024, the system enabled students to attend a missed class more than 160 times.
             </Typography>
           </Paper>
           <Paper
@@ -188,12 +188,11 @@ export function ExperienceSection() {
                 color: isDark ? '#a0a0a0' : '#555555',
                 lineHeight: 1.6,
                 fontSize: { xs: '0.85rem', sm: '0.95rem', md: '1rem' },
-                fontStyle: 'italic',
                 marginTop: 1,
                 textAlign: { xs: 'left', sm: 'justify' },
               }}
             >
-              Outcome: At the end of last year, my students brought me chocolate.
+              Outcome: At the end of 2025, my students brought me chocolate.
             </Typography>
           </Paper>
           <Paper
@@ -264,7 +263,7 @@ export function ExperienceSection() {
                 textAlign: { xs: 'left', sm: 'justify' },
               }}
             >
-              For my end-of-studies thesis for my first bachelor’s degree, I joined the R&D team at Aproove for a 15-week internship. The project aimed to develop a state-of-the-art solution to integrate the Aproove proofing and versioning system into the Adobe application environment.
+              During the conception of my end-of-studies thesis for my first bachelor’s degree, I joined the R&D team at Aproove for a 15-week internship. The project aimed to develop a state-of-the-art solution to integrate the Aproove proofing and versioning system into the Adobe application environment.
             </Typography>
             <Typography
               variant="body2"
@@ -272,12 +271,11 @@ export function ExperienceSection() {
                 color: isDark ? '#a0a0a0' : '#555555',
                 lineHeight: 1.6,
                 fontSize: { xs: '0.85rem', sm: '0.95rem', md: '1rem' },
-                fontStyle: 'italic',
                 marginTop: 1,
                 textAlign: { xs: 'left', sm: 'justify' },
               }}
             >
-              Outcome: Delivered a working Adobe plugin enabling real-time exchange of geometric data, surpassing the initial design brief and ahead of the deadline. The remaining time was dedicated to developing a prototype from scratch for proofing 3D files inside the browser. The prototype was approved by the CEO for further integration into the Aproove suite.
+              Outcome: Delivering a working Adobe plugin enabling real-time exchange of geometric data, surpassing the initial design brief and ahead of the deadline. The remaining time was dedicated to developing a prototype from scratch for proofing 3D files inside the browser. The prototype was accepted by the CEO for further integration into the Aproove suite.
             </Typography>
           </Paper>
           <Paper
@@ -348,7 +346,7 @@ export function ExperienceSection() {
                 textAlign: { xs: 'left', sm: 'justify' },
               }}
             >
-              Summer student job supporting the plant’s IT team and commercial office. Streamlined SAP dashboards to Power BI. Collaborated with the AGC IT team to expand the unique IT/OT system capabilities from Moustier to other plants.
+              I had the opportunity to work a summer student job supporting the plant’s IT team and commercial office. Streamlined SAP dashboards to Power BI. Collaborated with the AGC IT team to expand the unique IT/OT system capabilities from Moustier to other plants.
             </Typography>
             <Typography
               variant="body2"
@@ -356,7 +354,6 @@ export function ExperienceSection() {
                 color: isDark ? '#a0a0a0' : '#555555',
                 lineHeight: 1.6,
                 fontSize: { xs: '0.85rem', sm: '0.95rem', md: '1rem' },
-                fontStyle: 'italic',
                 marginTop: 1,
                 textAlign: { xs: 'left', sm: 'justify' },
               }}

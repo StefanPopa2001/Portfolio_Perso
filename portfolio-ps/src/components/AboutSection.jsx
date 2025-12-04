@@ -37,7 +37,7 @@ export function AboutSection() {
                 textAlign: 'justify',
               }}
             >
-              I’m Stefan Popa, a 24-year-old software developer. I was born in Romania and have lived in Belgium since I was seven. Growing up in the early 2000s computer era, I started exploring the realms of Windows 95 and XP.
+              I am Stefan Popa, a 24-year-old software developer. I was born in Romania and have lived in Belgium since I was seven. Growing up in the early 2000s computer era, I started exploring the realms of Windows 95 and XP.
             </Typography>
 
             <Typography
@@ -64,7 +64,7 @@ export function AboutSection() {
               }}
             >
 
-              My first bachelor’s degree at HELHa Mons sparked my curiosity for clean code practices and software architecture. My end-of-studies internship at Aproove further expanded my belief that code should be written first for other developers, and that architecture should limit or eliminate technical debt.
+              My first bachelor’s degree at HELHa Mons in application development sparked my curiosity for clean code practices and software architecture. My end-of-studies internship at Aproove further expanded my belief that code should be written first for other developers, and that architecture should limit or eliminate technical debt.
             </Typography>
 
 
