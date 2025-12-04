@@ -25,6 +25,18 @@ export function AchievementsSection() {
           Achievements
         </Typography>
 
+                <Typography variant="h6"
+          sx={{
+            fontWeight: 200,
+            marginBottom: 4,
+            color: isDark ? '#ffffff' : '#000000',
+            textAlign: 'center',
+            fontSize: { xs: '1rem', sm: '1.2rem', md: '1.5rem' },
+          }}>
+
+          List of my achievements and recognitions:
+        </Typography>
+
   <Grid container spacing={3} sx={{ justifyContent: 'center', maxWidth: 1200, alignItems: 'stretch' }}>
           <Grid item xs={12} sm={10} md={6} lg={4} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'stretch' }}>
             <Paper

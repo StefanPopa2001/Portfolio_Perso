@@ -43,6 +43,19 @@ export function EducationSection() {
         >
           Education
         </Typography>
+
+                  <Typography variant="h6"
+          sx={{
+            fontWeight: 200,
+            marginBottom: 4,
+            color: isDark ? '#ffffff' : '#000000',
+            textAlign: 'center',
+            fontSize: { xs: '1rem', sm: '1.2rem', md: '1.5rem' },
+          }}>
+
+          Summary of my educational background:
+        </Typography>
+
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4, maxWidth: '840px', margin: '0 auto' }}>
           {education.map((edu, index) => (
             <Paper

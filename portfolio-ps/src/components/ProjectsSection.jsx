@@ -184,6 +184,18 @@ export function ProjectsSection() {
           Projects
         </Typography>
 
+                  <Typography variant="h6"
+          sx={{
+            fontWeight: 200,
+            marginBottom: 4,
+            color: isDark ? '#ffffff' : '#000000',
+            textAlign: 'center',
+            fontSize: { xs: '1rem', sm: '1.2rem', md: '1.5rem' },
+          }}>
+
+          LIst of projects showcasing my skills:
+        </Typography>
+
         <Grid container spacing={4} sx={{ alignItems: 'stretch' }}>
           {projects.map((project, index) => (
             <Grid item xs={12} sm={6} md={6} key={index} sx={{ display: 'flex', width: '100%' }}>
