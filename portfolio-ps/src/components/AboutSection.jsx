@@ -79,7 +79,7 @@ export function AboutSection() {
                 textAlign: 'justify',
               }}
             >
-              My love for software and hardware led me to pursue a second bachelor’s degree in Industrial Computing at HELHa Charleroi. These studies have given me a deeper understanding of how our connected world works.
+              My love for software and hardware led me to pursue a second bachelor’s degree in industrial computing at HELHa Charleroi. These studies have given me a deeper understanding of how our connected world works.
             </Typography>
 
             <br />
@@ -93,7 +93,7 @@ export function AboutSection() {
                 textAlign: 'justify',
               }}
             >
-              These studies and experiences have given me a strong foundation to tackle tomorrow’s world and its challenges. My new goal is to gain what I’m missing: real years of experience inside a tech company.
+              These studies and experience have given me a strong foundation to tackle tomorrow’s world and its challenges. My new goal is to gain what I’m missing: real years of experience inside a tech company.
             </Typography>
 
           </Grid>

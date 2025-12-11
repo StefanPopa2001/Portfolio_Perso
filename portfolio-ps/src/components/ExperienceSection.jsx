@@ -79,7 +79,7 @@ export function ExperienceSection() {
               </Box>
               <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: { xs: 'flex-start', sm: 'flex-end' }, gap: 1 }}>
                 <Chip
-                  label="Current (part time)"
+                  label="Current (part-time)"
                   size="small"
                   sx={{
                     backgroundColor: '#10b981',
@@ -120,7 +120,7 @@ export function ExperienceSection() {
                 textAlign: 'justify',
               }}
             >
-              Outcome: By 2025, the solution fully manages databases, invoicing, statistical tracking, attendance, and automatic mailing. In the second half of 2024, the system enabled students to attend a missed class more than 160 times. Furthermore, it allowed all the invoicing to be calculated automatically, and an automatic mailing system updated the personnel on important events.
+              Outcome: By 2025, the solution fully manages databases, invoicing, statistical tracking, attendance, and automatic mailing. In the second half of 2024, the system enabled students to attend a missed class more than 160 times. Furthermore, it allowed all the invoices to be calculated automatically, and an automatic mailing system updated the personnel on important events.
             </Typography>
           </Paper>
           <Paper
@@ -163,7 +163,7 @@ export function ExperienceSection() {
               </Box>
               <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: { xs: 'flex-start', sm: 'flex-end' }, gap: 1 }}>
                 <Chip
-                  label="Current (part time)"
+                  label="Current (part-time)"
                   size="small"
                   sx={{
                     backgroundColor: '#10b981',

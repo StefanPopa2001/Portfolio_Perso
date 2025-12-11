@@ -8,16 +8,16 @@ export function SkillsSection() {
 
   const skills = {
     industrial: [
-      "Siemens PLC Programming",
-      "Schneider Electric PLC Programming",
-      "HMI/SCADA Development",
+      "Siemens PLC programming",
+      "Schneider Electric PLC programming",
+      "HMI/SCADA development",
       "Microcontrollers",
       "IoT",
-      "Embedded Systems",
+      "Embedded systems",
       "Telecommunications",
-      "Industrial Networks",
+      "Industrial networks",
       "Automation",
-      "PID Control regulation"
+      "PID control regulation"
     ],
     programming: [
       "JavaScript",
@@ -79,11 +79,11 @@ export function SkillsSection() {
   }
 
   const skillCategories = [
-    { title: 'Industrial Computing', skills: skills.industrial },
-    { title: 'Programming & Frameworks', skills: skills.programming },
-    { title: 'Databases & Infrastructure', skills: skills.infrastructure },
-    { title: 'Project Management', skills: skills.management },
-    { title: 'Soft Skills', skills: skills.professional, isProfessional: true },
+    { title: 'Industrial computing', skills: skills.industrial },
+    { title: 'Programming & frameworks', skills: skills.programming },
+    { title: 'Databases & infrastructure', skills: skills.infrastructure },
+    { title: 'Project management', skills: skills.management },
+    { title: 'Soft skills', skills: skills.professional, isProfessional: true },
   ]
 
   const languages = [
@@ -114,7 +114,7 @@ export function SkillsSection() {
             textAlign: 'center',
           }}
         >
-          Soft & Hard Skills
+          Soft & hard skills
         </Typography>
 
         <Typography variant="h6"
@@ -125,7 +125,7 @@ export function SkillsSection() {
             textAlign: 'center',
             fontSize: { xs: '1rem', sm: '1.2rem', md: '1.5rem' },
           }}>
-          Overview of my technical skills and soft skills. Levels of proficiency vary, please consult the project section to see my most proeficient skills.
+          Overview of my technical skills and soft skills. Levels of proficiency vary, please consult the project section to see my most proficient skills.
         </Typography>
 
   <Grid container spacing={4} sx={{ marginBottom: 8, alignItems: 'stretch', justifyContent: 'center' }}>

@@ -7,20 +7,20 @@ export function EducationSection() {
 
   const education = [
     {
-  "degree": "Bachelor in Industrial Computing (Systems and Networks)",
+  "degree": "Bachelor in industrial computing (systems and networks)",
   "school": "Haute École Louvain en Hainaut",
   "status": "Current",
   "date": "2023 - 2026",
   "photo": `${import.meta.env.BASE_URL}images/helha_charleroi.jpg`,
-  "description": "Focused on electronics and automation, with a strong emphasis on networks and cybersecurity. The program bridges operational technology (OT) and information technology (IT), preparing me to work at the intersection of both worlds."
+  "description": "Program focused on electronics and automation, with a strong emphasis on networks and cybersecurity. The program bridges operational technology (OT) and information technology (IT), preparing me to work at the intersection of both worlds."
     },
     {
-  "degree": "Bachelor in Management Computing (Application Development)",
+  "degree": "Bachelor in management computing (application development)",
   "school": "Haute École Louvain en Hainaut",
   "status": "Graduated",
   "date": "2020 - 2023 – Upper Class Honors",
   "photo": `${import.meta.env.BASE_URL}images/helha_mons.jpg`,
-  "description": "Specialized in software development and architecture, with a focus on solving business challenges through reliable and scalable software solutions. This degree gave me a solid foundation in building robust applications and understanding the needs of modern organizations."
+  "description": "Program specialized in software development and architecture, with a focus on solving business challenges through reliable and scalable software solutions. This degree gave me a solid foundation in building robust applications and understanding the needs of modern organizations."
     }
   ]
 

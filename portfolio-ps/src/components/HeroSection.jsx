@@ -52,7 +52,7 @@ export function HeroSection({ onScrollToSection }) {
             IT & OT
             <br />
             <Box component="span" sx={{ }}>
-              Full‑Stack Developer
+              full‑stack developer
             </Box>
           </Typography>
 
@@ -66,7 +66,7 @@ export function HeroSection({ onScrollToSection }) {
               lineHeight: 1.6,
             }}
           >
-            Software developer and industrial computing student with freelance full-stack developeement and 4.0 industry solutions experience.
+            Software developer and industrial computing student with freelance full-stack developement and 4.0 industry solutions experience.
           </Typography>
 
           <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', marginBottom: 6, flexWrap: 'wrap' }}>
@@ -84,7 +84,7 @@ export function HeroSection({ onScrollToSection }) {
                 },
               }}
             >
-              Get in Touch
+              Get in touch
             </Button>
             <Button
               variant="outlined"
@@ -100,7 +100,7 @@ export function HeroSection({ onScrollToSection }) {
                 },
               }}
             >
-              View Work
+              View work
             </Button>
           </Box>
 

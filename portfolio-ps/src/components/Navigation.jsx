@@ -20,7 +20,7 @@ export function Navigation({ onScrollToSection }) {
     "name": "Stefan Popa",
     "title": "IT & OT full-stack developer",
     "subtitle": "Bridging ",
-    "description": "Motivated industrial computing specialist with a proven track record in system administration, software development, and automation solutions. Currently pursuing advanced studies in industrial computing with a focus on systems and networks.",
+    "description": "Motivated industrial computing student with a proven track record in system administration, software development, and automation solutions. Currently pursuing advanced studies in industrial computing with a focus on systems and networks.",
     "fullDescription": "Passionate about leveraging technology to solve complex industrial challenges, with hands-on experience in PLC programming, SCADA systems, and full-stack development. Committed to delivering scalable, efficient solutions that drive operational excellence.",
     "email": "popa.stefan.pro@gmail.com",
     "phone": "+32 486 06 50 45",

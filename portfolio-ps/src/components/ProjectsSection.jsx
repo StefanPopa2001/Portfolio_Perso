@@ -19,7 +19,7 @@ export function ProjectsSection() {
       type: 'professional', // professional or school
       inProduction: true,
         description: 'A food ordering and delivery website developed for a restaurant. This project is notable as my first self-hosted professional project, designed with a mobile-first and client-centric approach.',
-      techStack: ["React", "Node.js", "Express JS", "PostgreSQL", "Prisma", "Docker", "Docker Compose", "Traefik", "Javascript", "Typescript"],
+      techStack: ["React", "Node.js", "Express JS", "PostgreSQL", "Prisma", "Docker", "Docker Compose", "Traefik", "javaScript", "Typescript"],
       githubUrl: 'https://github.com/StefanPopa2001/RF-Food-Delivery-App',
       liveUrl: 'https://rudyetfanny.be',
   images: [`${import.meta.env.BASE_URL}images/rf_carousel_2.png`]
@@ -29,7 +29,7 @@ export function ProjectsSection() {
       type: 'professional', // professional or school
       inProduction: false,
         description: 'Logiscool Mons Intranet 3 is a web-based CRM platform designed to meet the specific operational needs of Logiscool Mons. It was built to be modular and easily maintainable. Deployment to production is scheduled for early 2026.',
-      techStack: ["React", "Node.js", "Express JS", "PostgreSQL", "Prisma", "Docker", "Docker Compose", "Traefik", "Javascript", "Typescript"],
+      techStack: ["React", "Node.js", "Express JS", "PostgreSQL", "Prisma", "Docker", "Docker Compose", "Traefik", "javaScript", "Typescript"],
       githubUrl: 'https://github.com/StefanPopa2001/LMI-3',
       liveUrl: '',
       images: [
@@ -40,7 +40,7 @@ export function ProjectsSection() {
       title: 'Automated warehouse system',
       type: 'school', // professional or school
       inProduction: false,
-        description: 'During my second year at HELHa Charleroi, I was tasked with building an automated warehouse system. A camera scanned AprilTags on items located within a 3D printer frame, and the stock was displayed on both a web application and a local display. Users could order items via a keypad or the website, prompting the system to pick and place the items into a delivery zone.',
+        description: 'During my second year at HELHa Charleroi, I was tasked with building an automated warehouse system. A camera scanned April Tags on items located within a 3D printer frame, and the stock was displayed on both a web application and a local display. Users could order items via a keypad or the website, prompting the system to pick and place the items into a delivery zone.',
       techStack: ['Next JS', 'Node.js', 'MySQL', 'Microcontrollers', 'SSE',"Embedded systems"],
       githubUrl: '',
       liveUrl: '',
@@ -51,7 +51,7 @@ export function ProjectsSection() {
       type: 'professional', // professional or school
       inProduction: true,
         description: 'A showcase website deployed using Google Firebase, built voluntarily for the president of the association "Les Amitiés Françaises de Mons." This project marked my first experience with search engine optimization (SEO). The website was designed to be hosted for free and includes automated updates to minimize maintenance requirements.',
-      techStack: ['HTML', 'CSS', 'JavaScript', 'Google Firebase'],
+      techStack: ['HTML', 'CSS', 'javaScript', 'Google Firebase'],
       githubUrl: 'https://github.com/StefanPopa2001/Amiti-s-FR',
       liveUrl: 'https://les-amities-francaises-de-mons.web.app/',
   images: [`${import.meta.env.BASE_URL}images/afr_carousel_1.png`]
@@ -193,7 +193,7 @@ export function ProjectsSection() {
             fontSize: { xs: '1rem', sm: '1.2rem', md: '1.5rem' },
           }}>
 
-          LIst of projects showcasing my skills:
+          List of projects showcasing my skills:
         </Typography>
 
         <Grid container spacing={4} sx={{ alignItems: 'stretch' }}>
@@ -275,7 +275,7 @@ export function ProjectsSection() {
                           }}
                         >
                           <RocketIcon sx={{ fontSize: '1rem' }} />
-                          In Production
+                          In production
                         </Box>
                       )}
                     </Box>

@@ -112,7 +112,7 @@ export function AchievementsSection() {
                   textAlign: 'justify',
                 }}
               >
-                After the preselection phase, which involved programming a Siemens PLC to control a pneumatic system, I qualified for the national finals at Startech 2025 and won the gold medal. I was then selected to represent Belgium at the WorldSkills global competition in Shanghai 2026.
+                After the preselection phase, which involved programming a Siemens PLC to control a pneumatic system, I qualified for the national finals at Startech 2025 and won the gold medal. I was then selected to represent Belgium at the WorldSkills global competition in Shanghai in 2026.
               </Typography>
             </Paper>
           </Grid>
