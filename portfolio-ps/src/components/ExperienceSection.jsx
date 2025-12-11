@@ -120,7 +120,7 @@ export function ExperienceSection() {
                 textAlign: 'justify',
               }}
             >
-              Outcome: By 2025, the solution fully manages databases, invoicing, statistical tracking, attendance, and automatic mailing. In the second half of 2024, the system enabled students to attend a missed class more than 160 times. Furthermore, it allowed all the invoices to be calculated automatically, and an automatic mailing system updated the personnel on important events.
+              Outcome: By 2025, the solution fully manages databases, invoicing, statistical tracking, attendance, and automatic mailing. In the second half of 2024, the system enabled students to attend missed classes more than 160 times. Furthermore, it allowed all invoices to be calculated automatically, and an automatic mailing system updated the team on important events.
             </Typography>
           </Paper>
           <Paper

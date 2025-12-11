@@ -66,7 +66,7 @@ export function HeroSection({ onScrollToSection }) {
               lineHeight: 1.6,
             }}
           >
-            Software developer and industrial computing student with freelance full-stack developement and 4.0 industry solutions experience.
+            Software developer and industrial computing student with freelance full-stack development and 4.0 industry solutions experience.
           </Typography>
 
           <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', marginBottom: 6, flexWrap: 'wrap' }}>

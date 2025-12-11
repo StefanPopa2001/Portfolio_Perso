@@ -29,7 +29,7 @@ export function ProjectsSection() {
       type: 'professional', // professional or school
       inProduction: false,
         description: 'Logiscool Mons Intranet 3 is a web-based CRM platform designed to meet the specific operational needs of Logiscool Mons. It was built to be modular and easily maintainable. Deployment to production is scheduled for early 2026.',
-      techStack: ["React", "Node.js", "Express JS", "PostgreSQL", "Prisma", "Docker", "Docker Compose", "Traefik", "javaScript", "Typescript"],
+      techStack: ["React", "Node.js", "Express JS", "PostgreSQL", "Prisma", "Docker", "Docker Compose", "Traefik", "JavaScript", "TypeScript"],
       githubUrl: 'https://github.com/StefanPopa2001/LMI-3',
       liveUrl: '',
       images: [
@@ -41,7 +41,7 @@ export function ProjectsSection() {
       type: 'school', // professional or school
       inProduction: false,
         description: 'During my second year at HELHa Charleroi, I was tasked with building an automated warehouse system. A camera scanned April Tags on items located within a 3D printer frame, and the stock was displayed on both a web application and a local display. Users could order items via a keypad or the website, prompting the system to pick and place the items into a delivery zone.',
-      techStack: ['Next JS', 'Node.js', 'MySQL', 'Microcontrollers', 'SSE',"Embedded systems"],
+      techStack: ['Next.js', 'Node.js', 'MySQL', 'Microcontrollers', 'SSE',"Embedded systems"],
       githubUrl: '',
       liveUrl: '',
   images: [`${import.meta.env.BASE_URL}images/projet2.jpg`]

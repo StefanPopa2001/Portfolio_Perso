@@ -64,7 +64,7 @@ export function AboutSection() {
               }}
             >
 
-              My first bachelor’s degree at HELHa Mons in application development sparked my curiosity for clean code practices and software architecture. My end-of-studies internship at Aproove further expanded my belief that code should be written first for other developers, and that architecture should limit or eliminate technical debt.
+              My first bachelor's degree at HELHa Mons in application development sparked my curiosity about clean code practices and software architecture. My end-of-studies internship at Aproove strengthened my belief that code should be written first for other developers, and that architecture should limit or eliminate technical debt.
             </Typography>
 
 
